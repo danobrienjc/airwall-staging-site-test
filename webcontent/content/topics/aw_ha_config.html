@@ -1,0 +1,334 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="21.0">
+    <head><link rel="shortcut icon" href="../../logo.png"/><link rel="icon" href="../../logo.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="DC.rights.owner" content="(C) Copyright 2023"/><meta name="copyright" content="(C) Copyright 2023"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Configuring high-availability (HA) Airwall Gateways in v2.2.8 and later. For v2.2-v2.2.5, see Configure High Availability for Airwall Gateways (v2.2-v2.2.5) . The high-availability architecture for ..."/><meta name="DC.subject" content="high availability,Airwall Gateway"/><meta name="keywords" content="high availability, Airwall Gateway"/><meta name="DC.relation" content="../../content/topics/hip_ha_overview.html"/><meta name="DC.relation" content="../../content/topics/aw_ha_heartbeat.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="hip_ha_setup"/>        
+      <title>Configure High Availability Airwall Gateways (v2.2.8 and later)</title><!--  Generated with Oxygen version 24.0, build number 2022012605.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="hip_ha_setup-d8884e11338"/><meta name="wh-source-relpath" content="content/topics/aw_ha_config.dita"/><meta name="wh-out-relpath" content="content/topics/aw_ha_config.html"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022012605"/><script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script><script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tempered-help.css?buildId=2022012605"/><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NX2TVTD'); //</script><!-- End Google Tag Manager --></head>
+
+    <body id="hip_ha_setup" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        <!-- Google Tag Manager (noscript) --><noscript> &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2TVTD"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt; //</noscript><!-- End Google Tag Manager (noscript) -->
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="21.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../logo-48px.png" alt="Airwall help  be invisible    - you can't hack what you can't see"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Airwall help <sub class="ph sub"><sup class="ph sup beinvisible"> be invisible </sup>  <sup class="ph sup canthack"> - you can't hack what you can't see</sup></sub></span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' --> 
+                <!-- DOB commented this out to show the support menu without odd stray button
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                    aria-expanded="false" aria-label="${i18n(toggle.menu)}" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"/>
+                    
+                    
+                </button -->
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container" align="right"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support_top-d8884e16110-mi" data-tocid="support_top-d8884e16110" data-state="not-ready" class=" topicref " data-id="support_top"><span class="title"><a href="../../support_top.html">Get Support</a></span></span></li></ul></nav><!--DOB Added align to solve Support menu issue-->
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+        
+        <div class="container-fluid">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="web_top_docs"><div class="title"><a href="../../content/topics/web_top_docs.html">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div></li><li><div class="topicref" data-id="web_top_howto"><div class="title"><a href="../../content/topics/idn_install_config.html">Deploy an <span class="ph">Airwall</span> secure network</a><div class="wh-tooltip"><p class="shortdesc">Learn how to deploy the Airwall solution, connect devices, set up <span class="ph">overlays</span>,
+                configure device trust, and give people access to your Airwall secure
+                network.</p></div></div></div></li><li><div class="topicref" data-id="setup_hip_services"><div class="title"><a href="../../content/topics/setup_aws.html">Deploy and Configure <span class="ph">Airwall Edge Services</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Airwall Edge Services</span> let     you securely connect managed endpoints, such as laptops, PCs, tablets, and     smartphones.</p></div></div></div></li><li><div class="topicref" data-id="hipservice_advanced"><div class="title"><a href="../../content/topics/aw_advanced.html">Configure Advanced <span class="ph">Airwall Edge Service</span> Options</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li><div class="topicref" data-id="hip_ha_overview"><div class="title"><a href="../../content/topics/hip_ha_overview.html"><span class="ph">Airwall Edge Service</span> High Availability (HA)</a><div class="wh-tooltip"><p class="shortdesc">High Availability (HA) <span class="ph">Airwall Gateways</span> provide hardware   redundancy in a hot-standby mode. <span class="ph">Airwall Gateways</span> installed in an HA   configuration maintain a heartbeat on a dedicated Ethernet link where only the current primary is   participating in overlay network communications. If the primary fails to send heartbeat messages   to the secondary, the secondary takes over <span class="ph">overlay</span> network communications   for the HA pair.</p></div></div></div></li><li class="active"><div class="topicref" data-id="hip_ha_setup"><div class="title"><a href="../../content/topics/aw_ha_config.html">Configure High Availability <span class="ph">Airwall Gateways</span> (v2.2.8 and later)</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 d-none d-md-block d-print-none">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="vid_overdemos-d8884e17" class="topicref" data-id="vid_overdemos" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../vid_overdemos.html" id="vid_overdemos-d8884e17-link">Video Overview and Demos</a><div class="wh-tooltip"><p class="shortdesc">Overviews and demos for the <span class="ph">Tempered</span>         <span class="ph">Airwall Solution</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect_top-d8884e43" class="topicref" data-id="connect_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect_top-d8884e43-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/connect_top.html" id="connect_top-d8884e43-link">Connect to <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Connect your mobile or laptop to <span class="ph">Airwall</span> to
+                get access to protected resources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="idn_administrative-d8884e1435" class="topicref" data-id="idn_administrative" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action idn_administrative-d8884e1435-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_administrative.html" id="idn_administrative-d8884e1435-link">Manage <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Provision and manage <span class="ph">Airwall Edge Services</span> and devices, monitor activity, and install updates.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_docs-d8884e4585" class="topicref" data-id="web_top_docs" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_docs-d8884e4585-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_docs.html" id="web_top_docs-d8884e4585-link">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="web_content_start-d8884e4607" class="topicref" data-id="web_content_start" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_content_start-d8884e4607-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/get_started.html" id="web_content_start-d8884e4607-link">Get Started with the <span class="ph">Airwall Solution</span></a><div class="wh-tooltip"><p class="shortdesc">Get started with the <span class="ph">Airwall</span>
+                solution.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_howto-d8884e5102" class="topicref" data-id="web_top_howto" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_howto-d8884e5102-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_install_config.html" id="web_top_howto-d8884e5102-link">Deploy an <span class="ph">Airwall</span> secure network</a><div class="wh-tooltip"><p class="shortdesc">Learn how to deploy the Airwall solution, connect devices, set up <span class="ph">overlays</span>,
+                configure device trust, and give people access to your Airwall secure
+                network.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="deploy_checklist-d8884e5123" class="topicref" data-id="deploy_checklist" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_checklist.html" id="deploy_checklist-d8884e5123-link">Deployment Checklist</a><div class="wh-tooltip"><p class="shortdesc">A checklist for deploying the <span class="ph">Airwall Solution</span></p></div></div></div></li><li role="treeitem"><div data-tocid="deploy_roadmap-d8884e5153" class="topicref" data-id="deploy_roadmap" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_roadmap.html#deploy_roadmap" id="deploy_roadmap-d8884e5153-link">Deployment Roadmap</a><div class="wh-tooltip"><p class="shortdesc">A roadmap to the most helpful topics for getting the <span class="ph">Airwall Solution</span> up and running         on your network.</p></div></div></div></li><li role="treeitem"><div data-tocid="net_browse_require-d8884e5317" class="topicref" data-id="net_browse_require" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/depl_shared_net.html" id="net_browse_require-d8884e5317-link">Confirm your Network Settings</a><div class="wh-tooltip"><p class="shortdesc">Check that your network is set up to start deploying the <span class="ph">Airwall Solution</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="lic_top-d8884e5339" class="topicref" data-id="lic_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action lic_top-d8884e5339-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/lic_top.html" id="lic_top-d8884e5339-link">License a Conductor and Airwall Edge Services</a><div class="wh-tooltip"><p class="shortdesc">Everything you need to know about licensing your <span class="ph">Conductor</span> and <span class="ph">Airwall Edge Services</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cond_deploy_config-d8884e5724" class="topicref" data-id="cond_deploy_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cond_deploy_config-d8884e5724-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_deploy_config.html" id="cond_deploy_config-d8884e5724-link">Deploy and Configure a Conductor</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Airwall Conductor</span> helps you deploy, configure, administer, and update your <span class="ph">Airwall Solution</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="setup_hip_services-d8884e7854" class="topicref" data-id="setup_hip_services" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action setup_hip_services-d8884e7854-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/setup_aws.html" id="setup_hip_services-d8884e7854-link">Deploy and Configure <span class="ph">Airwall Edge Services</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Airwall Edge Services</span> let     you securely connect managed endpoints, such as laptops, PCs, tablets, and     smartphones.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="setup_airwall_gateways-d8884e7869" class="topicref" data-id="setup_airwall_gateways" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action setup_airwall_gateways-d8884e7869-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/setup_airwall_gateways.html" id="setup_airwall_gateways-d8884e7869-link">Set up <span class="ph">Airwall Gateways</span></a><div class="wh-tooltip"><p class="shortdesc">Set up physical, virtual, or cloud <span class="ph">Airwall Gateways</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hipapp_admin_welcome-d8884e9380" class="topicref" data-id="hipapp_admin_welcome" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hipapp_admin_welcome-d8884e9380-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/agent_server_setup_deploy.html" id="hipapp_admin_welcome-d8884e9380-link">Install <span class="ph">Airwall Agents and Servers</span> on people's laptops and devices</a><div class="wh-tooltip"><p class="shortdesc">How to connect people's cell phones, laptops, and servers to the resources people need     access to behind your <span class="ph">Airwall secure network</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hip_relay-d8884e9904" class="topicref" data-id="hip_relay" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hip_relay-d8884e9904-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_relay.html" id="hip_relay-d8884e9904-link">Set up an <span class="ph">Airwall Relay</span> to Route Encrypted Connections </a><div class="wh-tooltip"><p class="shortdesc">An <span class="ph">Airwall Relay</span> routes     encrypted <span class="ph">Airwall Edge Service</span>     connections across all networks and transport options, without modifying the underlying network,     for secure end-to-end connectivity. </p></div></div></div></li><li role="treeitem"><div data-tocid="deploy_aw_alibaba-d8884e10108" class="topicref" data-id="deploy_aw_alibaba" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_cloud_server.html" id="deploy_aw_alibaba-d8884e10108-link">Deploy a cloud <span class="ph">Airwall Server</span></a><div class="wh-tooltip"><p class="shortdesc">You can deploy an <span class="ph">Airwall Server</span> on a cloud         provider, which gives you a Windows Server machine with an <span class="ph">Airwall Server</span> installed and         configured to connect with your <span class="ph">Conductor</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hip_edit_settings-d8884e10141" class="topicref" data-id="hip_edit_settings" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hip_edit_settings-d8884e10141-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_edit_settings.html" id="hip_edit_settings-d8884e10141-link">Configure <span class="ph">Airwall Edge Service</span> Settings</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="hip_auth_session-d8884e10729" class="topicref" data-id="hip_auth_session" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/agent_auth_session.html" id="hip_auth_session-d8884e10729-link">Configure an authenticated <span class="ph">Airwall Agent or Server</span> session</a><div class="wh-tooltip"><p class="shortdesc">An authenticated <span class="ph">Airwall Agent or Server</span> session requires         users to authenticate before the <span class="ph">Airwall Agent or Server</span> can communicate         in an <span class="ph">overlay</span> network.         The authentication is based on a user’s <span class="ph">Conductor</span> login         credentials. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="hipservice_advanced-d8884e10769" class="topicref" data-id="hipservice_advanced" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action hipservice_advanced-d8884e10769-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_advanced.html" id="hipservice_advanced-d8884e10769-link">Configure Advanced <span class="ph">Airwall Edge Service</span> Options</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="cond_custom_certs_signed-d8884e10782" class="topicref" data-id="cond_custom_certs_signed" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_custom_certs.html#cond_custom_certs_signed" id="cond_custom_certs_signed-d8884e10782-link">Add or Replace a Signed Certificate on an <span class="ph">Airwall Gateway</span> for <span class="ph">Conductor</span> Communication</a><div class="wh-tooltip"><p class="shortdesc">By default, the <span class="ph">Airwall Gateways</span> come with a <span class="ph">Tempered</span> factory-installed         certificate. You can add your own custom CA certificate to use for <span class="ph">Conductor</span> communication. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="port_groups-d8884e10857" class="topicref" data-id="port_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action port_groups-d8884e10857-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/port_groups.html" id="port_groups-d8884e10857-link">Set up Port Groups on an Airwall Gateway</a><div class="wh-tooltip"><p class="shortdesc">The default port groups work for some deployments. You may need to set up <span class="ph">underlay</span> or <span class="ph">overlay</span> port groups if         your deployment requires it.</p></div></div></div></li><li role="treeitem"><div data-tocid="seamless_bypass-d8884e11089" class="topicref" data-id="seamless_bypass" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/seamless_bypass.html#seamless_bypass" id="seamless_bypass-d8884e11089-link">Seamless Bypass</a><div class="wh-tooltip"><p class="shortdesc">Seamless Bypass allows you to separate traffic (split tunnel) going through your <span class="ph">Airwall Gateway</span>, where you         selectively encrypt and tunnel some traffic, while allowing other traffic to pass through         the <span class="ph">Airwall Gateway</span> unchanged.         This ability also allows protected devices to securely communicate with devices or network         locations that are not protected by <span class="ph">Airwall Edge Services</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="backhaul_bypass-d8884e11197" class="topicref" data-id="backhaul_bypass" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/backhaul_bypass.html#backhaul_bypass" id="backhaul_bypass-d8884e11197-link">Backhaul Bypass</a><div class="wh-tooltip"><p class="shortdesc">Set up backhaul bypass to allow any v3.0 or later <span class="ph">Airwall Gateway</span> to reach         bypass destinations by tunneling traffic using designated bypass egress <span class="ph">Airwall Gateways</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="bypass_enable_dns-d8884e11294" class="topicref" data-id="bypass_enable_dns" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/bypass_enable_dns.html" id="bypass_enable_dns-d8884e11294-link">Enable DNS lookup for bypass destinations</a><div class="wh-tooltip"><p class="shortdesc">If you want or need to use a fully-qualified domain name (FQDN) when specifying a         bypass destination, you can enable DNS lookup for bypass. An FQDN may be necessary if the         bypass destination IP is not static.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="hip_ha_overview-d8884e11316" class="topicref" data-id="hip_ha_overview" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action hip_ha_overview-d8884e11316-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_ha_overview.html" id="hip_ha_overview-d8884e11316-link"><span class="ph">Airwall Edge Service</span> High Availability (HA)</a><div class="wh-tooltip"><p class="shortdesc">High Availability (HA) <span class="ph">Airwall Gateways</span> provide hardware   redundancy in a hot-standby mode. <span class="ph">Airwall Gateways</span> installed in an HA   configuration maintain a heartbeat on a dedicated Ethernet link where only the current primary is   participating in overlay network communications. If the primary fails to send heartbeat messages   to the secondary, the secondary takes over <span class="ph">overlay</span> network communications   for the HA pair.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="hip_ha_setup-d8884e11338" class="topicref" data-id="hip_ha_setup" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action hip_ha_setup-d8884e11338-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_ha_config.html" id="hip_ha_setup-d8884e11338-link">Configure High Availability <span class="ph">Airwall Gateways</span> (v2.2.8 and later)</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="aw_ha_heartbeat-d8884e11359" class="topicref" data-id="aw_ha_heartbeat" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_ha_heartbeat.html" id="aw_ha_heartbeat-d8884e11359-link">Set HA Heartbeat settings for an <span class="ph">Airwall Gateway</span> HA pair</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="hip_ha_setup-d8884e11372" class="topicref" data-id="hip_ha_setup" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_ha_config_v22.html" id="hip_ha_setup-d8884e11372-link">Configure High Availability for <span class="ph">Airwall Gateways</span> (v2.2-v2.2.5)</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="one_arm_mode-d8884e11385" class="topicref" data-id="one_arm_mode" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/one_arm_mode.html#one_arm_mode" id="one_arm_mode-d8884e11385-link">One-arm mode</a><div class="wh-tooltip"><p class="shortdesc">You can configure an <span class="ph">Airwall Gateway</span> to use a         single network connection in cases where you want to prevent common routing errors caused by         multiple interfaces.</p></div></div></div></li><li role="treeitem"><div data-tocid="hip_config_nat-d8884e11414" class="topicref" data-id="hip_config_nat" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_config_nat.html" id="hip_config_nat-d8884e11414-link">Network address translation (NAT)</a><div class="wh-tooltip"><p class="shortdesc">Network Address Translation (NAT) translates an IP address in one network to a         different IP address in another network. The two IP addresses are referred to as the         External IP address and the Internal IP address. The External IP address is the IP address         of the device in the overlay network and the Internal IP address is the actual IP address of         the device.</p></div></div></div></li><li role="treeitem"><div data-tocid="hip_encrypt_comp-d8884e11433" class="topicref" data-id="hip_encrypt_comp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_encrypt_comp.html" id="hip_encrypt_comp-d8884e11433-link">Encryption and tunnel compression on an <span class="ph">Airwall Gateway</span></a><div class="wh-tooltip"><p class="shortdesc">You can change the encryption or compression of <span class="ph">Airwall Gateways</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="dev_dhcp_config-d8884e11460" class="topicref" data-id="dev_dhcp_config" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/dev_dhcp_config.html" id="dev_dhcp_config-d8884e11460-link">Protected devices with static routing</a><div class="wh-tooltip"><p class="shortdesc">You can configure static routing for protected devices with IP addresses not directly         connected to an <span class="ph">Airwall Gateway</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="dev_dhcp_static-d8884e11486" class="topicref" data-id="dev_dhcp_static" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/dev_static_config.html" id="dev_dhcp_static-d8884e11486-link">Protected devices with DHCP</a><div class="wh-tooltip"><p class="shortdesc">If you have protected devices that use DHCP to obtain an IP address, you need to         configure DHCP on the <span class="ph">Airwall Gateway</span> that protects         that device.</p></div></div></div></li><li role="treeitem"><div data-tocid="untitled1-d8884e11511" class="topicref" data-id="untitled1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_relay_dhcp.html" id="untitled1-d8884e11511-link">DHCP relay on an <span class="ph">Airwall Gateway</span></a><div class="wh-tooltip"><p class="shortdesc">If you have protected devices that use DHCP to obtain an IP address, you can         configure the <span class="ph">Airwall Gateway</span>         to relay the DHCP address to your DHCP server.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="custom_firewall_rules-d8884e11538" class="topicref" data-id="custom_firewall_rules" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action custom_firewall_rules-d8884e11538-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_limit_traffic_port_filter.html" id="custom_firewall_rules-d8884e11538-link">Limit Device Traffic on an <span class="ph">Airwall Gateway</span> with Port Filtering </a><div class="wh-tooltip"><p class="shortdesc">You can use  <span class="ph">Airwall Gateway</span> port filtering to limit what traffic can pass over an Overlay based on TCP/UDP Ports. With     port filtering enabled, all communication from remote to local devices is disabled, and you     create custom rules to tell the local <span class="ph">Airwall Gateway</span> what to allow as     incoming connections to local devices.</p></div></div></div></li><li role="treeitem"><div data-tocid="hip_spanning-d8884e11582" class="topicref" data-id="hip_spanning" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_spanning.html" id="hip_spanning-d8884e11582-link">Spanning Tree Protocol on the <span class="ph">Overlay</span> Network</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="device_mgmt-d8884e11603" class="topicref" data-id="device_mgmt" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action device_mgmt-d8884e11603-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/device_mgmt.html" id="device_mgmt-d8884e11603-link">Connect and Configure Devices</a><div class="wh-tooltip"><p class="shortdesc">As you prepare to connect devices to <span class="ph">Airwall Gateways</span>, you may want your <span class="ph">Airwall Gateway</span> product guide available   to identify the ports reserved for connecting devices you want to protect.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="overlay_config-d8884e11959" class="topicref" data-id="overlay_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action overlay_config-d8884e11959-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/overlay_config.html" id="overlay_config-d8884e11959-link">Create and Manage an <span class="ph">Overlay</span> (Protected) Network</a><div class="wh-tooltip"><p class="shortdesc">Create an <span class="ph">overlay</span>     (protected) network for your deployment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="device_trust-d8884e12395" class="topicref" data-id="device_trust" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action device_trust-d8884e12395-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/device_trust.html" id="device_trust-d8884e12395-link">Configure Device Trust</a><div class="wh-tooltip"><p class="shortdesc">Configure device trust to set up secure communication between devices in your <span class="ph">Airwall secure network</span>.  </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cloud_prov_setup-d8884e12591" class="topicref" data-id="cloud_prov_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cloud_prov_setup-d8884e12591-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cloud_prov_setup.html" id="cloud_prov_setup-d8884e12591-link">Set up Cloud Providers</a><div class="wh-tooltip"><p class="shortdesc">Setting up one of the supported cloud providers in your <span class="ph">Conductor</span> makes it         easier to deploy <span class="ph">Airwall Gateways</span>         and High-Availability <span class="ph">Conductors</span> directly from         your <span class="ph">Conductor</span>. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="top_integrations-d8884e12784" class="topicref" data-id="top_integrations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action top_integrations-d8884e12784-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/top_integrations.html" id="top_integrations-d8884e12784-link">Integrate Third-party Services</a><div class="wh-tooltip"><p class="shortdesc">How to integrate the <span class="ph">Airwall Solution</span> with         third-party services.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_diagnostics-d8884e13413" class="topicref" data-id="web_top_diagnostics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_diagnostics-d8884e13413-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_diagnostics.html" id="web_top_diagnostics-d8884e13413-link">Diagnostics and Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">There are various tools available on our platform to help you diagnose
+                problems you may encounter. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="advisory_bulletins-d8884e14491" class="topicref" data-id="advisory_bulletins" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action advisory_bulletins-d8884e14491-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/advisory_bulletins.html" id="advisory_bulletins-d8884e14491-link">Security Notices, Advisory Notices, and Product Bulletins</a><div class="wh-tooltip"><p class="shortdesc">Go here for important information on known issues, end-of-life notices, and
+                other product updates.</p></div></div></div></li><li role="treeitem"><div data-tocid="web_top_api_ref-d8884e14922" class="topicref" data-id="web_top_api_ref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_api_ref.html" id="web_top_api_ref-d8884e14922-link"><span class="ph">Airwall</span> API</a><div class="wh-tooltip"><p class="shortdesc">You can access the <span class="ph">Airwall</span> API Reference from your    <span class="ph">Conductor</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_downloads-d8884e14947" class="topicref" data-id="web_top_downloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_downloads-d8884e14947-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_downloads.html" id="web_top_downloads-d8884e14947-link">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support_top-d8884e16110" class="topicref" data-id="support_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support_top-d8884e16110-link" class="wh-expand-btn"></span><div class="title"><a href="../../support_top.html" id="support_top-d8884e16110-link">Get Support</a><div class="wh-tooltip"><p class="shortdesc">You can often find answers to your questions in <span class="ph">Airwall             help</span>. If you still need help, check here for help         getting support.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="- topic/title title topictitle1" id="ariaid-title1">Configure High Availability  <span class="- topic/ph ph">Airwall Gateways</span> (v2.2.8 and
+    later)</h1>
+  
+  <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+    <section class="- topic/section task/context section context">
+      
+      <p class="- topic/p p">Configuring high-availability (HA) <span class="- topic/ph ph">Airwall Gateways</span> in v2.2.8 and
+        later. For v2.2-v2.2.5, see <a class="- topic/xref xref" href="hip_ha_config_v22.html">Configure High Availability for Airwall Gateways (v2.2-v2.2.5)</a>.</p>
+      <p class="- topic/p p">The high-availability architecture for <span class="- topic/ph ph">Airwall Gateways</span> distinguishes
+        between the following <span class="- topic/ph ph">Airwall Gateway</span> roles:</p>
+      <ul class="- topic/ul ul">
+        <li class="- topic/li li"><em class="+ topic/ph hi-d/i ph i">Primary vs. secondary</em>: These roles are assigned when the HA pairing is created.
+          The Primary <span class="- topic/ph ph">Airwall Gateway</span>
+          is the one that is added to the <span class="- topic/ph ph">overlay</span> in the <span class="- topic/ph ph">Conductor</span>. The secondary
+            <span class="- topic/ph ph">Airwall Gateway</span> has no
+          configuration on its own with the exception of identity-related information and port
+          configuration. The primary and secondary role assignment can’t be changed during the
+          lifetime of the HA pairing.</li>
+        <li class="- topic/li li"><em class="+ topic/ph hi-d/i ph i">Active vs. standby</em>: At any given time only one <span class="- topic/ph ph">Airwall Gateway</span> is active and
+          participating in <span class="- topic/ph ph">overlay</span> network communications. The active <span class="- topic/ph ph">Airwall Gateway</span>  maintains a
+          heartbeat on a dedicated Ethernet link. If the active <span class="- topic/ph ph">Airwall Gateway</span> fails to send
+          heartbeat messages to the standby, the standby takes over the <span class="- topic/ph ph">overlay</span> network
+          communications for the HA pair.</li>
+      </ul>
+    </section>
+  </div>
+  <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title2" id="task_gbk_4qs_ckb">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title2">Before You Begin</h2>
+    <div class="- topic/abstract abstract">
+      <p class="- topic/p p">Before you configure a High-availability (HA) pair, you must:</p>
+      <ul class="- topic/ul ul">
+        <li class="- topic/li li">Have a Conductor set up and running.</li>
+        <li class="- topic/li li">Configure and connect the physical or virtual v2.2.8 or later <span class="- topic/ph ph">Airwall Gateways</span> you wish to
+          configure for high availability. You need two physical or two virtual <span class="- topic/ph ph">Airwall Gateways</span>. See <a class="- topic/xref xref" href="hip_config.html" title="Before you begin installing your Airwall Gateway, ensure that you already have the Conductor installed and configured. After you are finished installing your Airwall Gateway, you can begin connecting devices.">Set up physical Airwall Gateways</a> for more information.</li>
+        <li class="- topic/li li">Connect both <span class="- topic/ph ph">Airwall Gateways</span>
+          to the same underlay and overlay network.</li>
+      </ul>
+      <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Cloud <span class="- topic/ph ph">Airwall Gateways</span> do not
+        support HA.</div>
+    </div>
+  </article>
+  <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="task_ztc_dy3_2kb">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title3">Create a High-availability <span class="- topic/ph ph">Airwall Gateway</span> pairing</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">High availability  <span class="- topic/ph ph">Airwall Gateway</span> pairing is
+      supported in v2.2 and later.</p><section class="- topic/section task/context section context"><p class="- topic/p p">To configure High-availability <span class="- topic/ph ph">Airwall Gateways</span>, you need to:</p></section><section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">For virtual <span class="- topic/ph ph">Airwall Gateways</span> only</strong> –
+            Add an ethernet port</span>
+        </li><li class="- topic/li task/step li step"><span class="- topic/ph task/cmd ph cmd">Connect the <span class="- topic/ph ph">Airwall Gateways</span></span></li><li class="- topic/li task/step li step"><span class="- topic/ph task/cmd ph cmd">Pair the <span class="- topic/ph ph">Airwall Gateways</span> for High
+          Availability</span></li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Make sure the <span class="- topic/ph ph">Overlay</span> Port Group
+            settings match</span>
+        </li></ol></section><section class="- topic/section task/postreq section postreq">These steps are described in more detail below.</section></div>
+  </article>
+ 
+  <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title4" id="one_add_ethernet_port">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title4">1  For Virtual <span class="- topic/ph ph">Airwall Gateways</span> only – Add an ethernet port</h2>
+    <div class="- topic/body task/taskbody body taskbody"><section class="- topic/section task/context section context">For virtual <span class="- topic/ph ph">Airwall Gateways</span>,
+        you need to add an ethernet port for the heartbeat the high-availability <span class="- topic/ph ph">Airwall Gateways</span> use to communicate
+        status. See your Hypervisor for instructions on adding a network port.</section> 
+    </div>
+  </article>
+  
+  <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title5" id="two_connect_airwalls">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title5">2 Connect the <span class="- topic/ph ph">Airwall Gateways</span></h2>
+    <div class="- topic/body task/taskbody body taskbody"><section class="- topic/section task/context section context"> You can configure a pair of physical or virtual <span class="- topic/ph ph">Airwall Gateways</span> as a
+        high-availability pair.</section> 
+      <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Select the primary <span class="- topic/ph ph">Airwall Gateway</span> and select
+            or add an HA Port Group</span>
+          <ol type="a" class="- topic/ol task/substeps ol substeps">
+            <li class="- topic/li task/substep li substep">
+              <span class="- topic/ph task/cmd ph cmd">At the top right of the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Ports</span> tab, select <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit Settings</span></span>.</span>
+            </li>
+            <li class="- topic/li task/substep li substep">
+              <span class="- topic/ph task/cmd ph cmd">Select an available HA Port Group, or, to create one, go to
+                  <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Ports</span> and select an available port, and create an HA Port
+                Group. The port group sets up a virtual connection between the <span class="- topic/ph ph">Airwall Gateways</span> you’re
+                configuring as an HA pair. A virtual <span class="- topic/ph ph">Airwall Gateway</span> is
+                expandable up to six (6) ports. You must configure one port for HA heartbeats with
+                the HA role.</span>
+            </li>
+          </ol>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Repeat step 1 with the secondary <span class="- topic/ph ph">Airwall Gateway</span>.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">If you are using physical <span class="- topic/ph ph">Airwall Gateways</span></strong>,
+            physically connect the primary to the secondary using an ethernet cable between the
+            dedicated HA ethernet ports on both <span class="- topic/ph ph">Airwall Gateways</span> with an
+            ethernet cable (so you have both a port and a physical connection between the two <span class="- topic/ph ph">Airwall Gateways</span>). </span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">If you are using virtual <span class="- topic/ph ph">Airwall Gateways</span></strong>, connect
+            the port created above to each other in the virtual network. See your Hypervisor help
+            for instructions.</span>
+        </li></ol></section>
+      <section class="- topic/section task/postreq section postreq"> Next, you will pair the <span class="- topic/ph ph">Airwall Gateways</span>.</section></div>
+  </article>
+  
+  <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title6" id="three_pair_for_high_availability">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title6">3  Pair the <span class="- topic/ph ph">Airwall Gateways</span>
+      for High Availability</h2>
+    <div class="- topic/body task/taskbody body taskbody"><section class="- topic/section task/context section context"></section> 
+      <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Open the page for the <span class="- topic/ph ph">Airwall Gateway</span> you want to
+            be Active in the HA pairing.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Open the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">HA</span> tab and select <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit Settings</span></span>.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Select a high-availability backup </span><span class="- topic/ph ph">Airwall Gateway</span>, select the
+            secondary/standby <span class="- topic/ph ph">Airwall Gateway</span>.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">If the port configuration on the selected secondary <span class="- topic/ph ph">Airwall Gateway</span> is different
+            from the configuration on the primary <span class="- topic/ph ph">Airwall Gateway</span>, you will see
+            an alert with the option to transfer the configuration of the primary <span class="- topic/ph ph">Airwall Gateway</span> to the
+            secondary <span class="- topic/ph ph">Airwall Gateway</span>.
+            Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Synchronize port configurations</span> to copy the configuration
+            from the primary to the secondary <span class="- topic/ph ph">Airwall Gateway</span>.</span>
+          <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/ha_port_replication_alert.png" width="500" alt="Port replication alert with Synchronize port configurations button"/></div>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd"><a class="- topic/xref xref" href="aw_ha_heartbeat.html">Set HA Heartbeat settings for an Airwall Gateway HA pair</a>.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Check <strong class="+ topic/ph hi-d/b ph b">Swap roles after failover</strong> if you want the standby <span class="- topic/ph ph">Airwall Gateway</span> to remain
+            active in the event of a failover. If this is not checked, the failed <span class="- topic/ph ph">Airwall Gateway</span> will
+            automatically become active again once it back online.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Check <strong class="+ topic/ph hi-d/b ph b">Trigger fail-over when network is unavailable</strong> if you want to initiate a
+            failover if the <span class="- topic/ph ph">Airwall Gateway</span> detects that
+            it has no network connectivity. With this option checked, the standby will become active
+            if the current active <span class="- topic/ph ph">Airwall Gateway</span> has no
+            underlay connectivity on any underlay port group but the standby still does.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Next to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">HA floating IPs</span>, select the + (plus sign), and enter
+            an IP address that the HA-pair will share. This IP address will be advertised by the <span class="- topic/ph ph">Conductor</span> to all peer
+              <span class="- topic/ph ph">Airwall Gateways</span>, but only
+            the active <span class="- topic/ph ph">Airwall Gateway</span>
+            owns it. This IP address should be routable and in the same subnets as the underlay IPs
+            of the HA-pair. You may skip this if the HA <span class="- topic/ph ph">Airwall Gateways</span> always
+            communicate through a relay. You can configure more than one floating IP if the HA <span class="- topic/ph ph">Airwall Gateways</span> have multiple
+            underlay ports.</span>
+          <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/aw_ha_float_ips.png" width="600" alt="Set HA floating IPs"/></div>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Select <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Update Settings</span></span>.</span>
+        </li></ol></section><section class="- topic/section task/postreq section postreq">The shared High Availability (HA) IP address is a virtual IP address that moves between the
+        two <span class="- topic/ph ph">Airwall Gateways</span> and is only
+        set on the active one, so that remote <span class="- topic/ph ph">Airwall Gateways</span> have a consistent
+        destination IP address for their connections to the HA Pair. The shared HA IP address must
+        be a static IP address assigned for this specific purpose.</section></div>
+  </article>
+  
+  <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title7" id="four_port_group_settings">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title7">4 Make sure the Overlay Port Group settings match</h2>
+    <div class="- topic/body task/taskbody body taskbody"><section class="- topic/section task/context section context"></section>
+      <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Check the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Overlay Port Group</span> of your primary <span class="- topic/ph ph">Airwall Gateway</span> for an IP
+            address or any other configured settings (such as DHCP, source NAT, etc). </span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">The <span class="- topic/ph ph">Conductor</span>
+            displays an alert on the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Port configuration</span> and
+              <span class="+ topic/ph ui-d/uicontrol ph uicontrol">HA</span> tabs if there are discrepancies between the port
+            configurations. Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Synchronize port configurations</span> to
+            replicate the configuration of the primary <span class="- topic/ph ph">Airwall Gateway</span> to the
+            secondary. Note that the secondary <span class="- topic/ph ph">Airwall Gateway</span> must be
+            online to replicate the settings.</span>
+          <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/ha_port_replication_alert.png" width="500" alt="Port replication alert"/></div>
+        </li></ol></section></div>
+  </article>
+  <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title8" id="task_zqb_4rj_2kb">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title8">Test the High-Availability Pair</h2>
+    <div class="- topic/body task/taskbody body taskbody"><section class="- topic/section task/context section context">The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">HA</span> tab on either HA-paired <span class="- topic/ph ph">Airwall Gateway</span> displays the
+        setup of the HA pair, identifying the primary and secondary, along with their current roles
+        and status. Immediately after setting up the HA pair, the status displays Setting up. After
+        a few seconds, the status of both <span class="- topic/ph ph">Airwall Gateways</span> will change: to
+          <span class="+ topic/ph ui-d/uicontrol ph uicontrol">OK (tunneling)</span> on the active and to  <span class="+ topic/ph ui-d/uicontrol ph uicontrol">OK
+          (monitoring)</span> on the standby.</section>
+      <section class="- topic/section task/result section result">
+        <br/><div class="imagecenter"><img class="- topic/image image imagecenter" src="../images/tunneling.png" width="600"/></div><br/>
+        <p class="- topic/p p">You can manually reverse the active and standby roles by selecting <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Swap
+            Roles</span>. This option initiates a failover from the current active  <span class="- topic/ph ph">Airwall Gateway</span> to the
+          standby, and permanently reverse the roles irrespective of the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Swap roles after
+            failover</span> setting.</p>
+        <p class="- topic/p p">You can also see that the <span class="- topic/ph ph">Airwall Gateways</span> are paired on
+          the Dashboard.</p>
+        <br/><div class="imagecenter"><img class="- topic/image image imagecenter" src="../images/ha_on_dashboard_228.png" width="600"/></div><br/>
+      </section>
+    </div></article>
+  
+  <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title9" id="remove_ha_pairing">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title9">Remove a High-Availability Pairing</h2>
+    <div class="- topic/body task/taskbody body taskbody">
+      <section class="- topic/section task/context section context">You remove an HA pairing from the primary <span class="- topic/ph ph">Airwall Gateway</span>.</section>
+      <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Open the page for the primary <span class="- topic/ph ph">Airwall Gateway</span>, and on the
+              <span class="+ topic/ph ui-d/uicontrol ph uicontrol">HA</span> tab, select  <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit Settings</span></span>.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Remove HA pairing</span>.</span>
+        </li><li class="- topic/li task/step li step">
+          <span class="- topic/ph task/cmd ph cmd">Select <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Update Settings</span></span>.</span>
+        </li></ol></section>
+      <section class="- topic/section task/result section result">When an HA Pair is removed, the primary <span class="- topic/ph ph">Airwall Gateway</span> stays in the <span class="- topic/ph ph">Overlay</span> Network and
+        the secondary <span class="- topic/ph ph">Airwall Gateway</span>
+        is removed from the <span class="- topic/ph ph">Overlay</span>
+        network.</section>
+    </div>
+  </article>
+</article></main></div>
+                        <div class=" wh_child_links "><nav aria-label="Child Links" role="navigation" class="- topic/related-links related-links"><ul class="ullinks"><li class="- topic/link link ulchildlink"><strong><a href="../../content/topics/aw_ha_heartbeat.html">Set HA Heartbeat settings for an Airwall Gateway HA pair</a></strong><div class="- topic/desc desc"></div></li></ul></nav></div>
+                        
+                        <whc:webhelp_feedback xmlns:whc="http://www.oxygenxml.com/webhelp/components"></whc:webhelp_feedback>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#task_gbk_4qs_ckb" data-tocid="task_gbk_4qs_ckb">Before You Begin</a></li><li class="topic-item"><a href="#task_ztc_dy3_2kb" data-tocid="task_ztc_dy3_2kb">Create a High-availability <span class="- topic/ph ph">Airwall Gateway</span> pairing</a></li><li class="topic-item"><a href="#one_add_ethernet_port" data-tocid="one_add_ethernet_port">1  For Virtual <span class="- topic/ph ph">Airwall Gateways</span> only – Add an ethernet port</a></li><li class="topic-item"><a href="#two_connect_airwalls" data-tocid="two_connect_airwalls">2 Connect the <span class="- topic/ph ph">Airwall Gateways</span></a></li><li class="topic-item"><a href="#three_pair_for_high_availability" data-tocid="three_pair_for_high_availability">3  Pair the <span class="- topic/ph ph">Airwall Gateways</span>
+      for High Availability</a></li><li class="topic-item"><a href="#four_port_group_settings" data-tocid="four_port_group_settings">4 Make sure the Overlay Port Group settings match</a></li><li class="topic-item"><a href="#task_zqb_4rj_2kb" data-tocid="task_zqb_4rj_2kb">Test the High-Availability Pair</a></li><li class="topic-item"><a href="#remove_ha_pairing" data-tocid="remove_ha_pairing">Remove a High-Availability Pairing</a></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <footer class="navbar navbar-default wh_footer" data-whc_version="21.0">
+  <div class=" footer-container  mx-auto">
+    <div>
+    <p> 
+        Go to: <a href="http://webhelp.tempered.io/webhelp-ft" target="_blank">Airwall Teams help</a> or <a href="http://webhelp.tempered.io/webhelp/webhelp222" target="_blank">pre-2.2.3 Tempered HIPswitch Help</a>.</p>
+    <p>© Copyright 2023 <a href="https://tempered.io">tempered.io</a> | <a href="https://tempered.io/resources/terms-of-product-sale-license-and-warranty" target="_blank">Terms of Product Sale, License and Warranty</a></p>
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

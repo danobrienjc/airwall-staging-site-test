@@ -1,0 +1,661 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="21.0">
+    <head><link rel="shortcut icon" href="../../logo.png"/><link rel="icon" href="../../logo.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="DC.rights.owner" content="(C) Copyright 2023"/><meta name="copyright" content="(C) Copyright 2023"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Release Date: December 13, 2018"/><meta name="DC.relation" content="../../content/topics/rel_notes_older.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="rel_notes_2_1_5"/>        
+      <title>Release Notes 2.1.5</title><!--  Generated with Oxygen version 24.0, build number 2022012605.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="rel_notes_2_1_5-d8884e15971"/><meta name="wh-source-relpath" content="content/topics/rel_notes_2_1_5.dita"/><meta name="wh-out-relpath" content="content/topics/rel_notes_2_1_5.html"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022012605"/><script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script><script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tempered-help.css?buildId=2022012605"/><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NX2TVTD'); //</script><!-- End Google Tag Manager --></head>
+
+    <body id="rel_notes_2_1_5" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        <!-- Google Tag Manager (noscript) --><noscript> &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2TVTD"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt; //</noscript><!-- End Google Tag Manager (noscript) -->
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="21.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../logo-48px.png" alt="Airwall help  be invisible    - you can't hack what you can't see"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Airwall help <sub class="ph sub"><sup class="ph sup beinvisible"> be invisible </sup>  <sup class="ph sup canthack"> - you can't hack what you can't see</sup></sub></span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' --> 
+                <!-- DOB commented this out to show the support menu without odd stray button
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                    aria-expanded="false" aria-label="${i18n(toggle.menu)}" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"/>
+                    
+                    
+                </button -->
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container" align="right"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support_top-d8884e16110-mi" data-tocid="support_top-d8884e16110" data-state="not-ready" class=" topicref " data-id="support_top"><span class="title"><a href="../../support_top.html">Get Support</a></span></span></li></ul></nav><!--DOB Added align to solve Support menu issue-->
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+        
+        <div class="container-fluid">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="web_top_downloads"><div class="title"><a href="../../content/topics/web_top_downloads.html">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div></li><li><div class="topicref" data-id="web_top_rel_notes"><div class="title"><a href="../../content/topics/web_top_rel_notes.html">Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Get information on the improvements, fixes, and known issues for each major
+                release of the <span class="ph">Airwall</span>
+                solution.</p></div></div></div></li><li><div class="topicref" data-id="rel_notes_older"><div class="title"><a href="../../content/topics/rel_notes_older.html">Older Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Release Notes for versions 2.1.2 through 2.2.2.</p></div></div></div></li><li class="active"><div class="topicref" data-id="rel_notes_2_1_5"><div class="title"><a href="../../content/topics/rel_notes_2_1_5.html">Release Notes 2.1.5</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: December 13, 2018</p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 d-none d-md-block d-print-none">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="vid_overdemos-d8884e17" class="topicref" data-id="vid_overdemos" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../vid_overdemos.html" id="vid_overdemos-d8884e17-link">Video Overview and Demos</a><div class="wh-tooltip"><p class="shortdesc">Overviews and demos for the <span class="ph">Tempered</span>         <span class="ph">Airwall Solution</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect_top-d8884e43" class="topicref" data-id="connect_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect_top-d8884e43-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/connect_top.html" id="connect_top-d8884e43-link">Connect to <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Connect your mobile or laptop to <span class="ph">Airwall</span> to
+                get access to protected resources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="idn_administrative-d8884e1435" class="topicref" data-id="idn_administrative" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action idn_administrative-d8884e1435-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_administrative.html" id="idn_administrative-d8884e1435-link">Manage <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Provision and manage <span class="ph">Airwall Edge Services</span> and devices, monitor activity, and install updates.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_docs-d8884e4585" class="topicref" data-id="web_top_docs" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_docs-d8884e4585-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_docs.html" id="web_top_docs-d8884e4585-link">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_downloads-d8884e14947" class="topicref" data-id="web_top_downloads" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_downloads-d8884e14947-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_downloads.html" id="web_top_downloads-d8884e14947-link">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="downloads_latest-d8884e14962" class="topicref" data-id="downloads_latest" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action downloads_latest-d8884e14962-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_latest.html" id="downloads_latest-d8884e14962-link">Latest firmware and software</a></div></div></li><li role="treeitem"><div data-tocid="downloads_3_1_2-d8884e15043" class="topicref" data-id="downloads_3_1_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_1_2.html" id="downloads_3_1_2-d8884e15043-link">3.1.2 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_1_0-d8884e15053" class="topicref" data-id="downloads_3_1_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_1_0.html" id="downloads_3_1_0-d8884e15053-link">3.1.0 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_0_3-d8884e15096" class="topicref" data-id="downloads_3_0_3" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_0_3.html" id="downloads_3_0_3-d8884e15096-link">3.0.3 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_0_2-d8884e15106" class="topicref" data-id="downloads_3_0_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_0_2.html" id="downloads_3_0_2-d8884e15106-link">3.0.2 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_0_1-d8884e15116" class="topicref" data-id="downloads_3_0_1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_0_1.html" id="downloads_3_0_1-d8884e15116-link">3.0.1 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_0_0-d8884e15143" class="topicref" data-id="downloads_3_0_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_0_0.html" id="downloads_3_0_0-d8884e15143-link">3.0.0 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_13-d8884e15170" class="topicref" data-id="downloads_2_2_13" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_13.html" id="downloads_2_2_13-d8884e15170-link">2.2.13 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_12-d8884e15197" class="topicref" data-id="downloads_2_2_12" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_12.html" id="downloads_2_2_12-d8884e15197-link">2.2.12 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15224" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_11.html" id="downloads_2_2_2-d8884e15224-link">2.2.11 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15235" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_10.html" id="downloads_2_2_2-d8884e15235-link">2.2.10 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15245" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_8.html" id="downloads_2_2_2-d8884e15245-link">2.2.8 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15255" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_5.html" id="downloads_2_2_2-d8884e15255-link">2.2.5 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15265" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_3.html" id="downloads_2_2_2-d8884e15265-link">2.2.3 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_cellular_packages-d8884e15275" class="topicref" data-id="downloads_cellular_packages" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_cellular_packages.html" id="downloads_cellular_packages-d8884e15275-link">Cellular modem firmware</a><div class="wh-tooltip"><p class="shortdesc">Firmware updated May 19, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_serial_drivers-d8884e15300" class="topicref" data-id="downloads_serial_drivers" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_serial_drivers.html" id="downloads_serial_drivers-d8884e15300-link">Serial drivers</a><div class="wh-tooltip"><p class="shortdesc">64-bit drivers updated Dec 16, 2020</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="firmware_older-d8884e15311" class="topicref" data-id="firmware_older" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action firmware_older-d8884e15311-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/firmware_older.html" id="firmware_older-d8884e15311-link">Older downloads</a><div class="wh-tooltip"><p class="shortdesc">Downloads for 2.1.x to 2.2.2 firmware and software versions. For firmware downloads         for versions 1.12.1 through 2.0.x, see the <a class="xref" href="https://webhelp.tempered.io/webhelp/webhelp222/content/topics/web_top_downloads.html" target="_blank" rel="external noopener">pre-2.2.3 software downloads page</a>.</p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_hotfixes-d8884e15417" class="topicref" data-id="downloads_hotfixes" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_hotfixes.html" id="downloads_hotfixes-d8884e15417-link">Hotfixes</a><div class="wh-tooltip"><p class="shortdesc">Updated May 19, 2022</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_rel_notes-d8884e15432" class="topicref" data-id="web_top_rel_notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_rel_notes-d8884e15432-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_rel_notes.html" id="web_top_rel_notes-d8884e15432-link">Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Get information on the improvements, fixes, and known issues for each major
+                release of the <span class="ph">Airwall</span>
+                solution.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rel_notes_latest-d8884e15454" class="topicref" data-id="rel_notes_latest" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_latest.html" id="rel_notes_latest-d8884e15454-link">Latest Release Notes (v3.1.2)</a></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_1_1-d8884e15479" class="topicref" data-id="rel_notes_3_1_1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_1_2.html" id="rel_notes_3_1_1-d8884e15479-link">Release Notes v3.1.2</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: November 30, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_1_0-d8884e15492" class="topicref" data-id="rel_notes_3_1_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_1_0.html" id="rel_notes_3_1_0-d8884e15492-link">Release Notes v3.1.0</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Oct 13, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_0_3-d8884e15526" class="topicref" data-id="rel_notes_3_0_3" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_0_3.html" id="rel_notes_3_0_3-d8884e15526-link">Release Notes v3.0.3</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: May 10, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_0_2-d8884e15547" class="topicref" data-id="rel_notes_3_0_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_0_2.html" id="rel_notes_3_0_2-d8884e15547-link">Release Notes v3.0.2</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Apr 8, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_0_1-d8884e15560" class="topicref" data-id="rel_notes_3_0_1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_0_1.html" id="rel_notes_3_0_1-d8884e15560-link">Release Notes v3.0.1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Feb 3, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_0_0-d8884e15587" class="topicref" data-id="rel_notes_3_0_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_0_0.html" id="rel_notes_3_0_0-d8884e15587-link">Release Notes v3.0.0</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Nov 2, 2021</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_13-d8884e15614" class="topicref" data-id="rel_notes_2_2_13" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_13.html" id="rel_notes_2_2_13-d8884e15614-link">Release Notes 2.2.13</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Jul 30, 2021</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_12_cond_HF15748-d8884e15641" class="topicref" data-id="rel_notes_2_2_12_cond_HF15748" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_12_cond_HF15748.html" id="rel_notes_2_2_12_cond_HF15748-d8884e15641-link">Release Notes 2.2.12 Hotfix – <span class="ph">Conductor</span> HF-15748</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: May 28, 2021 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_12-d8884e15657" class="topicref" data-id="rel_notes_2_2_12" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_12.html" id="rel_notes_2_2_12-d8884e15657-link">Release Notes 2.2.12</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: May 24, 2021</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_11_cond_HF1-d8884e15685" class="topicref" data-id="rel_notes_2_2_11_cond_HF1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_11_cond_HF1.html" id="rel_notes_2_2_11_cond_HF1-d8884e15685-link">Release Notes 2.2.11 Hotfix – <span class="ph">Conductor</span> HF-1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Apr 13, 2021 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_11_aw_HF2-d8884e15701" class="topicref" data-id="rel_notes_2_2_11_aw_HF2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_11_aw_HF2.html" id="rel_notes_2_2_11_aw_HF2-d8884e15701-link">Release Notes 2.2.11 Hotfix – <span class="ph">Airwall Gateway</span> HF-2</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Mar 30, 2021 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15717" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_11_aw_HF1.html" id="rel_notes_2_2_2-d8884e15717-link">Release Notes 2.2.11 Hotfix – <span class="ph">Airwall Gateway</span> HF-1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Mar 17, 2021 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_11-d8884e15733" class="topicref" data-id="rel_notes_2_2_11" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_11.html" id="rel_notes_2_2_11-d8884e15733-link">Release Notes 2.2.11</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Mar 15, 2021</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15746" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_10_aw_HF1.html" id="rel_notes_2_2_2-d8884e15746-link">Release Notes 2.2.10 Hotfix – <span class="ph">Airwall Gateway</span> HF-1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Dec 16, 2020 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15762" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_10_cond_HF1.html" id="rel_notes_2_2_2-d8884e15762-link">Release Notes 2.2.10 Hotfix – <span class="ph">Conductor</span> HF-1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Dec 16, 2020 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15778" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_10.html" id="rel_notes_2_2_2-d8884e15778-link">Release Notes 2.2.10</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Nov 18, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15791" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8_cond_HF5.html" id="rel_notes_2_2_2-d8884e15791-link">Release Notes 2.2.8 Hotfix – <span class="ph">Conductor</span> HF-5</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Dec 18, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15807" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8_aw_HF3.html" id="rel_notes_2_2_2-d8884e15807-link">Release Notes 2.2.8 Hotfix – <span class="ph">Airwall Gateway</span> HF-3</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Oct 19, 2020 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15823" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8_cond_HF4.html" id="rel_notes_2_2_2-d8884e15823-link">Release Notes 2.2.8 Hotfix – <span class="ph">Conductor</span> HF-4</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Oct 19, 2020 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15839" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8_hotfix_13955.html" id="rel_notes_2_2_2-d8884e15839-link">Release Notes 2.2.8 Hotfix – <span class="ph">Airwall Gateway</span> Hotfix-13955</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Aug 4, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15856" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8.html" id="rel_notes_2_2_2-d8884e15856-link">Release Notes 2.2.8</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Jul 17, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15869" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_5.html" id="rel_notes_2_2_2-d8884e15869-link">Release Notes 2.2.5</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Apr 17, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15882" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_3_hotfix.html" id="rel_notes_2_2_2-d8884e15882-link">Release Notes 2.2.3 Hotfix</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Mar 27, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15895" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_3.html" id="rel_notes_2_2_2-d8884e15895-link">Release Notes 2.2.3</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Feb 6, 2020</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rel_notes_older-d8884e15908" class="topicref" data-id="rel_notes_older" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rel_notes_older-d8884e15908-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_older.html" id="rel_notes_older-d8884e15908-link">Older Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Release Notes for versions 2.1.2 through 2.2.2.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15919" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_2.html" id="rel_notes_2_2_2-d8884e15919-link">Release Notes 2.2.2</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: October 18 , 2019</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_1-d8884e15932" class="topicref" data-id="rel_notes_2_2_1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_1.html" id="rel_notes_2_2_1-d8884e15932-link">Release Notes 2.2.1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: September 16 , 2019</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_1_7-d8884e15945" class="topicref" data-id="rel_notes_2_1_7" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_1_7.html" id="rel_notes_2_1_7-d8884e15945-link">Release Notes 2.1.7</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: November 11, 2019</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_1_6-d8884e15958" class="topicref" data-id="rel_notes_2_1_6" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_1_6.html" id="rel_notes_2_1_6-d8884e15958-link">Release Notes 2.1.6</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: March 1, 2019</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="rel_notes_2_1_5-d8884e15971" class="topicref" data-id="rel_notes_2_1_5" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_1_5.html" id="rel_notes_2_1_5-d8884e15971-link">Release Notes 2.1.5</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: December 13, 2018</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_1_4-d8884e15984" class="topicref" data-id="rel_notes_2_1_4" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_1_4.html" id="rel_notes_2_1_4-d8884e15984-link">Release Notes 2.1.4</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: October 16, 2018</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_1_0-d8884e15997" class="topicref" data-id="rel_notes_2_1_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_1_3.html" id="rel_notes_2_1_0-d8884e15997-link">Release Notes 2.1.3</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: May 24, 2018</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_1_0-d8884e16010" class="topicref" data-id="rel_notes_2_1_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_1_2.html" id="rel_notes_2_1_0-d8884e16010-link">Release Notes 2.1.2</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: February 9, 2018</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="untitled6-d8884e16023" class="topicref" data-id="untitled6" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action untitled6-d8884e16023-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/relnotes_retired_hotfixes.html" id="untitled6-d8884e16023-link">Release Notes for Retired Hotfixes</a><div class="wh-tooltip"><p class="shortdesc">These hotfixes have been retired.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="support_top-d8884e16110" class="topicref" data-id="support_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support_top-d8884e16110-link" class="wh-expand-btn"></span><div class="title"><a href="../../support_top.html" id="support_top-d8884e16110-link">Get Support</a><div class="wh-tooltip"><p class="shortdesc">You can often find answers to your questions in <span class="ph">Airwall             help</span>. If you still need help, check here for help         getting support.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Release Notes 2.1.5</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><strong class="+ topic/ph hi-d/b ph b">Release Date</strong>: December 13, 2018</p>
+        <section class="- topic/section section" id="rel_notes_2_1_5__whats_new" data-ofbid="rel_notes_2_1_5__whats_new"><h2 class="- topic/title title sectiontitle">What's New</h2>
+            
+            <p class="- topic/p p">New in this release:</p>
+            <dl class="- topic/dl dl">
+                
+                    <dt class="- topic/dt dt dlterm">FIPS</dt>
+                    <dd class="- topic/dd dd">Tempered Networks now offers FIPS 140-2, based on the HIPswitch 500 and
+                        Conductor 500 platforms. With FIPS, private keys are stored on the
+                        FIPS-certified HSM (hardware security module). The HSM performs all
+                        cryptographic operations. For this added key security, performance may be
+                        noticeably slower in terms of data plane throughput and firmware update
+                        processing. Redundant HA FIPS is not supported at this time.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">Improved time management</dt>
+                    <dd class="- topic/dd dd">NTP sync is now configurable from the Conductor. Various improvements have
+                        been made to ensure HIPswitch time is closely synchronized with the
+                        Conductor, eliminating time-drift.<div class="- topic/note note note note_note"><span class="note__title">Note:</span> We recommend pointing your
+                            HIP-enabled servers and clients to the same NTP Time source to ensure
+                            proper synchronization.</div></dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">HIPswitch 75w Series</dt>
+                    <dd class="- topic/dd dd">We now offer the HIPswitch 75 Series with a built-in WiFi module. Software
+                        version 2.1.5 does not currently provide WiFi LED status on the outside of
+                        the unit, but the WiFi uplink functions correctly. This will be addressed in
+                        a future release.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">HIPswitch 150e Series</dt>
+                    <dd class="- topic/dd dd">We now offer the HIPswitch 150e base platform, suitable for ICS and SCADA
+                        environments and includes 4x Gig-E and 1x SFP port, 1x micro-USB console
+                        port, and can be powered by PoE or external single- or dual-power supply.
+                        The HIPswitch 150 can sustain 75 Mb/s, and burst up to 100 Mb/s. This new
+                        platform supports field-upgradeable expansion modules.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">HIPswitch 150 Series cellular module</dt>
+                    <dd class="- topic/dd dd">
+                        <p class="- topic/p p">This release supports a cellular expansion module suitable for North
+                            American cell carriers, which accepts 3FF Micro SIM cards. ATT, Verizon,
+                            T-Mobile, Rogers, and Telus have been field-tested at the time of this
+                            release.</p>
+                    </dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">HIPswitch 250 Series single- and dual-modem automated recovery</dt>
+                    <dd class="- topic/dd dd">We added an internal watchdog monitor for cell carrier uplink connections.
+                        If a HIPswitch cannot connect to Conductor via any means, then occasionally
+                        (approx. once per day) it will perform a full reset, which may re-establish
+                        the carrier connection in certain environments. This will only occur when
+                        the HIPswitch 250 has no means of reaching the Conductor or peer
+                        HIPswitches.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">HIPrelay bandwidth reporting</dt>
+                    <dd class="- topic/dd dd">It is now possible to view the bandwidth of relayed connections between HIP
+                        Services in Conductor! An extra tab will appear in Conductor at <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">HIPservice</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Reporting</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">HIPrelay Stats</span></span> for each HIPrelay. These statistics provide visibility into
+                        your network utilization with full-color, layered bandwidth graphs. They are
+                        also useful for troubleshooting underlay network relayed connection
+                        issues.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">Service-specific CPU and memory reporting</dt>
+                    <dd class="- topic/dd dd">For 2.1.5 and above, your HIP Services will report resource utilization more
+                        granularly, and you will be able to see this diagnostic information in the <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">HIPservice</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Reporting</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Graphs</span></span>.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">Headless install for Windows HIPclient and HIPserver</dt>
+                    <dd class="- topic/dd dd">You can now perform non-interactive installations of the Windows 7 HIPclient
+                        or HIPserver using Microsoft’s System Center Configuration Manager (SCCM).
+                        Previous releases required manual acknowledgment by an administrator to
+                        complete the installation of an unsigned network tap (TAP) driver on
+                        Windows. We have patched the driver and obtained Microsoft certification, so
+                        this step is no longer necessary.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">Tags public API</dt>
+                    <dd class="- topic/dd dd">All basic tagging capabilities released in software version 2.1.4 are
+                        exposed in the public API. This includes the ability to index the tags, set
+                        or unset tags on taggable objects, such as devices, device groups,
+                        HIP Services, HIPservice groups, networks, and people. You can manage tags,
+                        retrieve various objects by tag, manage tag expirations, and perform other
+                        tag-based actions on several taggable objects at once. Advanced tag
+                        management, such as using tags in smart device group rules, or managing
+                        monitor event-actions that manipulate tags, will be added in a future
+                        release.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">Custom CA alerts &amp; public API</dt>
+                    <dd class="- topic/dd dd">Though technically possible, it was difficult to use a non-Tempered CA at
+                        scale with your Conductor and HIP Services. Prior releases required you to
+                        manually copy/paste each CSR and cert from the Conductor GUI. Now you can
+                        automate the process using new public API calls. This enables a scriptable,
+                        scalable Conductor-centric workflow. Also, an admin alert is created in
+                        Conductor when custom CA certs are near expiration.</dd>
+                
+            </dl>
+        </section>
+        <section class="- topic/section section" id="rel_notes_2_1_5__upgrade_considerations" data-ofbid="rel_notes_2_1_5__upgrade_considerations"><h2 class="- topic/title title sectiontitle">Upgrade Considerations</h2>
+            
+            <p class="- topic/p p">The 2.1.5 release includes all hotfixes from prior releases and addresses all known
+                support cases at the time of release.</p>
+            <table class="- topic/table table frame-all" data-cols="2"><caption></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_1_5__upgrade_considerations__entry__1" colspan="2"><strong class="+ topic/ph hi-d/b ph b">We recommend you upgrade to 2.1.5
+                                    if:</strong></th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__upgrade_considerations__entry__1">You want to take advantage of performance and stability increases
+                                in 2.1.5, or use any of the following features:</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__upgrade_considerations__entry__1">You were impacted by any issues discovered in prior releases,
+                                especially if you have any of the following:</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="rel_notes_2_1_5__upgrade_considerations__entry__1">
+                                <ul class="- topic/ul ul">
+                                    <li class="- topic/li li">Relay bandwidth reporting</li>
+                                    <li class="- topic/li li">HIPswitch 75w</li>
+                                    <li class="- topic/li li">HIPswitch 150e</li>
+                                    <li class="- topic/li li">HIPswitch 250gd carrier monitoring</li>
+                                    <li class="- topic/li li">Windows SCCM HIPclient installs</li>
+                                    <li class="- topic/li li">Public API for Tags or Custom CA</li>
+                                </ul>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_1_5__upgrade_considerations__entry__1">
+                                <ul class="- topic/ul ul">
+                                    <li class="- topic/li li">Time drift issues with Conductor or HIP Services</li>
+                                    <li class="- topic/li li">Cell carrier connection flapping</li>
+                                    <li class="- topic/li li">Issues switching cell carriers (e.g. changing SIM cards) on
+                                        the HIPswitch 250</li>
+                                    <li class="- topic/li li">Issues with SFP ports on the HIPswitch 250</li>
+                                    <li class="- topic/li li">DHCP configuration on the overlay network</li>
+                                    <li class="- topic/li li">Problems setting one-arm mode on any multi-port
+                                        HIPswitch</li>
+                                    <li class="- topic/li li">Event monitor permissions / usability problems</li>
+                                    <li class="- topic/li li">Difficult to detect misconfiguration problems pairing HA
+                                        HIPswitches</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody></table>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> You may upgrade Conductor directly to 2.1.5 from version 1.12.6 or later. You may
+                upgrade HIPswitches to 2.1.5 provided you are running Conductor 2.1.5.</div>
+            <p class="- topic/p p">Extensive testing was conducted both in-house and with selected development partners,
+                in lab and in production environments to ensure that performance is equivalent to
+                2.1.4. Additionally, 2.1.5 should be more stable than all prior releases.</p>
+        </section>
+        <section class="- topic/section section" id="rel_notes_2_1_5__fixes" data-ofbid="rel_notes_2_1_5__fixes"><h2 class="- topic/title title sectiontitle">Fixes</h2>
+            
+            <table class="- topic/table table frame-all" id="rel_notes_2_1_5__table_dfq_frb_4y" data-ofbid="rel_notes_2_1_5__table_dfq_frb_4y" data-cols="3"><caption></caption><colgroup><col style="width:100px"/><col style="width:200px"/><col style="width:100%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">ID</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Applies to</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9462</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue with the HIPswitch 250g where ports 1, 2, and/or 7
+                                are non-functional following an upgrade from 2.1.3 to 2.1.4, if the
+                                100M SFP PHY setting is in use. (Otherwise it is reverting to the
+                                default of 1000M mode.)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9461</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue where port 8 on the HIPswitch 250 would not
+                                reestablish a link after a soft reboot.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9430</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">The <strong class="+ topic/ph hi-d/b ph b">PKI</strong> tab now only displays on models that support the
+                                feature. Previously, the <strong class="+ topic/ph hi-d/b ph b">PKI</strong> tab was visible in the Conductor
+                                UI for HIPclients and HIPservers.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9378</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPswitch-Cellular</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue where cellular modems in the HIPswitch 150 and
+                                HIPswitch 250 were not properly initialized.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9370</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue where Conductor-initiated port configurations
+                                would fail.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9353</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">All users allowed to view an alert monitor can now receive alerts
+                                for that monitor.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9333</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue where a standby Conductor in an HA pair would not
+                                display the <strong class="+ topic/ph hi-d/b ph b">Diagnostics</strong> tab.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9287</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue where Conductors running software version 2.1.4
+                                sent an incorrect DHCP server configuration data to HIPswitches
+                                running versions prior to 2.1.4.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9263</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPswitch-Cellular</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue where a HIPswitch 250 with a cellular modem may
+                                show abnormally high CPU usage. </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9246</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Attempting to delete a HIPclient or HIPserver from the
+                                    <strong class="+ topic/ph hi-d/b ph b">Devices</strong>page no longer returns a permission denied
+                                error.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9244</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPclient, iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">The Conductor now correctly reports the version of the connected
+                                iOS HIPclient.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9239</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">The <strong class="+ topic/ph hi-d/b ph b">Event Monitors</strong> view no longer prevents the Conductor
+                                UI from timing out.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9152</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">The Conductor now rejects configuration changes that would add a
+                                0.0.0.0 wildcard device to an overlay network if the network also
+                                has a 0.0.0.0/0 route on one of the connected HIP Services.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9149</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPclient, Windows</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">The Windows HIPclient and HIPserver now report errors in the
+                                correct format.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9136</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPserver, Linux</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue where hipctl on Linux would not report an error
+                                when trying to reset the active profile.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9120</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor API</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Improved the API filter and sort parameters. Sending a parameter
+                                that is not supported results in a more actionable message.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9112</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Fixed an issue where a PCI user activity report would not contain
+                                firmware upload information.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9106</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPclient, iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">Mobile devices running iOS now failover from wireless to cellular
+                                correctly.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__1">DEV-9053</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__2">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_1_5__table_dfq_frb_4y__entry__3">HIPswitch HA configurations now verify the HA floating IP address
+                                is in range of the shared network IP address, and will display an
+                                error in the Conductor UI if it is not.</td>
+                        </tr>
+                    </tbody></table>
+        </section>
+        <section class="- topic/section section" id="rel_notes_2_1_5__known_issues" data-ofbid="rel_notes_2_1_5__known_issues"><h2 class="- topic/title title sectiontitle">Known Issues</h2>
+            
+            <table class="- topic/table table frame-all" id="rel_notes_2_1_5__table_ffq_frb_4y" data-ofbid="rel_notes_2_1_5__table_ffq_frb_4y" data-cols="3"><caption></caption><colgroup><col style="width:100px"/><col style="width:205px"/><col style="width:100%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">ID</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Applies to</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-9887</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">HIPswitch 150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">When applying power to a HIPswitch 150 while the microUSB console
+                                port is connected to a computer, the HIPSwitch-150 fails to enable
+                                power to the expansion bay.<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: Ensure your
+                                    HIPswitch is connected to a power source prior to connecting to
+                                    the console port.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-9875</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">OpenHIP</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">When the Conductor's time is changed backwards by a large amount,
+                                such as enabling NTP on the Conductor for the first time, all
+                                connected HIPswitches will adjust their time accordingly and result
+                                in HIPswitches being unable to establish tunnels with other
+                                        HIPswitches.<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: Reboot your connected
+                                    HIPswitches whenever you make large time adjustments to the
+                                    Conductor.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-9477</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">The <strong class="+ topic/ph hi-d/b ph b">Health Data</strong> tab displays 28 lines with a link at the
+                                    bottom stating <strong class="+ topic/ph hi-d/b ph b">+438 more</strong>. Clicking on the link does not
+                                    expand the list</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-9397</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">Factory resetting a Conductor that's in an HA-pair doesn't work
+                                    correctly the first time.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: Factory reset the Conductor a second time to
+                                    resolve the issue.</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-9382</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">Attempting to install a non-Azure firmware package in an Azure
+                                    instance will produce an error message stating <strong class="+ topic/ph hi-d/b ph b">&lt;inserv
+                                        form image&gt;</strong>.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-9157</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">HIPclient, macOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">Killing the hipctl daemon (tnw-cltd) will result in the HIPclient
+                                not functioning properly.<p class="- topic/p p">If you try and run any hipctl commands,
+                                    the message Could not connect with Tempered Networks control
+                                    process is displayed. No message is displayed when trying to
+                                    make changes from the configuration UI.</p><p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>:
+                                    Restart the process by entering sudo launchctl start
+                                    com.temperednetworks.ctld from a terminal.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-8097</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">HIPclient, macOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">If your computer has multiple active NICs and you select a
+                                specific NIC in your HIPclient configuration, the operating system
+                                will choose the NIC for outbound traffic.<u class="+ topic/ph hi-d/u ph u">Workaround</u>:
+                                None</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-8060</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">In rare cases, a Conductor HA pair will stop syncing.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: If this happens, promote the HA-secondary to a
+                                    primary, then re-pair them.</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-8051</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">The IP address field on associated with a HIPswitch may be blank
+                                on the HIP Services tab.<u class="+ topic/ph hi-d/u ph u">Workaround</u>: You can locate the IP
+                                address information under the <strong class="+ topic/ph hi-d/b ph b">Reporting</strong> tab.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-7955</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">If you ping a HIPswitch running in Azure from another HIPswitch,
+                                    it will fail in the Conductor UI. This is due to ICMP being
+                                    denied by Azure's security groups.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-7769</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">Toggling policy on and off too quickly on a HIPswitch hosted in
+                                    Google Cloud can result in the route table becoming out of sync
+                                    when using route injection.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: After toggling policy, wait 10 seconds before
+                                    toggling it again.</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-7661</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">When replacing a HIPswitch, the new HIPswitch may take a few
+                                    minutes to reconnect and appear online in the Conductor.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: Wait a few minutes after replacing the
+                                    HIPswitch for it to display in the Conductor UI.</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-7499</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">The bandwidth check in the HIPswitch <strong class="+ topic/ph hi-d/b ph b">Diagnostics</strong> tab might
+                                fail for HA-paired HIPswitches.<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>:
+                                None</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-7125</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor, PCI</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">When exporting PCI data, HIP Services references may not display
+                                    correctly when viewing the CSV file in Microsoft Excel.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-7058</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">When reconfiguring your underlay network from one physical port
+                                    to another in the Conductor, the changes may not be applied
+                                    successfully and the configuration will revert back to the
+                                    original settings.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: Make the configuration changes in diagnostic
+                                    mode.</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-6590</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">You can add a voucher code more then once from the Licensing tab.
+                                This does not create additional licenses, but is visually
+                                    confusing.<u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-6587</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">The Licensing tab may display invalid entries.<u class="+ topic/ph hi-d/u ph u">Workaround</u>:
+                                Remove the invalid items manually.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-6533</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">When creating or editing a smart device group, rules can have the
+                                    same ordinal values. This can cause unintended issues in the
+                                    processing results.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: When creating rules, verify each rule has a
+                                    unique ordinal value.</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-6446</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">HIPclient, iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">When viewing traffic stats in the iOS app, the chart may show
+                                    negative values instead of zero.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-6226</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">A fully qualified domain name cannot be used for local or peer
+                                    replication addresses on an HA Conductor pair.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-6195</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">The Conductor incorrectly displays an option to check bandwidth
+                                    for HIPclients in diagnostic view. This option is not supported
+                                    for HIPclients and will not function correctly if selected.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-5832</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">Device NAT functionality currently does not work with layer 2
+                                    traffic.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: None</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-5530</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor UI</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">In some cases, Allow incoming pings (ICMP)and SYN Flood
+                                Protection on the <strong class="+ topic/ph hi-d/b ph b">Firewall</strong> page may be disabled and won't
+                                        toggle.<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: Refresh your browser to resolve
+                                    the issue.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-5430</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">After configuring a Conductor for the first time, you may receive
+                                a Lost connection to the original server message if you select
+                                    <strong class="+ topic/ph hi-d/b ph b">Return to settings </strong>too quickly.<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>. Wait
+                                    at least 20 seconds before selecting Return to
+                                settings.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-5008</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">PCI Reporting</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">PCI Reporting shows the UUID reference instead of the name when
+                                generating a PCI report from <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Advanced</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">PCI Reporting</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Downloads</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">User Activities Report</span></span>.<p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: To view names, you can download
+                                    object references from the same page where you generated the PCI
+                                    report.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__1">DEV-1846</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__2">Conductor, HA</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_1_5__table_ffq_frb_4y__entry__3">
+                                <p class="- topic/p p">The standby Conductor UI in an HA pair will not timeout. This
+                                    issue does not affect the master Conductor UI.</p>
+                                <p class="- topic/p p"><u class="+ topic/ph hi-d/u ph u">Workaround</u>: Log off manually when not using the standby
+                                    Conductor UI.</p>
+                            </td>
+                        </tr>
+                    </tbody></table>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns:whc="http://www.oxygenxml.com/webhelp/components"></whc:webhelp_feedback>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#rel_notes_2_1_5__whats_new" data-tocid="rel_notes_2_1_5__whats_new">What's New</a></div></li><li class="section-item"><div class="section-title"><a href="#rel_notes_2_1_5__upgrade_considerations" data-tocid="rel_notes_2_1_5__upgrade_considerations">Upgrade Considerations</a></div></li><li class="section-item"><div class="section-title"><a href="#rel_notes_2_1_5__fixes" data-tocid="rel_notes_2_1_5__fixes">Fixes</a></div></li><li class="section-item"><div class="section-title"><a href="#rel_notes_2_1_5__known_issues" data-tocid="rel_notes_2_1_5__known_issues">Known Issues</a></div></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <footer class="navbar navbar-default wh_footer" data-whc_version="21.0">
+  <div class=" footer-container  mx-auto">
+    <div>
+    <p> 
+        Go to: <a href="http://webhelp.tempered.io/webhelp-ft" target="_blank">Airwall Teams help</a> or <a href="http://webhelp.tempered.io/webhelp/webhelp222" target="_blank">pre-2.2.3 Tempered HIPswitch Help</a>.</p>
+    <p>© Copyright 2023 <a href="https://tempered.io">tempered.io</a> | <a href="https://tempered.io/resources/terms-of-product-sale-license-and-warranty" target="_blank">Terms of Product Sale, License and Warranty</a></p>
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

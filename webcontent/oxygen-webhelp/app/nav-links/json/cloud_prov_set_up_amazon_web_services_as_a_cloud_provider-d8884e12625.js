@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Set up AWS as a cloud provider","shortdesc":"<p class=\"shortdesc\"\/>","href":"content\/topics\/cloud_prov_aws.html#cloud_prov_aws1","attributes":{"data-id":"cloud_prov_aws1"},"menu":{"hasChildren":false},"tocID":"cloud_prov_aws1-d8884e12652","topics":[]}]});

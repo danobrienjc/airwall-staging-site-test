@@ -1,0 +1,866 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="21.0">
+    <head><link rel="shortcut icon" href="../../logo.png"/><link rel="icon" href="../../logo.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="DC.rights.owner" content="(C) Copyright 2023"/><meta name="copyright" content="(C) Copyright 2023"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="dita"/><meta name="description" content="You can integrate a third-party authentication provider with person authentication in the Conductor using OpenID Connect (OIDC). If your users are already configured for single sign-on (SSO) with a third party, or if you have a large number of users, this integration streamlines your user management."/><meta name="DC.subject" content="Conductor,user authentication,OpenID Connect,integrate,MFA,multi-factor authentication"/><meta name="keywords" content="Conductor, user authentication, OpenID Connect, integrate, MFA, multi-factor authentication"/><meta name="DC.relation" content="../../content/topics/top_integrations.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="auth_openid_connect_intro"/>        
+      <title>Integrate Third-party Authentication with OpenID Connect</title><!--  Generated with Oxygen version 24.0, build number 2022012605.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="auth_openid_connect_intro-d8884e12798"/><meta name="wh-source-relpath" content="content/topics/auth_openid_connect_intro.dita"/><meta name="wh-out-relpath" content="content/topics/auth_openid_connect_intro_2.html"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022012605"/><script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script><script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tempered-help.css?buildId=2022012605"/><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NX2TVTD'); //</script><!-- End Google Tag Manager --></head>
+
+    <body class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        <!-- Google Tag Manager (noscript) --><noscript> &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2TVTD"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt; //</noscript><!-- End Google Tag Manager (noscript) -->
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="21.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../logo-48px.png" alt="Airwall help  be invisible    - you can't hack what you can't see"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Airwall help <sub class="ph sub"><sup class="ph sup beinvisible"> be invisible </sup>  <sup class="ph sup canthack"> - you can't hack what you can't see</sup></sub></span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' --> 
+                <!-- DOB commented this out to show the support menu without odd stray button
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                    aria-expanded="false" aria-label="${i18n(toggle.menu)}" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"/>
+                    
+                    
+                </button -->
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container" align="right"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support_top-d8884e16110-mi" data-tocid="support_top-d8884e16110" data-state="not-ready" class=" topicref " data-id="support_top"><span class="title"><a href="../../support_top.html">Get Support</a></span></span></li></ul></nav><!--DOB Added align to solve Support menu issue-->
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+        
+        <div class="container-fluid">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="web_top_docs"><div class="title"><a href="../../content/topics/web_top_docs.html">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div></li><li><div class="topicref" data-id="top_integrations"><div class="title"><a href="../../content/topics/top_integrations.html">Integrate Third-party Services</a><div class="wh-tooltip"><p class="shortdesc">How to integrate the <span class="ph">Airwall Solution</span> with         third-party services.</p></div></div></div></li><li class="active"><div class="topicref" data-id="auth_openid_connect_intro"><div class="title"><a href="../../content/topics/auth_openid_connect_intro_2.html#auth_openid_connect_intro">Integrate Third-party Authentication with OpenID Connect</a><div class="wh-tooltip"><p class="shortdesc">You can integrate a third-party authentication provider with person authentication in         the Conductor using OpenID Connect (OIDC). If your users are already configured for single         sign-on (SSO) with a third party, or if you have a large number of users, this integration         streamlines your user management.</p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 d-none d-md-block d-print-none">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="vid_overdemos-d8884e17" class="topicref" data-id="vid_overdemos" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../vid_overdemos.html" id="vid_overdemos-d8884e17-link">Video Overview and Demos</a><div class="wh-tooltip"><p class="shortdesc">Overviews and demos for the <span class="ph">Tempered</span>         <span class="ph">Airwall Solution</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect_top-d8884e43" class="topicref" data-id="connect_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect_top-d8884e43-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/connect_top.html" id="connect_top-d8884e43-link">Connect to <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Connect your mobile or laptop to <span class="ph">Airwall</span> to
+                get access to protected resources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="idn_administrative-d8884e1435" class="topicref" data-id="idn_administrative" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action idn_administrative-d8884e1435-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_administrative.html" id="idn_administrative-d8884e1435-link">Manage <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Provision and manage <span class="ph">Airwall Edge Services</span> and devices, monitor activity, and install updates.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_docs-d8884e4585" class="topicref" data-id="web_top_docs" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_docs-d8884e4585-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_docs.html" id="web_top_docs-d8884e4585-link">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="web_content_start-d8884e4607" class="topicref" data-id="web_content_start" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_content_start-d8884e4607-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/get_started.html" id="web_content_start-d8884e4607-link">Get Started with the <span class="ph">Airwall Solution</span></a><div class="wh-tooltip"><p class="shortdesc">Get started with the <span class="ph">Airwall</span>
+                solution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_howto-d8884e5102" class="topicref" data-id="web_top_howto" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_howto-d8884e5102-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_install_config.html" id="web_top_howto-d8884e5102-link">Deploy an <span class="ph">Airwall</span> secure network</a><div class="wh-tooltip"><p class="shortdesc">Learn how to deploy the Airwall solution, connect devices, set up <span class="ph">overlays</span>,
+                configure device trust, and give people access to your Airwall secure
+                network.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="top_integrations-d8884e12784" class="topicref" data-id="top_integrations" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action top_integrations-d8884e12784-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/top_integrations.html" id="top_integrations-d8884e12784-link">Integrate Third-party Services</a><div class="wh-tooltip"><p class="shortdesc">How to integrate the <span class="ph">Airwall Solution</span> with         third-party services.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="auth_openid_connect_intro-d8884e12798" class="topicref" data-id="auth_openid_connect_intro" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/auth_openid_connect_intro_2.html#auth_openid_connect_intro" id="auth_openid_connect_intro-d8884e12798-link">Integrate Third-party Authentication with OpenID Connect</a><div class="wh-tooltip"><p class="shortdesc">You can integrate a third-party authentication provider with person authentication in         the Conductor using OpenID Connect (OIDC). If your users are already configured for single         sign-on (SSO) with a third party, or if you have a large number of users, this integration         streamlines your user management.</p></div></div></div></li><li role="treeitem"><div data-tocid="config_ldap_auth-d8884e13013" class="topicref" data-id="config_ldap_auth" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/config_ldap_auth_2.html" id="config_ldap_auth-d8884e13013-link">Configure LDAP authentication on <span class="ph">Conductor</span> and <span class="ph">Airwall Edge Services</span></a><div class="wh-tooltip"><p class="shortdesc">You can use Active Directory and LDAP authentication with the <span class="ph">Conductor</span> to streamline         user account management. When LDAP is configured, users can choose to log in with an LDAP         account on the <span class="ph">Conductor</span>         login page.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="int_packet_analyzers-d8884e13035" class="topicref" data-id="int_packet_analyzers" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action int_packet_analyzers-d8884e13035-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/int_packet_analyzers.html" id="int_packet_analyzers-d8884e13035-link">Mirror traffic from your <span class="ph">Airwall Gateways</span> to a packet analyzer tool</a><div class="wh-tooltip"><p class="shortdesc">You can mirror traffic from your <span class="ph">Airwall Gateways</span> to allow common         packet analyzer/visibility tools (like Nozomi or Wireshark) to see what’s going on in your             <span class="ph">Airwall secure network</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_diagnostics-d8884e13413" class="topicref" data-id="web_top_diagnostics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_diagnostics-d8884e13413-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_diagnostics.html" id="web_top_diagnostics-d8884e13413-link">Diagnostics and Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">There are various tools available on our platform to help you diagnose
+                problems you may encounter. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="advisory_bulletins-d8884e14491" class="topicref" data-id="advisory_bulletins" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action advisory_bulletins-d8884e14491-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/advisory_bulletins.html" id="advisory_bulletins-d8884e14491-link">Security Notices, Advisory Notices, and Product Bulletins</a><div class="wh-tooltip"><p class="shortdesc">Go here for important information on known issues, end-of-life notices, and
+                other product updates.</p></div></div></div></li><li role="treeitem"><div data-tocid="web_top_api_ref-d8884e14922" class="topicref" data-id="web_top_api_ref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_api_ref.html" id="web_top_api_ref-d8884e14922-link"><span class="ph">Airwall</span> API</a><div class="wh-tooltip"><p class="shortdesc">You can access the <span class="ph">Airwall</span> API Reference from your    <span class="ph">Conductor</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_downloads-d8884e14947" class="topicref" data-id="web_top_downloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_downloads-d8884e14947-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_downloads.html" id="web_top_downloads-d8884e14947-link">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support_top-d8884e16110" class="topicref" data-id="support_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support_top-d8884e16110-link" class="wh-expand-btn"></span><div class="title"><a href="../../support_top.html" id="support_top-d8884e16110-link">Get Support</a><div class="wh-tooltip"><p class="shortdesc">You can often find answers to your questions in <span class="ph">Airwall             help</span>. If you still need help, check here for help         getting support.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="auth_openid_connect_intro">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Integrate Third-party Authentication with OpenID Connect</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">You can integrate a third-party authentication provider with person authentication in
+        the Conductor using OpenID Connect (OIDC). If your users are already configured for single
+        sign-on (SSO) with a third party, or if you have a large number of users, this integration
+        streamlines your user management.</p>
+        <div class="- topic/p p">
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> You can only configure one OpenID Connect provider on the <span class="- topic/ph ph">Conductor</span> at a
+                time. If you need to support many OIDC authentication providers simultaneously, you
+                can choose providers that support federated login so you can connect to one provider
+                and have that provider connect to other providers to authenticate users. </div>
+            <div class="- topic/note note important note_important"><span class="note__title">Important:</span>  To use OpenID Connect on macOS or iOS <span class="- topic/ph ph">Airwall Agents</span>, you
+                must have a public certiﬁcate on your <span class="- topic/ph ph">Conductor</span>.</div>
+        </div>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">User Roles</h2>
+            
+            <p class="- topic/p p">In the <span class="- topic/ph ph">Airwall Conductor</span>,
+                you configure person roles in OIDC by including them in groups. The OIDC group names
+                are pre-configured in the <span class="- topic/ph ph">Conductor</span>, so
+                when you make a person a member of one of the OIDC groups in the OIDC provider, they
+                are automatically given that role in the <span class="- topic/ph ph">Conductor</span>. For
+                instance, you can declare that all members of the OIDC provider’s cond_system_admins
+                group are system administrators in the <span class="- topic/ph ph">Conductor</span>, and
+                that members of the OIDC cond_remote_users group are remote-access users. </p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Multi-factor Authentication</h2>
+            
+            <p class="- topic/p p">If your OIDC provider supports a multi-factor authentication (MFA) protocols, you can
+                use MFA on your provider to require MFA for logging into your <span class="- topic/ph ph">Conductor</span> or for
+                    <span class="- topic/ph ph">Airwall Agent</span>
+                session authentication.</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Integrate Authentication with the <span class="- topic/ph ph">Conductor</span></h2>
+            
+            <p class="- topic/p p">To successfully integrate authentication, you must</p>
+            <ol class="- topic/ol ol">
+                <li class="- topic/li li"><a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_connect" title="Create and configure the application in your provider using the Provider-specific Instructions before connecting it to the Airwall Conductor. Each provider’s workflow is different, but here are the general steps:">Create and configure an application in
+                        your authentication provider</a>. </li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_cond">Configure OIDC on the <span class="- topic/ph ph">Conductor</span></a>.</li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_agents">Set up <span class="- topic/ph ph">Airwall Agents</span></a>.</li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_verify">Verify third-party authentication is working</a></li>
+            </ol>
+            <p class="- topic/p p">Since each provider is different, refer to the basics required here, and then the
+                    <a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_prov_spec_intro">Provider-specific
+                    instructions</a> that follow for integrating with some popular providers that
+                support OIDC.</p>
+        </section>
+    </div>
+<article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title2" id="auth_openid_connect">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title2">1. Create and configure an application in your authentication provider</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Create and configure the application in your provider using the <a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_prov_spec_intro">Provider-specific Instructions</a> before connecting it to the <span class="- topic/ph ph">Airwall Conductor</span>. Each
+        provider’s workflow is different, but here are the general steps: </p>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Create an OpenID Connect application.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Configure it with the following information:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col/><col/></colgroup><tbody class="- topic/tbody tbody">
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0"><strong class="+ topic/ph hi-d/b ph b">Field</strong></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0"><strong class="+ topic/ph hi-d/b ph b">Enter</strong></td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0">Name</td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0">Whatever you want. For example, “<span class="- topic/ph ph">Airwall Conductor</span>”</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0">Login Redirect URI</td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0">
+                                        <p class="- topic/p p">Your <span class="- topic/ph ph">Conductor</span> URI followed by
+                                                <kbd class="+ topic/ph sw-d/userinput ph userinput">/user/auth/openid_connect/callback</kbd>.
+                                            For example:
+                                                <kbd class="+ topic/ph sw-d/userinput ph userinput">https://conductor.mycompany.com/user/auth/openid_connect/callback.
+                                            </kbd></p>
+                                        <p class="- topic/p p"> Note – If your Conductor is HA paired, add a second
+                                            login redirect URI, with the same path added. </p>
+                                    </td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0">Logout Redirect URI</td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0">Your Conductor URI:
+                                        https://conductor.mycompany.com</td>
+                                </tr>
+                            </tbody></table>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Depending on your provider, set the authentication method to <strong class="+ topic/ph hi-d/b ph b">basic</strong>, or
+                    indicate you are using an <strong class="+ topic/ph hi-d/b ph b">authorization code</strong> for authentication (not a
+                    refresh token).</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Allow the <strong class="+ topic/ph hi-d/b ph b">groups</strong> claim for grant. The <strong class="+ topic/ph hi-d/b ph b">groups</strong> claim is what allows
+                    the <span class="- topic/ph ph">Conductor</span> to match a user’s group with what role they are given. Because <strong class="+ topic/ph hi-d/b ph b">groups</strong>
+                    is not a default OIDC claim, it must be turned on in the provider. For more
+                    details, see the <a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_prov_spec_intro">Provider-specific
+                        instructions</a>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Create four groups: <kbd class="+ topic/ph sw-d/userinput ph userinput">cond_system_admins</kbd>,
+                        <kbd class="+ topic/ph sw-d/userinput ph userinput">cond_readonly_admins</kbd>,
+                        <kbd class="+ topic/ph sw-d/userinput ph userinput">cond_network_admins</kbd>, and
+                        <kbd class="+ topic/ph sw-d/userinput ph userinput">cond_remote_users</kbd> to indicate the four different <span class="- topic/ph ph">Conductor</span>
+                    roles. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Add users to each group so they are assigned the correct role when logging into
+                    Conductor. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Give your users access to the application you created in your provider.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">If you want to require MFA to log in, set it up in the OIDC provider. Generally
+                    MFA is associated with the app. Please consult your provider documentation for
+                    detailed instructions on setting up MFA.</span>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="auth_openid_cond">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title3">2. Configure OIDC on the <span class="- topic/ph ph">Airwall Conductor</span></h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context"></section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Go to <span class="- topic/ph ph">Conductor</span>
+                    <strong class="+ topic/ph hi-d/b ph b">Settings</strong>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Next to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Authentication</span>, select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add
+                        provider</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">OpenID Connect</span> and then select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add Authentication Provider</span> page, under
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">General settings</span>, configure the Provider settings as
+                    follows (see the <a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_prov_spec_intro">Provider-specific
+                        Instructions</a> for help in finding this information): </span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-0 rowsep-0" id="auth_openid_cond__entry__1"><strong class="+ topic/ph hi-d/b ph b">For this Setting</strong></th>
+                                <th class="- topic/entry entry colsep-0 rowsep-0" id="auth_openid_cond__entry__2"><strong class="+ topic/ph hi-d/b ph b">Enter</strong></th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__1"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Provider Name</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__2">Give your provider a descriptive name. This name appears
+                                        as an option when logging into the <span class="- topic/ph ph">Conductor</span>.</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__1"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Conductor host</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__2">Host of your <span class="- topic/ph ph">Conductor</span>. Must be in the format
+                                            <kbd class="+ topic/ph sw-d/userinput ph userinput">https://conductor.mycompany.com</kbd>
+                                        (no trailing slash)</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__1"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">OpenID Connect host</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__2">Must be in the format
+                                            <kbd class="+ topic/ph sw-d/userinput ph userinput">https://hostname.com:{optional
+                                            port}</kbd></td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__1"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Issuer</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__2">Issuer provided by your OIDC provider. Sometimes this
+                                        value is the same as the OpenID Connect host depending on
+                                        the provider. </td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__1"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Client ID</span> (sometimes called
+                                        Identifier)</td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__2">Token provided by your OIDC provider associated with the
+                                        provider application</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__1"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Secret</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__2">Secret token that goes with the Client ID</td>
+                                </tr>
+                            </tbody></table>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">For <span class="+ topic/ph ui-d/uicontrol ph uicontrol">HA-paired Conductor host</span>, enter the Host of your HA
+                        <span class="- topic/ph ph">Conductor</span> (if applicable).</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Configure the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Group</span> settings as follows, and then click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+                                <tr class="- topic/row">
+                                    <th class="- topic/entry entry colsep-0 rowsep-0" id="auth_openid_cond__entry__15"><strong class="+ topic/ph hi-d/b ph b">For this Setting</strong></th>
+                                    <th class="- topic/entry entry colsep-0 rowsep-0" id="auth_openid_cond__entry__16"><strong class="+ topic/ph hi-d/b ph b">Enter</strong></th>
+                                </tr>
+                            </thead><tbody class="- topic/tbody tbody">
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__15"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Use groups to manage roles</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__16">Checked</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__15"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">System admin groups</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__16">Comma-separated list of groups from your provider that
+                                        will give your user this role.</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__15"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Read-only admin groups</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__16">Comma-separated list of groups from your provider that
+                                        will give your user this role.</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__15"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Network admin groups</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__16">Comma-separated list of groups from your provider that
+                                        will give your user this role.</td>
+                                </tr>
+                                <tr class="- topic/row">
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__15"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Remote-access user groups</span></td>
+                                    <td class="- topic/entry entry colsep-0 rowsep-0" headers="auth_openid_cond__entry__16">Comma-separated list of groups from your provider that
+                                        will give your user this role.</td>
+                                </tr>
+                            </tbody></table>
+                    <div class="- topic/note note note note_note"><span class="note__title">Note:</span> If users are in groups that match more than one of the roles, they are
+                        given the highest level of access possible (system admin, read-only admin,
+                        network admin, then remote-access user).</div>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Configure any Group filters you want, and click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Finish</span>.
+                </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">If you have non-public DNS servers configured in the <span class="- topic/ph ph">Conductor</span>
+                    under <strong class="+ topic/ph hi-d/b ph b">Global <span class="- topic/ph ph">Airwall Agent</span>/client settings</strong>, your users won’t be able to reach the public
+                    addresses on their devices that include the OpenID Connect providers. You may
+                    need to configure DNS servers on the <span class="- topic/ph ph">Conductor</span> to
+                    add your OpenID Connect provider’s DNS server.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">After changing OIDC configuration, you need to log out and log back in to the
+                    Conductor to restart it. When you log back in, you can now choose your
+                    third-party authentication provider. </span>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title4" id="auth_openid_agents">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title4">3. Set up the <span class="- topic/ph ph">Airwall Agents</span></h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">Any <span class="- topic/ph ph">Airwall Agents</span>
+                authenticating using your third-party provider also need to be set up:</p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd"><a class="- topic/xref xref" href="lic_airwall.html" title="How to provision and license Airwall Edge Services. You need to add Airwall Edge Services licenses to the Conductor before you can provision and license Airwall Edge Services.">Provision and License Airwall Edge Services</a> in the <span class="- topic/ph ph">Conductor</span>.
+                </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Go to the <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Overlays</span></span> page,
+                    scroll down to <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">People</span></span>, and
+                    click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Update</span>, and add the <span class="- topic/ph ph">Airwall Agent</span> as
+                    a member.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Also check that:</span>
+                <ol type="a" class="- topic/ol task/substeps ol substeps">
+                    <li class="- topic/li task/substep li substep">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="- topic/ph ph">Airwall Agents</span> are included in your <span class="- topic/ph ph">Airwall Relay</span> rules.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="- topic/ph ph">Airwall Agent</span> devices have been added to the appropriate <span class="- topic/ph ph">Overlays</span>, and you’ve set device trust on the <span class="- topic/ph ph">Overlays</span> as needed.</span>
+                    </li>
+                </ol>
+            </li></ol></section>
+        <section class="- topic/section task/result section result">Your users should now be able to log in using the third-party authentication
+            provider.</section>
+    </div>
+    <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title5" id="task_owz_q1n_tkb">
+        <h3 class="- topic/title title topictitle3" id="ariaid-title5">Require third-party authentication</h3>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/section task/context section context">
+                <p class="- topic/p p">You can also require users to authenticate using the third-party provider either
+                    individually or as a group (in 2.2.3 and later <span class="- topic/ph ph">Conductors</span>). On
+                    the agent's <strong class="+ topic/ph hi-d/b ph b"><span class="- topic/ph ph">Airwall Agent</span>
+                    </strong>tab, or on a <span class="+ topic/ph ui-d/uicontrol ph uicontrol">People Group</span>
+                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Properties</span> tab:</p>
+                <ul class="- topic/ul ul">
+                    <li class="- topic/li li">Check the <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Require authenticated Airwall
+            session</span></span> box.</li>
+                    <li class="- topic/li li">Under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Provider</span>, choose the third-party authentication
+                        provider you created.</li>
+                </ul>
+            </section>
+        </div>
+    </article>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title6" id="auth_openid_prov_spec_intro">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title6">Provider-specific Instructions</h2>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"></p>
+        <p class="- topic/p p">Here are specific instructions for a few of the common third-party authentication
+            providers. Note your provider’s documentation may be more up-to-date.</p>
+    </div>
+<article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title7" id="auth_openid_okta">
+    <h3 class="- topic/title title topictitle3" id="ariaid-title7">Okta - Create Application and Set Up Group Claims</h3>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p></div>
+    <article class="- topic/topic task/task topic task nested3" aria-labelledby="ariaid-title8" id="task_i1b_5zm_tkb">
+        <h4 class="- topic/title title topictitle4" id="ariaid-title8">Create an Application</h4>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">In Okta, go to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Applications</span>.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add Application</span>. </span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create New Application</span>, select
+                            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Web</span>.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Set <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Allowed grant type</span> to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Authorization
+                            code</span>.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Set the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">OpenID Connect host</span> to the same value as the
+                            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Issuer</span> in Conductor. This value is found on the
+                        under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">OpenID Connect ID Token</span> on the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Sign
+                            on</span> tab.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Note the Client ID and Secret that are in your application, on the
+                            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">General</span> tab under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Client
+                            Credentials</span>.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Set up Groups Claim (see below).</span>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested3" aria-labelledby="ariaid-title9" id="okta_set_group_claim">
+        <h4 class="- topic/title title topictitle4" id="ariaid-title9">Set up Groups Claim</h4>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/section task/context section context">
+                <p class="- topic/p p">To set up Okta to allow the groups claim in OpenID Connect, use the Classic
+                    UI.</p>
+            </section>
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">In Okta Authentication, go to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Security</span>, and select
+                            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">API</span>.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">From the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Authorization Servers</span> tab, open the default
+                        API (or whatever API you are assigning to your application).</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">On the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Scopes</span> tab:</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">Add a scope named <kbd class="+ topic/ph sw-d/userinput ph userinput">groups</kbd>.</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">Uncheck <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Set as Default</span>.</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">Check <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Include in Public Metadata</span>.</span>
+                        </li>
+                    </ol>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">On the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Claims</span> tab:</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">Add a claim named <kbd class="+ topic/ph sw-d/userinput ph userinput">groups</kbd>.</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">Set <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Include in token type</span> to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">ID
+                                    Token / Always</span></span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">Set <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Value type</span> to
+                                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Groups</span></span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">Set a filter of <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Matches regex</span> to
+                                    <kbd class="+ topic/ph sw-d/userinput ph userinput">.*</kbd>. Alternatively, set a filter of
+                                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Starts with</span> and set to the prefix for
+                                your group names that you want to use in Conductor. For example, set
+                                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Starts with</span> to
+                                    <kbd class="+ topic/ph sw-d/userinput ph userinput">cond_</kbd>.</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">Set <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Include in</span> to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Any
+                                    scope</span>.</span>
+                        </li>
+                    </ol>
+                </li></ol></section>
+        </div>
+    </article>
+</article><article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title10" id="auth_openid_onelogin">
+    <h3 class="- topic/title title topictitle3" id="ariaid-title10">OneLogin - Create Application</h3>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p"></p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In OneLogin, select <strong class="+ topic/ph hi-d/b ph b">Add App,</strong> and then choose <strong class="+ topic/ph hi-d/b ph b">OpenID Connect
+                        (OIDC)</strong>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Set <strong class="+ topic/ph hi-d/b ph b">Authentication method</strong> to <strong class="+ topic/ph hi-d/b ph b">basic</strong>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Add users to the roles you want. For example, to make them a system admin, add
+                    them to <strong class="+ topic/ph hi-d/b ph b">cond_sysadmins</strong>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <div class="- topic/note note note note_note"><span class="note__title">Note:</span> In OneLogin, roles are mapped to OIDC groups (groups mean something else),
+                        so add users to roles, not groups.</div>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In your OneLogin application, on the <strong class="+ topic/ph hi-d/b ph b">Parameters</strong> tab, configure the
+                    roles-to-groups mapping. Edit the groups and modify the default on the
+                        <strong class="+ topic/ph hi-d/b ph b">Roles</strong> field to: <span class="+ topic/ph ui-d/uicontrol ph uicontrol">User roles</span>, <span class="+ topic/ph ui-d/uicontrol ph uicontrol">--No
+                        transform—</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Note the information you’ll need to configure the Conductor:</span>
+                <ol type="a" class="- topic/ol task/substeps ol substeps">
+                    <li class="- topic/li task/substep li substep">
+                        <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">OpenID Connect host</strong>: This is your OneLogin login URL, for
+                            example, <kbd class="+ topic/ph sw-d/userinput ph userinput">https://my-company.onelogin.com</kbd>.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep">
+                        <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">Issuer</strong>: On the <strong class="+ topic/ph hi-d/b ph b">SSO</strong> tab, select <strong class="+ topic/ph hi-d/b ph b">OpenID Provider
+                                Configuration Information </strong>for the <strong class="+ topic/ph hi-d/b ph b">Issuer</strong>.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep">
+                        <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">Client ID and Secret</strong>: These are both on the <strong class="+ topic/ph hi-d/b ph b">SSO</strong>
+                            tab.</span>
+                    </li>
+                </ol>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title11" id="auth_openid_auth0">
+    <h3 class="- topic/title title topictitle3" id="ariaid-title11">Auth0 - Create Application</h3>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In Auth0, under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Applications</span>, select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create
+                        Application</span>, and then <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Regular Web
+                        Application</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Skip the quick start.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On your new application's <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span> page: </span>
+                <ol type="a" class="- topic/ol task/substeps ol substeps">
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Change <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Application Properties</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Token Endpoint Authentication Method</span></span>  to <strong class="+ topic/ph hi-d/b ph b">Basic</strong>.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Application URIs</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Allowed Callback URLs</span></span>, add the login redirect URI. See the Login Redirect URI
+                            near the top of this page.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Application URIs</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Allowed Logout URLs</span></span>, add the logout redirect URI. See the Logout Redirect URI
+                            near the top of this page.</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Auth0 does not currently support OpenID Connect Logout.</div>
+                        </div>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Note the following information in Auth0 that you’ll need to configure
+                            the <span class="- topic/ph ph">Conductor</span>:</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li"><span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Basic Information</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Domain</span></span>: On the <span class="- topic/ph ph">Conductor</span>, you enter this information as <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Open Connect
+                                        host</span> and <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Issuer</span> (note
+                                    that the https is required).</li>
+                                <li class="- topic/li li"><span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Basic Information</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Client ID</span></span> and <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Client Secret</span>: On the
+                                        <span class="- topic/ph ph">Conductor</span>, you enter this information as Client ID and Secret.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">When finished, select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Save Changes</span> at the bottom
+                            of the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span> page.</span>
+                    </li>
+                </ol>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Add the rule required by Auth0 to set OIDC groups. (In Auth0, roles map to
+                    groups on the <span class="- topic/ph ph">Conductor</span>.)</span>
+                <ol type="a" class="- topic/ol task/substeps ol substeps">
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Under <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Auth Pipeline</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Rules</span></span>, select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create Rule</span>.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Empty Rule</span>.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Set the name to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add groups to OIDC token</span>.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Add this rule: </span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>
+function (user, context, callback) { 
+    const namespace = 'https://&lt;your issuer&gt;'; 
+    const assignedRoles = (context.authorization || {}).roles; 
+                                
+    let idTokenClaims = context.idToken || {}; 
+    let accessTokenClaims = context.accessToken || {}; 
+                                
+    idTokenClaims[`${namespace}/groups`] = assignedRoles;
+    accessTokenClaims[`${namespace}/groups`] = assignedRoles;
+                                
+    context.idToken = idTokenClaims; 
+    context.accessToken = accessTokenClaims; 
+                                
+    callback(null, user, context);
+}</code></pre>
+                        </div>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Change the namespace in the rule to be your Auth0 issuer. Example:
+                                <kbd class="+ topic/ph sw-d/userinput ph userinput">https://dev-abc123.auth0.com</kbd></span>
+                    </li>
+                </ol>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Following Auth0 instructions, add roles to users that give them the proper role
+                    in the <span class="- topic/ph ph">Conductor</span>.
+                </span>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title12" id="auth_openid_azuread">
+    <h3 class="- topic/title title topictitle3" id="ariaid-title12">Azure Active Directory - Create Application</h3>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Note that the Azure AD documentation may be more up-to-date and the settings in your
+        Azure AD account may vary.</p>
+        <section class="- topic/section task/context section context"></section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In Azure Active Directory (AD), select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">App
+                    registrations</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_menu.png" width="250" alt="Azure Active Directory menu"/></div><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">New Registration</span>, and fill in the form as
+                    follows:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <ul class="- topic/ul ul">
+                        <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Name</strong> – Enter a name for the Application (for example, "Airwall
+                            Conductor").</li>
+                        <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Supported account types</strong> – Select<strong class="+ topic/ph hi-d/b ph b"> Accounts in any
+                                organizational directory (Any Azure AD directory – multitenant)</strong>. </li>
+                        <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Redirect URI</strong> – Select <strong class="+ topic/ph hi-d/b ph b">Web</strong>, and then enter the URL of your
+                            Conductor followed by<code class="+ topic/ph pr-d/codeph ph codeph">/user/auth/openid_connect/callback</code>:<div class="- topic/p p">
+                                <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_new_reg.jpg" width="600" alt="Azure AD Register an application dialog box"/></div><br/>
+                            </div></li>
+                    </ul>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Register</span>. Take a note of the Application (client)
+                    ID and the Directory (tenant) ID provided by Azure AD.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <p class="- topic/p p">Once you’ve registered the Application, Azure AD provides a set of IDs that
+                        you configure in the <span class="- topic/ph ph">Conductor</span> when you set up Azure AD as an OIDC provider. Here is how they map to the
+                        Edit Authentication Provider options in the <span class="- topic/ph ph">Conductor</span>:</p>
+                    <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_ID_map.jpg" width="600" alt="Azure AD IDs mapped to Conductor OIDC fields (details in the bulleted list following)"/></div><br/>
+                    <ul class="- topic/ul ul">
+                        <li class="- topic/li li">Application (client) ID – Enter in the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Client ID</span>
+                            box.</li>
+                        <li class="- topic/li li">Directory (tenant) ID – Append this ID to
+                                <code class="+ topic/ph pr-d/codeph ph codeph">https://sts.windows.net/</code>and enter in the
+                                <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Issuer</span> box .</li>
+                    </ul>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In Azure AD, create a Client Secret:</span>
+                <ol type="a" class="- topic/ol task/substeps ol substeps">
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Certificates &amp; secrets</span>.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">New client secret</span>.</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_create_secret.png" width="600" alt="Azure AD Certificates &amp; secrets page"/></div><br/>
+                        </div>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Add a description, and select when the secret expires. </span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_config_secret.png" width="200" alt="Azure AD Add a client secret page"/></div><br/>
+                        </div>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add</span>.</span>
+                    </li>
+                </ol>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Client secrets</span> page, copy the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Value</span> (not the ID). Enter the Value as the secret in
+                    the <span class="- topic/ph ph">Conductor</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_secret_value.jpg" width="600" alt="Mapping the Azure AD Secret Value to the Secret box in Conductor"/></div><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">From the newly registered application in Azure AD, select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Authentication</span>. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Implicit grant</span>, verify that <span class="+ topic/ph ui-d/uicontrol ph uicontrol">ID
+                        tokens</span> is checked.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    
+                    
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the Azure AD application, set up the groups claim:</span>
+                <ol type="a" class="- topic/ol task/substeps ol substeps">
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">From the menu on the left, select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Token
+                                configuration</span>.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Select Add groups claim.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Check all of the group types:</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_groups_claim.jpg" width="400" alt="Azure AD Edit groups claim page with all group types selected"/></div><br/>
+                        </div>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Under Customize token properties by type, expand and configure the
+                            properties as follows:</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">ID</span> –  Select
+                                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">sAMAccountName</span>.</li>
+                                <li class="- topic/li li"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Access</span> – Select
+                                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">sAMAccountName</span>.</li>
+                                <li class="- topic/li li"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">SAML</span> – This is not used.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In Azure AD, create the groups you want to use for the Conductor. Here are some
+                    suggested groups:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <ul class="- topic/ul ul">
+                        <li class="- topic/li li">cond_network_admins</li>
+                        <li class="- topic/li li">cond_readonly_admins</li>
+                        <li class="- topic/li li">cond_remote_users</li>
+                        <li class="- topic/li li">cond_system_admins</li>
+                    </ul>
+                    <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_groups.png" width="600" alt="Azure AD showing the groups above created for use in the Conductor"/></div><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Add users to Azure AD, and assign them to the appropriate groups for Conductor
+                    access:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/azure_ad_add_users.png" width="600" alt="Azure AD showing adding users"/></div><br/>
+                </div>
+            </li></ol></section>
+        <section class="- topic/section task/result section result">You are now ready to configure Azure AD as an OIDC provider in the <span class="- topic/ph ph">Conductor</span> as
+            described in <a class="- topic/xref xref" href="auth_openid_connect_intro.html#auth_openid_cond">2. Configure OIDC on the Airwall Conductor</a>. For the mappings from Azure AD to the
+                <span class="- topic/ph ph">Conductor</span>, see
+            steps 3 to 7 above.</section>
+    </div>
+</article></article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title13" id="auth_openid_verify">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title13">Verify third-party authentication is working</h2>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section section">
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">To verify your configuration:</strong></p><ol class="- topic/ol ol">
+                <li class="- topic/li li">Log out of the <span class="- topic/ph ph">Conductor</span>.</li>
+                <li class="- topic/li li">Open an incognito window and log in, choosing the provider name you chose in the
+                        <span class="- topic/ph ph">Conductor</span>.</li>
+                <li class="- topic/li li">Log in as a user you’ve set up with third-party provider. You should be able to
+                    log in to the <span class="- topic/ph ph">Conductor</span>
+                    using your third-party provider credentials.</li>
+            </ol>
+                <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">To verify a client can connect:</strong>
+                </p>
+                <ul class="- topic/ul ul">
+                    <li class="- topic/li li">After the client logs in using the third-party provider, ping the
+                        client.</li>
+                </ul>
+            </section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title14" id="auth_openid_troublesh">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title14">Troubleshooting Third-party Authentication User Login</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">If user login is failing with “Could not find that username/password combination,”
+                usually the integration between the <span class="- topic/ph ph">Conductor</span> and
+                OpenID Connect (OIDC) provider is working, but something about group membership is
+                not correctly configured. Use these suggestions to troubleshoot what the issue is. </p>
+        </section>
+    </div>
+    <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title15" id="task_mqq_cs2_xsb">
+        <h3 class="- topic/title title topictitle3" id="ariaid-title15">Check Conductor and OIDC provider group settings</h3>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">On the <span class="- topic/ph ph">Conductor</span>, go to <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">General settings</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Authentication</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Your OIDC provider</span></span>.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Actions</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit</span></span>.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>, and confirm that <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Group
+                            settings</span> on the second page are filled out.</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/oidc_tbl.png" width="500" alt="Edit Authentication Settings wizard, group settings page showing groups filled in"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">In your OIDC provider, confirm that the groups you have chosen for each
+                        role have been created.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Confirm that the user that is trying to log in is a member of one of the
+                        groups that will give them a role on the <span class="- topic/ph ph">Conductor</span>. For example, if this user should be a Read-only admin then they should
+                        be in the “cond_viewers” group in the OIDC provider. </span>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title16" id="task_t3w_cs2_xsb">
+        <h3 class="- topic/title title topictitle3" id="ariaid-title16">Follow the Log</h3>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/section task/context section context">If you've confirmed steps 1-3 are configured and are still having issues,
+                follow the log to gain more information.</section>
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Under <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">General Settings</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Other settings</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Logging settings</span></span>, if you are logging at warn or error levels, change logging
+                        to at least info.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Go to <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Airshell</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Open remote Airshell</span></span>.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Enter the command: <code class="+ topic/ph pr-d/codeph ph codeph">log follow</code>. You should now see <span class="- topic/ph ph">Conductor</span> logs in the virtual terminal.</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">Have the user attempt to log in again with OIDC. If this is you, do not log
+                        out of the Airshell terminal – use a private browser window. </span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">When the user completes login, there should be a log message for the user
+                        attempting to login such as </span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>1Mar 11 20:57:34 kibbles SCMP[30051]: OpenID user 
+'google-oauth2|115620360600894761234' allowed groups: ["cond_netadmins"]</code></pre>
+                    </div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">If the allowed groups is empty, the optional “groups” claim may not be
+                        correctly configured on the OIDC provider. Please refer to the specific
+                        documentation for your OIDC provider to allow the <span class="- topic/ph ph">Conductor</span> to receive the “groups” claim. </span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">If there are allowed groups but none apply to a <span class="- topic/ph ph">Conductor</span> role are there three possible problems:</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">The user is not a member of the group you expected</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">The groups are being filtered by the OIDC provider. Please check
+                                your OIDC provider configuration. </span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">The groups are being filtered by the <span class="- topic/ph ph">Conductor</span> configuration. Check the configuration for your OIDC provider.
+                                The <span class="- topic/ph ph">Conductor</span> does attempt to prevent you from creating a filter that would
+                                invalidate groups assigned for roles. </span>
+                        </li>
+                    </ol>
+                </li></ol></section>
+        </div>
+    </article>
+</article></article></article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns:whc="http://www.oxygenxml.com/webhelp/components"></whc:webhelp_feedback>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#auth_openid_connect" data-tocid="auth_openid_connect">1. Create and configure an application in your authentication provider</a></li><li class="topic-item"><a href="#auth_openid_cond" data-tocid="auth_openid_cond">2. Configure OIDC on the <span class="- topic/ph ph">Airwall Conductor</span></a></li><li class="topic-item"><a href="#auth_openid_agents" data-tocid="auth_openid_agents">3. Set up the <span class="- topic/ph ph">Airwall Agents</span></a><ul><li class="topic-item"><a href="#task_owz_q1n_tkb" data-tocid="task_owz_q1n_tkb">Require third-party authentication</a></li></ul></li><li class="topic-item"><a href="#auth_openid_prov_spec_intro" data-tocid="auth_openid_prov_spec_intro">Provider-specific Instructions</a><ul><li class="topic-item"><a href="#auth_openid_okta" data-tocid="auth_openid_okta">Okta - Create Application and Set Up Group Claims</a><ul><li class="topic-item"><a href="#task_i1b_5zm_tkb" data-tocid="task_i1b_5zm_tkb">Create an Application</a></li><li class="topic-item"><a href="#okta_set_group_claim" data-tocid="okta_set_group_claim">Set up Groups Claim</a></li></ul></li><li class="topic-item"><a href="#auth_openid_onelogin" data-tocid="auth_openid_onelogin">OneLogin - Create Application</a></li><li class="topic-item"><a href="#auth_openid_auth0" data-tocid="auth_openid_auth0">Auth0 - Create Application</a></li><li class="topic-item"><a href="#auth_openid_azuread" data-tocid="auth_openid_azuread">Azure Active Directory - Create Application</a></li></ul></li><li class="topic-item"><a href="#auth_openid_verify" data-tocid="auth_openid_verify">Verify third-party authentication is working</a></li><li class="topic-item"><a href="#auth_openid_troublesh" data-tocid="auth_openid_troublesh">Troubleshooting Third-party Authentication User Login</a><ul><li class="topic-item"><a href="#task_mqq_cs2_xsb" data-tocid="task_mqq_cs2_xsb">Check Conductor and OIDC provider group settings</a></li><li class="topic-item"><a href="#task_t3w_cs2_xsb" data-tocid="task_t3w_cs2_xsb">Follow the Log</a></li></ul></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <footer class="navbar navbar-default wh_footer" data-whc_version="21.0">
+  <div class=" footer-container  mx-auto">
+    <div>
+    <p> 
+        Go to: <a href="http://webhelp.tempered.io/webhelp-ft" target="_blank">Airwall Teams help</a> or <a href="http://webhelp.tempered.io/webhelp/webhelp222" target="_blank">pre-2.2.3 Tempered HIPswitch Help</a>.</p>
+    <p>© Copyright 2023 <a href="https://tempered.io">tempered.io</a> | <a href="https://tempered.io/resources/terms-of-product-sale-license-and-warranty" target="_blank">Terms of Product Sale, License and Warranty</a></p>
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

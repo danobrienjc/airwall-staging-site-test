@@ -1,0 +1,290 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="21.0">
+    <head><link rel="shortcut icon" href="../../logo.png"/><link rel="icon" href="../../logo.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="DC.rights.owner" content="(C) Copyright 2023"/><meta name="copyright" content="(C) Copyright 2023"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="dita"/><meta name="description" content="To get started, make sure you have access to your Google Cloud account. If you do not have an account, you can create a free Google Cloud account and upgrade it to a full account later. If you have an ..."/><meta name="DC.subject" content="Conductor,deploy,cloud,Google Cloud,GCP,quick start"/><meta name="keywords" content="Conductor, deploy, cloud, Google Cloud, GCP, quick start"/><meta name="DC.relation" content="../../content/topics/conductor_setup.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="install_cond_gcp_mkt"/>        
+      <title>Conductor for Google Cloud Platform Quick Start</title><!--  Generated with Oxygen version 24.0, build number 2022012605.  --><meta name="wh-path2root" content="../../"/><meta name="wh-source-relpath" content="content/topics/install_cond_gcp_mkt.dita"/><meta name="wh-out-relpath" content="content/topics/install_cond_gcp_mkt.html"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022012605"/><script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script><script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tempered-help.css?buildId=2022012605"/><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NX2TVTD'); //</script><!-- End Google Tag Manager --></head>
+
+    <body class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        <!-- Google Tag Manager (noscript) --><noscript> &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2TVTD"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt; //</noscript><!-- End Google Tag Manager (noscript) -->
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="21.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../logo-48px.png" alt="Airwall help  be invisible    - you can't hack what you can't see"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Airwall help <sub class="ph sub"><sup class="ph sup beinvisible"> be invisible </sup>  <sup class="ph sup canthack"> - you can't hack what you can't see</sup></sub></span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' --> 
+                <!-- DOB commented this out to show the support menu without odd stray button
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                    aria-expanded="false" aria-label="${i18n(toggle.menu)}" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"/>
+                    
+                    
+                </button -->
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container" align="right"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support_top-d8884e16110-mi" data-tocid="support_top-d8884e16110" data-state="not-ready" class=" topicref " data-id="support_top"><span class="title"><a href="../../support_top.html">Get Support</a></span></span></li></ul></nav><!--DOB Added align to solve Support menu issue-->
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+        
+        <div class="container-fluid">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="install_cond_gcp_mkt">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Conductor for Google Cloud Platform Quick Start</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"></p>
+        <p class="- topic/p p">To get started, make sure you have access to your Google Cloud account.
+            If you do not have an account, you can create a free <a class="- topic/xref xref" href="https://cloud.google.com/" target="_blank" rel="external noopener">Google</a> Cloud
+            account and upgrade it to a full account later. If you have an existing Google Cloud
+            account, make sure your billing information is set up. You cannot create a project until
+            you are able to link your billing information to your newly created project.</p>
+        <p class="- topic/p p">A <span class="- topic/ph ph">Conductor</span> license
+            voucher is necessary at the end of this procedure if you want to start the <span class="- topic/ph ph">Conductor</span> and verify
+            it is set up correctly. Fulfillment will provide this to you in an email after your
+            purchase is complete. </p>
+    </div>
+<article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title2" id="install_cond_gcp_login">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title2">Log in to Google Cloud</h2>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"></p>
+        <p class="- topic/p p">From a Web browser, navigate to <a class="- topic/xref xref" href="https://console.cloud.google.com" target="_blank" rel="external noopener">https://console.cloud.google.com</a>. You will see
+            one of two pages, the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Getting Started</span> page if you have no
+            projects or the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Home</span> page if you have existing projects.</p>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="install_cond_gcp_mkt_select">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title3">Select the <span class="- topic/ph ph">Tempered</span>
+        <span class="- topic/ph ph">Conductor</span> from the
+        Marketplace</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">Select the <span class="- topic/ph ph">Conductor</span> in the
+                Google Cloud Marketplace.</p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">From your GCP Dashboard, select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Marketplace</span> on the left
+                    sidebar.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Search</span> field at the top of the page, enter
+                        <kbd class="+ topic/ph sw-d/userinput ph userinput">tempered networks conductor</kbd> and press enter.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the results list, locate and select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Tempered Networks Conductor
+                        v2.1</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result">The product page opens where you can deploy the <span class="- topic/ph ph">Conductor</span>.</section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title4" id="install_cond_gcp_mkt_image">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title4">Install the <span class="- topic/ph ph">Conductor</span> Image</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context"></section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the product page, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">LAUNCH ON COMPUTE
+                    ENGINE</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">The <span class="- topic/ph ph">Conductor</span> deployment uses a template so most settings you can leave as is, however you
+                    may want to make the following changes:</span>
+                <ol type="a" class="- topic/ol task/substeps ol substeps">
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Deployment name</span>: Enter a name for your <span class="- topic/ph ph">Conductor</span>. </span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Zone</span>: Select a zone from the drop-down. The zone
+                            determines what computing resources are available and where your data is
+                            stored and used.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Machine type</span>: Leave as is. Machine type
+                            determines the amount of memory, virtual cores, and persistent disk
+                            limits for the <span class="- topic/ph ph">Conductor</span>. The default settings are required for the <span class="- topic/ph ph">Conductor</span> to function correctly.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Data Disk</span>: Leave the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Data disk
+                                type</span> and <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Data disk size in GB</span>
+                            fields as is.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd">Networking: Leave the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Network</span>,
+                                <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Subnetwork</span>, <span class="+ topic/ph ui-d/uicontrol ph uicontrol">External
+                                IP</span>, <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Firewall</span>, and <span class="+ topic/ph ui-d/uicontrol ph uicontrol">IP
+                                forwarding</span> fields as is.</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Some fields may be hidden based on your screen size. To view these
+                                fields, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">More</span> just above the
+                                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Deploy</span> button.</div>
+                        </div>
+                    </li>
+                </ol>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Deploy</span>.</span>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title5" id="install_cond_gcp_mkt_final">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title5">Finalize the Deployment</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">It will take a few moments for the process to complete. You can view the progress of
+                your deployment by viewing the tree hierarchy of you components on the page. </p>
+            <p class="- topic/p p">Once complete, the message changes indicating your deployment is complete.</p>
+        </section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title6" id="install_cond_gcp_creds">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title6">Obtain your <span class="- topic/ph ph">Conductor</span> Address and
+        Credentials</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <div class="- topic/p p">When your <span class="- topic/ph ph">Conductor</span> finishes installing, its information appears in the right pane of the page. You
+                need three pieces of this information to log in to your <span class="- topic/ph ph">Conductor</span> for
+                the first time: your <span class="- topic/ph ph">Conductor</span> site
+                address, username, and temporary password.<dl class="- topic/dl dl">
+                    
+                        <dt class="- topic/dt dt dlterm"><span class="- topic/ph ph">Conductor</span> site address</dt>
+                        <dd class="- topic/dd dd">Copy from <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Site address</span>, or click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Visit
+                                the site</span> to open it in your browser.</dd>
+                    
+                    
+                        <dt class="- topic/dt dt dlterm">Username and password</dt>
+                        <dd class="- topic/dd dd">Copy from the shaded box near the bottom.</dd>
+                    
+                </dl><br/><div class="imagecenter"><img class="- topic/image image imagecenter" src="../images/cond_gcp_mkt_creds.png" width="500"/></div><br/></div>
+        </section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title7" id="install_cond_gcp_verify">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title7">Verify the install</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">At this point the <span class="- topic/ph ph">Conductor</span> instance
+            is running in Google Cloud. You should verify it is installed correctly by logging in
+            and licensing the <span class="- topic/ph ph">Conductor</span>. It may
+            take several minutes for the <span class="- topic/ph ph">Conductor</span> to become
+            available after it starts, so if you attempt to access it and your browser appears to
+            stop responding, please try again in a few minutes. <div class="- topic/note note note note_note"><span class="note__title">Note:</span> When running the <span class="- topic/ph ph">Conductor</span> for
+                the first time, you may receive notifications indicating the connection is not
+                private. Once you have finished configuring the <span class="- topic/ph ph">Conductor</span>, you
+                can install a customer certificate on the <span class="- topic/ph ph">Conductor</span> that
+                preventd these notifications</div><p class="- topic/p p">To verify the install:</p></section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Point your web browser to the external IP address for your <span class="- topic/ph ph">Conductor</span>.
+                    Make sure you begin the address with <var class="+ topic/keyword sw-d/varname keyword varname">https://</var>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">An unlicensed <span class="- topic/ph ph">Conductor</span>
+                    will display the initial <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Provisioning</span> page where you
+                    enter your license voucher.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Enter the voucher code you received from <span class="- topic/ph ph">Tempered</span> in the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Voucher code</span> field.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Provision now</span>. It will take a moment to finish the
+                    operation. Once complete, you should see confirmation page.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Click here to start using the </span><span class="- topic/ph ph">Conductor</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Enter the default username and password you received when you completed
+                    installation and click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Sign in</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">You will be prompted to enter a new password. Enter the default password in the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Current password</span> field and a new password of your
+                    choosing in the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">New password</span> and <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Confirm new
+                        password</span> fields.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Update</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the System Configuration dialog, leave all the fields as is and click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Configure</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">It will take a moment to complete the operation. Once finished, click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Return to settings</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result">You should see the <span class="- topic/ph ph">Conductor</span>
+            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span> page. On the right side in the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Network
+                adapter 1</span> section, the IP address should match the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Internal
+                IP</span> of your instance in the GCP portal.<br/><div class="imagecenter"><img class="- topic/image image imagecenter" src="../images/config_validate.png" width="400"/></div><br/></section>
+    </div>
+</article></article></article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns:whc="http://www.oxygenxml.com/webhelp/components"></whc:webhelp_feedback>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#install_cond_gcp_login" data-tocid="install_cond_gcp_login">Log in to Google Cloud</a></li><li class="topic-item"><a href="#install_cond_gcp_mkt_select" data-tocid="install_cond_gcp_mkt_select">Select the <span class="- topic/ph ph">Tempered</span>
+        <span class="- topic/ph ph">Conductor</span> from the
+        Marketplace</a></li><li class="topic-item"><a href="#install_cond_gcp_mkt_image" data-tocid="install_cond_gcp_mkt_image">Install the <span class="- topic/ph ph">Conductor</span> Image</a></li><li class="topic-item"><a href="#install_cond_gcp_mkt_final" data-tocid="install_cond_gcp_mkt_final">Finalize the Deployment</a></li><li class="topic-item"><a href="#install_cond_gcp_creds" data-tocid="install_cond_gcp_creds">Obtain your <span class="- topic/ph ph">Conductor</span> Address and
+        Credentials</a></li><li class="topic-item"><a href="#install_cond_gcp_verify" data-tocid="install_cond_gcp_verify">Verify the install</a></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <footer class="navbar navbar-default wh_footer" data-whc_version="21.0">
+  <div class=" footer-container  mx-auto">
+    <div>
+    <p> 
+        Go to: <a href="http://webhelp.tempered.io/webhelp-ft" target="_blank">Airwall Teams help</a> or <a href="http://webhelp.tempered.io/webhelp/webhelp222" target="_blank">pre-2.2.3 Tempered HIPswitch Help</a>.</p>
+    <p>© Copyright 2023 <a href="https://tempered.io">tempered.io</a> | <a href="https://tempered.io/resources/terms-of-product-sale-license-and-warranty" target="_blank">Terms of Product Sale, License and Warranty</a></p>
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,1 @@
+define({"topics":[{"title":"How to configure wildcard devices","shortdesc":"<p class=\"shortdesc\"\/>","href":"content\/topics\/wildcard_devices.html#howto_wildcard_device","attributes":{"data-id":"howto_wildcard_device"},"menu":{"hasChildren":false},"tocID":"howto_wildcard_device-d8884e11861","topics":[]}]});

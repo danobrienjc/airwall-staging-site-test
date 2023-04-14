@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Configure one-arm mode","shortdesc":"<p class=\"shortdesc\"\/>","href":"content\/topics\/one_arm_mode.html#one_arm_mode_conf","attributes":{"data-id":"one_arm_mode_conf"},"menu":{"hasChildren":false},"tocID":"one_arm_mode_conf-d8884e11404","topics":[]}]});

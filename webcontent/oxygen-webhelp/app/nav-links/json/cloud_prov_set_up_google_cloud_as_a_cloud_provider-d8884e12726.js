@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Set up Google Cloud as a cloud provider","shortdesc":"<p class=\"shortdesc\"\/>","href":"content\/topics\/cloud_prov_gcp.html#setup_gcloud_creds","attributes":{"data-id":"setup_gcloud_creds"},"menu":{"hasChildren":false},"tocID":"setup_gcloud_creds-d8884e12753","topics":[]}]});

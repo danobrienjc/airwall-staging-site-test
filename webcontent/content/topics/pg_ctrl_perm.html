@@ -1,0 +1,340 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="21.0">
+    <head><link rel="shortcut icon" href="../../logo.png"/><link rel="icon" href="../../logo.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="DC.rights.owner" content="(C) Copyright 2023"/><meta name="copyright" content="(C) Copyright 2023"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="dita"/><meta name="description" content="Using people groups, you can control what the people in the group can see and use on the Conductor, including cloud providers, Airwall Gateways, and Overlay networks and resources."/><meta name="DC.subject" content="people groups,access,cloud,Airwall,permissions,overlay,Airwall Edge Service,resources,protected resources,roles"/><meta name="keywords" content="people groups, access, cloud, Airwall, permissions, overlay, Airwall Edge Service, resources, protected resources, roles"/><meta name="indexterms" content="people groups, Airwall"/><meta name="DC.relation" content="../../content/topics/people_top.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="pg_ctrl_perm"/>        
+      <title>Customize People's Access to your Airwall secure network with People Groups</title><!--  Generated with Oxygen version 24.0, build number 2022012605.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="pg_ctrl_perm-d8884e2920"/><meta name="wh-source-relpath" content="content/topics/pg_ctrl_perm.dita"/><meta name="wh-out-relpath" content="content/topics/pg_ctrl_perm.html"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022012605"/><script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script><script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tempered-help.css?buildId=2022012605"/><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NX2TVTD'); //</script><!-- End Google Tag Manager --></head>
+
+    <body class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        <!-- Google Tag Manager (noscript) --><noscript> &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2TVTD"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt; //</noscript><!-- End Google Tag Manager (noscript) -->
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="21.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../logo-48px.png" alt="Airwall help  be invisible    - you can't hack what you can't see"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Airwall help <sub class="ph sub"><sup class="ph sup beinvisible"> be invisible </sup>  <sup class="ph sup canthack"> - you can't hack what you can't see</sup></sub></span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' --> 
+                <!-- DOB commented this out to show the support menu without odd stray button
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                    aria-expanded="false" aria-label="${i18n(toggle.menu)}" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"/>
+                    
+                    
+                </button -->
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container" align="right"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support_top-d8884e16110-mi" data-tocid="support_top-d8884e16110" data-state="not-ready" class=" topicref " data-id="support_top"><span class="title"><a href="../../support_top.html">Get Support</a></span></span></li></ul></nav><!--DOB Added align to solve Support menu issue-->
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+        
+        <div class="container-fluid">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="idn_administrative"><div class="title"><a href="../../content/topics/idn_administrative.html">Manage <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Provision and manage <span class="ph">Airwall Edge Services</span> and devices, monitor activity, and install updates.</p></div></div></div></li><li><div class="topicref" data-id="people_top"><div class="title"><a href="../../content/topics/people_top.html">Manage People</a><div class="wh-tooltip"><p class="shortdesc">Manage <span class="ph">Conductor</span>         admins and people connecting to your <span class="ph">Airwall secure network</span>         with laptops and mobile devices.</p></div></div></div></li><li class="active"><div class="topicref" data-id="pg_ctrl_perm"><div class="title"><a href="../../content/topics/pg_ctrl_perm.html#pg_ctrl_perm">Customize People's Access to your <span class="ph">Airwall secure network</span> with People Groups</a><div class="wh-tooltip"><p class="shortdesc">Using people groups, you can control what the people in the group can see and use on         the <span class="ph">Conductor</span>, including         cloud providers, <span class="ph">Airwall Gateways</span>, and <span class="ph">Overlay</span>         networks and resources.</p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 d-none d-md-block d-print-none">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="vid_overdemos-d8884e17" class="topicref" data-id="vid_overdemos" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../vid_overdemos.html" id="vid_overdemos-d8884e17-link">Video Overview and Demos</a><div class="wh-tooltip"><p class="shortdesc">Overviews and demos for the <span class="ph">Tempered</span>         <span class="ph">Airwall Solution</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect_top-d8884e43" class="topicref" data-id="connect_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect_top-d8884e43-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/connect_top.html" id="connect_top-d8884e43-link">Connect to <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Connect your mobile or laptop to <span class="ph">Airwall</span> to
+                get access to protected resources.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="idn_administrative-d8884e1435" class="topicref" data-id="idn_administrative" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action idn_administrative-d8884e1435-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_administrative.html" id="idn_administrative-d8884e1435-link">Manage <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Provision and manage <span class="ph">Airwall Edge Services</span> and devices, monitor activity, and install updates.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="admin_dashboard-d8884e1456" class="topicref" data-id="admin_dashboard" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action admin_dashboard-d8884e1456-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/admin_dashboard.html" id="admin_dashboard-d8884e1456-link">The <span class="ph">Conductor</span> Dashboard</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Conductor</span>         Dashboard gives you a quick view into the health and state of your <span class="ph">Airwall secure network</span>,         showing you activity and alerting across the entire network.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect_change_pref-d8884e1552" class="topicref" data-id="connect_change_pref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect_change_pref-d8884e1552-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/connect_change_pref_2.html" id="connect_change_pref-d8884e1552-link">Change My <span class="ph">Conductor</span> Preferences</a><div class="wh-tooltip"><p class="shortdesc">Change your <span class="ph">Conductor</span> password,         theme and other options from your Preferences page.</p></div></div></div></li><li role="treeitem"><div data-tocid="custom_cond_emails-d8884e1643" class="topicref" data-id="custom_cond_emails" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/custom_cond.html#custom_cond_emails" id="custom_cond_emails-d8884e1643-link">Customize the <span class="ph">Conductor</span></a><div class="wh-tooltip"><p class="shortdesc">You can customize the <span class="ph">Conductor</span> login screen         and emails sent from the <span class="ph">Conductor</span> for your         business. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cond_search-d8884e1726" class="topicref" data-id="cond_search" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cond_search-d8884e1726-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_search.html" id="cond_search-d8884e1726-link">Search in the <span class="ph">Conductor</span></a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Conductor</span>         supports searching by full text search or by expressions using the <span class="ph">Conductor Query Language</span>. Searching by expression is         available in the search boxes on the <span class="ph"><span class="ph uicontrol">Overlays</span></span>, <span class="ph"><span class="ph uicontrol">Devices</span></span>, <span class="ph"><span class="ph uicontrol">Airwalls</span></span>, <span class="ph"><span class="ph uicontrol">People</span></span>, and <span class="ph"><span class="ph uicontrol">Dashboard</span></span> pages. Search         results show in real time as you add search terms or expressions. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="people_top-d8884e1913" class="topicref" data-id="people_top" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action people_top-d8884e1913-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/people_top.html" id="people_top-d8884e1913-link">Manage People</a><div class="wh-tooltip"><p class="shortdesc">Manage <span class="ph">Conductor</span>         admins and people connecting to your <span class="ph">Airwall secure network</span>         with laptops and mobile devices.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="create_user_accts-d8884e1930" class="topicref" data-id="create_user_accts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action create_user_accts-d8884e1930-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/create_user_accts.html" id="create_user_accts-d8884e1930-link">Manage Conductor Admins</a><div class="wh-tooltip"><p class="shortdesc">Create accounts and people groups in the <span class="ph">Conductor</span> to manage the         administrators who access your <span class="ph">Airwall Conductor</span> and your             <span class="ph">overlay</span> networks and         devices.</p></div></div></div></li><li role="treeitem"><div data-tocid="people_import_csv-d8884e2074" class="topicref" data-id="people_import_csv" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/people_import_csv.html#people_import_csv" id="people_import_csv-d8884e2074-link">Import people using a CSV file</a><div class="wh-tooltip"><p class="shortdesc">Add many local users to the <span class="ph">Conductor</span> at one time by         importing them in bulk. You export a .csv file as a template or with current users, edit it,         and then import it back into the <span class="ph">Conductor</span>..</p></div></div></div></li><li role="treeitem"><div data-tocid="people_remove-d8884e2115" class="topicref" data-id="people_remove" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/people_remove.html" id="people_remove-d8884e2115-link">Remove people in bulk</a><div class="wh-tooltip"><p class="shortdesc">You can delete users in bulk from the <span class="ph"><span class="ph uicontrol">People</span></span> page.</p></div></div></div></li><li role="treeitem"><div data-tocid="win_hip_lockdown-d8884e2147" class="topicref" data-id="win_hip_lockdown" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/win_hip_lockdown.html" id="win_hip_lockdown-d8884e2147-link">Restrict network access for Windows <span class="ph">Airwall Agents and Servers</span> users (Lockdown mode) </a><div class="wh-tooltip"><p class="shortdesc">You can configure Windows <span class="ph">Airwall Agents and Servers</span> to run in Lockdown         mode, which restricts access to network resources not explicitly allowed by <span class="ph">Conductor</span> trust policy. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hipapp_admin_welcome-d8884e2194" class="topicref" data-id="hipapp_admin_welcome" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hipapp_admin_welcome-d8884e2194-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/agent_hipserver_setup.html" id="hipapp_admin_welcome-d8884e2194-link">Connect People's Devices to your <span class="ph">Airwall secure network</span></a><div class="wh-tooltip"><p class="shortdesc">Choose your device to install an Airwall Agent or Server.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="pg_ctrl_perm-d8884e2920" class="topicref" data-id="pg_ctrl_perm" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/pg_ctrl_perm.html#pg_ctrl_perm" id="pg_ctrl_perm-d8884e2920-link">Customize People's Access to your <span class="ph">Airwall secure network</span> with People Groups</a><div class="wh-tooltip"><p class="shortdesc">Using people groups, you can control what the people in the group can see and use on         the <span class="ph">Conductor</span>, including         cloud providers, <span class="ph">Airwall Gateways</span>, and <span class="ph">Overlay</span>         networks and resources.</p></div></div></div></li><li role="treeitem"><div data-tocid="people_group_setup-d8884e3100" class="topicref" data-id="people_group_setup" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/people_group_setup.html" id="people_group_setup-d8884e3100-link">Set up a People Group</a><div class="wh-tooltip"><p class="shortdesc">Set up a people group to make it easier to manage the people accessing your secure         network.</p></div></div></div></li><li role="treeitem"><div data-tocid="top_user_auth-d8884e3125" class="topicref" data-id="top_user_auth" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/top_user_auth.html" id="top_user_auth-d8884e3125-link">Set up User Authentication</a><div class="wh-tooltip"><p class="shortdesc">How to set up user authentication for your <span class="ph">Airwall secure network</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="people_group_access_windows-d8884e3150" class="topicref" data-id="people_group_access_windows" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/people_group_access_windows.html" id="people_group_access_windows-d8884e3150-link">Set Times Authenticated Users can Access the Secure Network</a><div class="wh-tooltip"><p class="shortdesc">Specify or restrict what days and times authenticated users can log in to access         resources on your secure network by setting up Access Windows.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="admin_manage_assets-d8884e3178" class="topicref" data-id="admin_manage_assets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action admin_manage_assets-d8884e3178-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/admin_manage_assets.html" id="admin_manage_assets-d8884e3178-link">Manage Devices and <span class="ph">Airwall Edge Services</span></a><div class="wh-tooltip"><p class="shortdesc">Set up tags, groups, and Smart Device Groups to help you manage the devices connected         to your <span class="ph">Airwall secure network</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_monitor_top-d8884e3868" class="topicref" data-id="manage_monitor_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_monitor_top-d8884e3868-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/manage_monitor_top.html" id="manage_monitor_top-d8884e3868-link">Monitor Activity and Connections</a><div class="wh-tooltip"><p class="shortdesc">Monitor activity and connections to your <span class="ph">Airwall secure network</span>         with <span class="ph">Conductor</span> Event         monitoring and alerting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_maintainence-d8884e4178" class="topicref" data-id="web_top_maintainence" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_maintainence-d8884e4178-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_aw_updates.html" id="web_top_maintainence-d8884e4178-link">Update your <span class="ph">Conductor</span> and <span class="ph">Airwall Edge Services</span>  </a><div class="wh-tooltip"><p class="shortdesc">The maintenance section provides information about various tasks you may
+                    need to perform to keep the platform up-to-date, such as updating firmware and
+                    replacing equipment. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="backup_top-d8884e4424" class="topicref" data-id="backup_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action backup_top-d8884e4424-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/backup_top.html" id="backup_top-d8884e4424-link">Back Up your Conductor and Airwall Edge Services</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="pci_reporting-d8884e4540" class="topicref" data-id="pci_reporting" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/pci_reporting.html#pci_reporting" id="pci_reporting-d8884e4540-link"><span class="ph">Conductor</span> and <span class="ph">Airwall Edge Service</span> PCI Compliance</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Airwall</span>     <span class="ph">Conductor</span> and <span class="ph">Airwall Edge Services</span> are compliant with     PCIDSS guidelines and Payment Card Industry (PCI) data security standards. The <span class="ph">Airwall Solution</span> provides secure     transport of logs, firewall rules creation and reporting, retention of activity logs, and audit     reporting of system configuration changes. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_docs-d8884e4585" class="topicref" data-id="web_top_docs" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_docs-d8884e4585-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_docs.html" id="web_top_docs-d8884e4585-link">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_downloads-d8884e14947" class="topicref" data-id="web_top_downloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_downloads-d8884e14947-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_downloads.html" id="web_top_downloads-d8884e14947-link">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support_top-d8884e16110" class="topicref" data-id="support_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support_top-d8884e16110-link" class="wh-expand-btn"></span><div class="title"><a href="../../support_top.html" id="support_top-d8884e16110-link">Get Support</a><div class="wh-tooltip"><p class="shortdesc">You can often find answers to your questions in <span class="ph">Airwall             help</span>. If you still need help, check here for help         getting support.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="pg_ctrl_perm">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Customize People's Access to your <span class="- topic/ph ph">Airwall secure network</span>
+        with People Groups</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Using people groups, you can control what the people in the group can see and use on
+        the <span class="- topic/ph ph">Conductor</span>, including
+        cloud providers, <span class="- topic/ph ph">Airwall Gateways</span>, and <span class="- topic/ph ph">Overlay</span>
+        networks and resources.</p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">This control allows you to host several departments or customers on a single <span class="- topic/ph ph">Conductor</span>, where
+                they have control over their own networks and access, but cannot see other networks
+                or resources that are hosted on the <span class="- topic/ph ph">Conductor</span>.</p>
+            <dl class="- topic/dl dl">
+                
+                    <dt class="- topic/dt dt dlterm">Supported versions</dt>
+                    <dd class="- topic/dd dd">
+                        <ul class="- topic/ul ul">
+                            <li class="- topic/li li">v3.1.0 <span class="- topic/ph ph">Conductors</span>
+                            </li>
+                            <li class="- topic/li li">All <span class="- topic/ph ph">Airwall Edge Services</span>
+                            </li>
+                        </ul>
+                    </dd>
+                
+            </dl>
+            <dl class="- topic/dl dl">
+                
+                    <dt class="- topic/dt dt dlterm">Supported Roles</dt>
+                    <dd class="- topic/dd dd">To set access with People groups, you must be a system administrator </dd>
+                
+            </dl>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">You can give People groups access to <span class="- topic/ph ph">Airwall Edge Services</span> in two ways: </strong></p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Give members of the people group access directly by adding <span class="- topic/ph ph">Airwall Edge Services</span> to the Airwall permissions tab when creating or editing the people
+                    group.</li>
+                <li class="- topic/li li">Set the people group as the permissions scope of a smart device group (SDG), so
+                    only devices from those <span class="- topic/ph ph">Airwall Edge Services</span> can be added to the SDG.</li>
+            </ul>
+            <p class="- topic/p p">To support least-privileged access, you can set finer controls on what users have
+                access to: </p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li"><a class="- topic/xref xref" href="aw_lock.html" title="Lock an Airwall Edge Service so only system administrators can edit it.">Lock an Airwall Edge Service</a>
+                </li>
+                <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Remove permissions to Relay rules</strong> – This option can be important for
+                    privacy on a shared <span class="- topic/ph ph">Conductor</span>.</li>
+                <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Limit the permissions scope for Smart device groups</strong>
+                </li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="tags_owner.html" title="Manage who can see and edit tags.">Manage Tag Ownership</a> – In v3.1.0, tag ownership is more restrictive by
+                    default. If a system administrator creates a tag, then by default, only system
+                    administrators can see or use them. If a network administrator creates a tag,
+                    ownership defaults to only them or their people group, and system
+                    administrators. </li>
+            </ul>
+        </section>
+    </div>
+<article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title2" id="pg_ctrl_cloud">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title2">Give Access to Cloud Providers with People Groups</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p"></p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the  <span class="- topic/ph ph">Conductor</span>,
+                    go to <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">People</span></span>,
+                    and open the <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">People groups</span></span>
+                     tab. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Open an existing people group, or select  <span class="+ topic/ph ui-d/uicontrol ph uicontrol">New People
+                        Group</span> to create a new one. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Open the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Cloud providers</span> tab. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add Cloud provider</span>. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select the cloud provider on which you’d like this people group to be able to
+                    create and manage <span class="- topic/ph ph">Airwall Gateways</span> on
+                    your <span class="- topic/ph ph">Airwall secure network</span>. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>. </span>
+                <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/peep_cloud_perm_add.png" width="400" alt="Add cloud provider dialog box"/></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Enter a name and the credentials for the selected cloud provider. </span>
+                <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/peep_cloud_perm.png" width="400" alt="Enter cloud credentials and select options on the Add cloud provider page"/></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Cloud route injection</span> option and
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Default region</span> for this people group to use.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Finish</span>. </span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result">The members of this people group can now manage and create <span class="- topic/ph ph">Airwall Gateways</span> on the added
+            cloud provider. </section>
+        <section class="- topic/section task/postreq section postreq">
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span>  If you want to add additional cloud providers to this people group, repeat these
+                steps for each cloud provider you want to give access to.</div>
+        </section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="pg_ctrl_aw">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title3">Give Access to <span class="- topic/ph ph">Airwall Edge Services</span> with
+        People Groups</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p"></p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the  <span class="- topic/ph ph">Conductor</span>,
+                    go to <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">People</span></span>,
+                    and open the <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">People groups</span></span>
+                     tab. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Open an existing people group, or select  <span class="+ topic/ph ui-d/uicontrol ph uicontrol">New People
+                        Group</span> to create a new one. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Open the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Airwall permissions</span> tab. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add Airwalls</span> box, enter a search term, or select
+                    the + to choose which <span class="- topic/ph ph">Airwall Edge Services</span> you want the members of this people group to have access to. </span>
+                <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/peep_aw_perm.png" width="750" alt="Airwall permissions tab on a people group page"/></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Finish</span>. </span>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title4" id="pg_ctrl_overlay">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title4">Give Access to <span class="- topic/ph ph">Overlay</span> networks and
+        Resources </h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">You can give access to <span class="- topic/ph ph">overlay</span> networks
+                and resources using people groups. When you give the people group the user role on
+                an <span class="- topic/ph ph">overlay</span>
+                network, the members of the group can use the <span class="- topic/ph ph">overlay</span> to add
+                and remove devices and change trust, but they cannot edit the <span class="- topic/ph ph">overlay</span> network
+                configuration and they do not gain permissions to edit the <span class="- topic/ph ph">Airwall Edge Service</span>
+                in the <span class="- topic/ph ph">overlay</span> network. For more information, see <a class="- topic/xref xref" href="pg_ctrl_perm.html#pg_ctrl_overlay_roles" title="There are several roles people can have on an overlay network. Refer to this table for what overlay permissions each role grants.">Overlay network access roles</a>. </p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Create a people group and add the people you want to be able to see an <span class="- topic/ph ph">overlay</span>
+                    network in the <span class="- topic/ph ph">Conductor</span>.
+                </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Create or open an ∫<strong class="+ topic/ph hi-d/b ph b"></strong> network. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the right, under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Network members</span>, select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Update</span>. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add network members</span> page, for the people or
+                    people group you want to give user access to, check the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Users</span> column. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Close</span>. </span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The selected people or people group now can add and remove device groups
+                    and change trust policy on the <span class="- topic/ph ph">overlay</span>
+                    network. </div>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title5" id="pg_ctrl_overlay_roles">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title5"><span class="- topic/ph ph">Overlay</span> network
+        access roles </h2>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">There are several roles people can have on an <span class="- topic/ph ph">overlay</span> network. Refer
+        to this table for what <span class="- topic/ph ph">overlay</span> permissions each
+        role grants.</p>
+        <table class="- topic/table table" data-cols="4"><caption></caption><colgroup><col/><col/><col/><col/></colgroup><tbody class="- topic/tbody tbody">
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry align-left colsep-0 rowsep-0" rowspan="2">
+                            <p class="- topic/p p"> </p>
+                            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b"><span class="- topic/ph ph">Overlay</span> Permissions</strong>
+                            </p>
+                        </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0" colspan="3"><strong class="+ topic/ph hi-d/b ph b"><span class="- topic/ph ph">Overlay</span> Role</strong>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"><strong class="+ topic/ph hi-d/b ph b">Viewer</strong>
+                        </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"><strong class="+ topic/ph hi-d/b ph b">User</strong>
+                        </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"><strong class="+ topic/ph hi-d/b ph b">Editor</strong>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry align-left colsep-0 rowsep-0">View the <span class="- topic/ph ph">overlay</span>
+                        </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry align-left colsep-0 rowsep-0">Add and remove devices </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"> </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry align-left colsep-0 rowsep-0">Change trust policy between devices </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"> </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry align-left colsep-0 rowsep-0">Edit <span class="- topic/ph ph">overlay</span> network configuration </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"> </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"> </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry align-left colsep-0 rowsep-0">Edit <span class="- topic/ph ph">Airwall Edge Services</span> in the <span class="- topic/ph ph">overlay</span> network. </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"> </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0"> </td>
+                        <td class="- topic/entry entry align-center colsep-0 rowsep-0">X </td>
+                    </tr>
+                </tbody></table>
+    </div>
+</article></article></article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns:whc="http://www.oxygenxml.com/webhelp/components"></whc:webhelp_feedback>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#pg_ctrl_cloud" data-tocid="pg_ctrl_cloud">Give Access to Cloud Providers with People Groups</a></li><li class="topic-item"><a href="#pg_ctrl_aw" data-tocid="pg_ctrl_aw">Give Access to <span class="- topic/ph ph">Airwall Edge Services</span> with
+        People Groups</a></li><li class="topic-item"><a href="#pg_ctrl_overlay" data-tocid="pg_ctrl_overlay">Give Access to <span class="- topic/ph ph">Overlay</span> networks and
+        Resources </a></li><li class="topic-item"><a href="#pg_ctrl_overlay_roles" data-tocid="pg_ctrl_overlay_roles"><span class="- topic/ph ph">Overlay</span> network
+        access roles </a></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <footer class="navbar navbar-default wh_footer" data-whc_version="21.0">
+  <div class=" footer-container  mx-auto">
+    <div>
+    <p> 
+        Go to: <a href="http://webhelp.tempered.io/webhelp-ft" target="_blank">Airwall Teams help</a> or <a href="http://webhelp.tempered.io/webhelp/webhelp222" target="_blank">pre-2.2.3 Tempered HIPswitch Help</a>.</p>
+    <p>© Copyright 2023 <a href="https://tempered.io">tempered.io</a> | <a href="https://tempered.io/resources/terms-of-product-sale-license-and-warranty" target="_blank">Terms of Product Sale, License and Warranty</a></p>
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

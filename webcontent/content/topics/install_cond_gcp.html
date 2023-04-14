@@ -1,0 +1,527 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="21.0">
+    <head><link rel="shortcut icon" href="../../logo.png"/><link rel="icon" href="../../logo.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="DC.rights.owner" content="(C) Copyright 2023"/><meta name="copyright" content="(C) Copyright 2023"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="dita"/><meta name="description" content="You can deploy an Airwall Conductor on GCP and manage physical, virtual, and cloud Airwall Edge Services, and Airwall Agents. Use the following steps to deploy on the Google Cloud platform."/><meta name="DC.subject" content="Conductor,deploy,cloud,Google CLoud,GCP"/><meta name="keywords" content="Conductor, deploy, cloud, Google CLoud, GCP"/><meta name="DC.relation" content="../../content/topics/conductor_setup.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="install_cond_gcp"/>        
+      <title>Deploy a Conductor on the Google Cloud Platform (GCP)</title><!--  Generated with Oxygen version 24.0, build number 2022012605.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="install_cond_gcp-d8884e6336"/><meta name="wh-source-relpath" content="content/topics/install_cond_gcp.dita"/><meta name="wh-out-relpath" content="content/topics/install_cond_gcp.html"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022012605"/><script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script><script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tempered-help.css?buildId=2022012605"/><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NX2TVTD'); //</script><!-- End Google Tag Manager --></head>
+
+    <body class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        <!-- Google Tag Manager (noscript) --><noscript> &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2TVTD"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt; //</noscript><!-- End Google Tag Manager (noscript) -->
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="21.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../logo-48px.png" alt="Airwall help  be invisible    - you can't hack what you can't see"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Airwall help <sub class="ph sub"><sup class="ph sup beinvisible"> be invisible </sup>  <sup class="ph sup canthack"> - you can't hack what you can't see</sup></sub></span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' --> 
+                <!-- DOB commented this out to show the support menu without odd stray button
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                    aria-expanded="false" aria-label="${i18n(toggle.menu)}" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"/>
+                    
+                    
+                </button -->
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container" align="right"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support_top-d8884e16110-mi" data-tocid="support_top-d8884e16110" data-state="not-ready" class=" topicref " data-id="support_top"><span class="title"><a href="../../support_top.html">Get Support</a></span></span></li></ul></nav><!--DOB Added align to solve Support menu issue-->
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+        
+        <div class="container-fluid">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="web_top_docs"><div class="title"><a href="../../content/topics/web_top_docs.html">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div></li><li><div class="topicref" data-id="web_top_howto"><div class="title"><a href="../../content/topics/idn_install_config.html">Deploy an <span class="ph">Airwall</span> secure network</a><div class="wh-tooltip"><p class="shortdesc">Learn how to deploy the Airwall solution, connect devices, set up <span class="ph">overlays</span>,
+                configure device trust, and give people access to your Airwall secure
+                network.</p></div></div></div></li><li><div class="topicref" data-id="cond_deploy_config"><div class="title"><a href="../../content/topics/cond_deploy_config.html">Deploy and Configure a Conductor</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Airwall Conductor</span> helps you deploy, configure, administer, and update your <span class="ph">Airwall Solution</span>. </p></div></div></div></li><li><div class="topicref" data-id="cond_install"><div class="title"><a href="../../content/topics/conductor_setup.html">Deploy a <span class="ph">Conductor</span></a><div class="wh-tooltip"><p class="shortdesc">To set up a <span class="ph">Conductor</span> for the first time, you need to configure a few basic settings. After completing the following,   you can connect the <span class="ph">Conductor</span>   to your underlay.</p></div></div></div></li><li class="active"><div class="topicref" data-id="install_cond_gcp"><div class="title"><a href="../../content/topics/install_cond_gcp.html#install_cond_gcp">Deploy a <span class="ph">Conductor</span> on the Google Cloud Platform (GCP)</a><div class="wh-tooltip"><p class="shortdesc">You can deploy an   <span class="ph">Airwall Conductor</span> on GCP         and manage physical, virtual, and cloud <span class="ph">Airwall Edge Services</span>, and <span class="ph">Airwall Agents</span>. Use the         following steps to deploy on the Google Cloud platform.</p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 d-none d-md-block d-print-none">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="vid_overdemos-d8884e17" class="topicref" data-id="vid_overdemos" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../vid_overdemos.html" id="vid_overdemos-d8884e17-link">Video Overview and Demos</a><div class="wh-tooltip"><p class="shortdesc">Overviews and demos for the <span class="ph">Tempered</span>         <span class="ph">Airwall Solution</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect_top-d8884e43" class="topicref" data-id="connect_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect_top-d8884e43-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/connect_top.html" id="connect_top-d8884e43-link">Connect to <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Connect your mobile or laptop to <span class="ph">Airwall</span> to
+                get access to protected resources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="idn_administrative-d8884e1435" class="topicref" data-id="idn_administrative" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action idn_administrative-d8884e1435-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_administrative.html" id="idn_administrative-d8884e1435-link">Manage <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Provision and manage <span class="ph">Airwall Edge Services</span> and devices, monitor activity, and install updates.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_docs-d8884e4585" class="topicref" data-id="web_top_docs" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_docs-d8884e4585-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_docs.html" id="web_top_docs-d8884e4585-link">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="web_content_start-d8884e4607" class="topicref" data-id="web_content_start" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_content_start-d8884e4607-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/get_started.html" id="web_content_start-d8884e4607-link">Get Started with the <span class="ph">Airwall Solution</span></a><div class="wh-tooltip"><p class="shortdesc">Get started with the <span class="ph">Airwall</span>
+                solution.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_howto-d8884e5102" class="topicref" data-id="web_top_howto" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_howto-d8884e5102-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_install_config.html" id="web_top_howto-d8884e5102-link">Deploy an <span class="ph">Airwall</span> secure network</a><div class="wh-tooltip"><p class="shortdesc">Learn how to deploy the Airwall solution, connect devices, set up <span class="ph">overlays</span>,
+                configure device trust, and give people access to your Airwall secure
+                network.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="deploy_checklist-d8884e5123" class="topicref" data-id="deploy_checklist" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_checklist.html" id="deploy_checklist-d8884e5123-link">Deployment Checklist</a><div class="wh-tooltip"><p class="shortdesc">A checklist for deploying the <span class="ph">Airwall Solution</span></p></div></div></div></li><li role="treeitem"><div data-tocid="deploy_roadmap-d8884e5153" class="topicref" data-id="deploy_roadmap" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_roadmap.html#deploy_roadmap" id="deploy_roadmap-d8884e5153-link">Deployment Roadmap</a><div class="wh-tooltip"><p class="shortdesc">A roadmap to the most helpful topics for getting the <span class="ph">Airwall Solution</span> up and running         on your network.</p></div></div></div></li><li role="treeitem"><div data-tocid="net_browse_require-d8884e5317" class="topicref" data-id="net_browse_require" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/depl_shared_net.html" id="net_browse_require-d8884e5317-link">Confirm your Network Settings</a><div class="wh-tooltip"><p class="shortdesc">Check that your network is set up to start deploying the <span class="ph">Airwall Solution</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="lic_top-d8884e5339" class="topicref" data-id="lic_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action lic_top-d8884e5339-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/lic_top.html" id="lic_top-d8884e5339-link">License a Conductor and Airwall Edge Services</a><div class="wh-tooltip"><p class="shortdesc">Everything you need to know about licensing your <span class="ph">Conductor</span> and <span class="ph">Airwall Edge Services</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="cond_deploy_config-d8884e5724" class="topicref" data-id="cond_deploy_config" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action cond_deploy_config-d8884e5724-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_deploy_config.html" id="cond_deploy_config-d8884e5724-link">Deploy and Configure a Conductor</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Airwall Conductor</span> helps you deploy, configure, administer, and update your <span class="ph">Airwall Solution</span>. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="cond_install-d8884e5741" class="topicref" data-id="cond_install" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action cond_install-d8884e5741-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/conductor_setup.html" id="cond_install-d8884e5741-link">Deploy a <span class="ph">Conductor</span></a><div class="wh-tooltip"><p class="shortdesc">To set up a <span class="ph">Conductor</span> for the first time, you need to configure a few basic settings. After completing the following,   you can connect the <span class="ph">Conductor</span>   to your underlay.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="cond_deploy_wizard-d8884e5768" class="topicref" data-id="cond_deploy_wizard" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_deploy_wizard.html" id="cond_deploy_wizard-d8884e5768-link"><span class="ph">Conductor</span> Configuration Wizard Settings</a><div class="wh-tooltip"><p class="shortdesc">Here are the settings you can configure in the <span class="ph">Conductor</span> Configuration         Wizard. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="conductor_setup_physical-d8884e5801" class="topicref" data-id="conductor_setup_physical" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action conductor_setup_physical-d8884e5801-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/conductor_setup_physical.html" id="conductor_setup_physical-d8884e5801-link">Deploy a Physical <span class="ph">Conductor</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Tempered</span> offers two         physical <span class="ph">Conductor</span>         models, the <span class="ph">Conductor</span>         400 Series and the <span class="ph">Conductor</span> 500 Series.         Both are 1U rack-mount security appliances that facilitate private overlay networks between         customer-provided equipment and devices.</p></div></div></div></li><li role="treeitem"><div data-tocid="conductor_setup_cloud-d8884e5929" class="topicref" data-id="conductor_setup_cloud" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/conductor_setup_cloud.html" id="conductor_setup_cloud-d8884e5929-link">Deploy a <span class="ph">Conductor</span> on a Cloud Platform</a><div class="wh-tooltip"><p class="shortdesc">You can deploy a <span class="ph">Tempered</span>         <span class="ph">Conductor</span> on several         cloud platforms and manage physical, virtual, and cloud <span class="ph">Airwall Edge Services</span> and <span class="ph">Airwall Agents</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="cond_deploy_alibaba_deploy_a_conductor_on_alibaba_cloud-d8884e5966" class="topicref" data-id="cond_deploy_alibaba_deploy_a_conductor_on_alibaba_cloud" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_deploy_alibaba.html#cond_deploy_alibaba_deploy_a_conductor_on_alibaba_cloud" id="cond_deploy_alibaba_deploy_a_conductor_on_alibaba_cloud-d8884e5966-link">Deploy a Conductor on Alibaba Cloud</a><div class="wh-tooltip"><p class="shortdesc">You can deploy an Airwall Conductor on Alibaba Cloud to manage physical, virtual, and         cloud Airwall Edge Services, and Airwall Agents. Use the following steps to deploy a         Conductor on Alibaba Cloud.</p></div></div></div></li><li role="treeitem"><div data-tocid="install_cond_aws-d8884e6058" class="topicref" data-id="install_cond_aws" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/install_cond_aws.html#install_cond_aws" id="install_cond_aws-d8884e6058-link">Deploy a <span class="ph">Conductor</span> on Amazon Web Services (AWS)</a><div class="wh-tooltip"><p class="shortdesc">You can deploy an  <span class="ph">Airwall Conductor</span> on AWS         and manage physical, virtual, and cloud <span class="ph">Airwall Edge Services</span>, and <span class="ph">Airwall Agents</span>. Use the         following steps to deploy a <span class="ph">Conductor</span> on the AWS         platform.</p></div></div></div></li><li role="treeitem"><div data-tocid="install_cond_azure-d8884e6224" class="topicref" data-id="install_cond_azure" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/install_cond_azure.html#install_cond_azure" id="install_cond_azure-d8884e6224-link">Deploy a <span class="ph">Conductor</span> on Microsoft Azure</a><div class="wh-tooltip"><p class="shortdesc">You can deploy an <span class="ph">Airwall Conductor</span> on Azure         and manage physical, virtual, and cloud <span class="ph">Airwall Edge Services</span>, and <span class="ph">Airwall Agents</span>. Use the         following steps to deploy a <span class="ph">Conductor</span> on the         Microsoft Azure platform.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="install_cond_gcp-d8884e6336" class="topicref" data-id="install_cond_gcp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/install_cond_gcp.html#install_cond_gcp" id="install_cond_gcp-d8884e6336-link">Deploy a <span class="ph">Conductor</span> on the Google Cloud Platform (GCP)</a><div class="wh-tooltip"><p class="shortdesc">You can deploy an   <span class="ph">Airwall Conductor</span> on GCP         and manage physical, virtual, and cloud <span class="ph">Airwall Edge Services</span>, and <span class="ph">Airwall Agents</span>. Use the         following steps to deploy on the Google Cloud platform.</p></div></div></div></li><li role="treeitem"><div data-tocid="depl_cond_vmware-d8884e6567" class="topicref" data-id="depl_cond_vmware" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/conductor_setup_esxi.html" id="depl_cond_vmware-d8884e6567-link">Deploy a <span class="ph">Conductor</span> in VMware ESX/ESXi</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="conductor_setup_hyperv-d8884e6610" class="topicref" data-id="conductor_setup_hyperv" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/conductor_setup_hyperv.html#conductor_setup_hyperv" id="conductor_setup_hyperv-d8884e6610-link">Deploy a <span class="ph">Conductor</span> in Microsoft Hyper-V</a><div class="wh-tooltip"><p class="shortdesc">The virtualization server role for Windows Server 2012 R2 or 2016 is called Hyper-V         Manager. The following documentation show the steps to implement and manage a secure <span class="ph">Conductor</span> on Hyper-V. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="conductor_configure-d8884e6771" class="topicref" data-id="conductor_configure" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action conductor_configure-d8884e6771-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/conductor_configure.html" id="conductor_configure-d8884e6771-link">Configure a <span class="ph">Conductor</span></a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph uicontrol">Settings</span> page contains many configurable options to help         you customize <span class="ph">Conductor</span>         behavior to support your environment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="config_user_auth_pwd-d8884e7148" class="topicref" data-id="config_user_auth_pwd" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action config_user_auth_pwd-d8884e7148-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/config_user_auth_pwd.html" id="config_user_auth_pwd-d8884e7148-link">Configure Authentication Options</a><div class="wh-tooltip"><p class="shortdesc">Manage the settings for user login authentication, such as password requirements and         lockout time.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cond_adv_config-d8884e7550" class="topicref" data-id="cond_adv_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cond_adv_config-d8884e7550-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_adv_config.html" id="cond_adv_config-d8884e7550-link">Optional Conductor Configuration</a><div class="wh-tooltip"><p class="shortdesc">How to configure optional features on your <span class="ph">Conductor</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="setup_hip_services-d8884e7854" class="topicref" data-id="setup_hip_services" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action setup_hip_services-d8884e7854-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/setup_aws.html" id="setup_hip_services-d8884e7854-link">Deploy and Configure <span class="ph">Airwall Edge Services</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Airwall Edge Services</span> let     you securely connect managed endpoints, such as laptops, PCs, tablets, and     smartphones.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="device_mgmt-d8884e11603" class="topicref" data-id="device_mgmt" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action device_mgmt-d8884e11603-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/device_mgmt.html" id="device_mgmt-d8884e11603-link">Connect and Configure Devices</a><div class="wh-tooltip"><p class="shortdesc">As you prepare to connect devices to <span class="ph">Airwall Gateways</span>, you may want your <span class="ph">Airwall Gateway</span> product guide available   to identify the ports reserved for connecting devices you want to protect.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="overlay_config-d8884e11959" class="topicref" data-id="overlay_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action overlay_config-d8884e11959-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/overlay_config.html" id="overlay_config-d8884e11959-link">Create and Manage an <span class="ph">Overlay</span> (Protected) Network</a><div class="wh-tooltip"><p class="shortdesc">Create an <span class="ph">overlay</span>     (protected) network for your deployment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="device_trust-d8884e12395" class="topicref" data-id="device_trust" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action device_trust-d8884e12395-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/device_trust.html" id="device_trust-d8884e12395-link">Configure Device Trust</a><div class="wh-tooltip"><p class="shortdesc">Configure device trust to set up secure communication between devices in your <span class="ph">Airwall secure network</span>.  </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cloud_prov_setup-d8884e12591" class="topicref" data-id="cloud_prov_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cloud_prov_setup-d8884e12591-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cloud_prov_setup.html" id="cloud_prov_setup-d8884e12591-link">Set up Cloud Providers</a><div class="wh-tooltip"><p class="shortdesc">Setting up one of the supported cloud providers in your <span class="ph">Conductor</span> makes it         easier to deploy <span class="ph">Airwall Gateways</span>         and High-Availability <span class="ph">Conductors</span> directly from         your <span class="ph">Conductor</span>. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="top_integrations-d8884e12784" class="topicref" data-id="top_integrations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action top_integrations-d8884e12784-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/top_integrations.html" id="top_integrations-d8884e12784-link">Integrate Third-party Services</a><div class="wh-tooltip"><p class="shortdesc">How to integrate the <span class="ph">Airwall Solution</span> with         third-party services.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_diagnostics-d8884e13413" class="topicref" data-id="web_top_diagnostics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_diagnostics-d8884e13413-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_diagnostics.html" id="web_top_diagnostics-d8884e13413-link">Diagnostics and Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">There are various tools available on our platform to help you diagnose
+                problems you may encounter. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="advisory_bulletins-d8884e14491" class="topicref" data-id="advisory_bulletins" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action advisory_bulletins-d8884e14491-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/advisory_bulletins.html" id="advisory_bulletins-d8884e14491-link">Security Notices, Advisory Notices, and Product Bulletins</a><div class="wh-tooltip"><p class="shortdesc">Go here for important information on known issues, end-of-life notices, and
+                other product updates.</p></div></div></div></li><li role="treeitem"><div data-tocid="web_top_api_ref-d8884e14922" class="topicref" data-id="web_top_api_ref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_api_ref.html" id="web_top_api_ref-d8884e14922-link"><span class="ph">Airwall</span> API</a><div class="wh-tooltip"><p class="shortdesc">You can access the <span class="ph">Airwall</span> API Reference from your    <span class="ph">Conductor</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_downloads-d8884e14947" class="topicref" data-id="web_top_downloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_downloads-d8884e14947-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_downloads.html" id="web_top_downloads-d8884e14947-link">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support_top-d8884e16110" class="topicref" data-id="support_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support_top-d8884e16110-link" class="wh-expand-btn"></span><div class="title"><a href="../../support_top.html" id="support_top-d8884e16110-link">Get Support</a><div class="wh-tooltip"><p class="shortdesc">You can often find answers to your questions in <span class="ph">Airwall             help</span>. If you still need help, check here for help         getting support.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="install_cond_gcp">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Deploy a <span class="- topic/ph ph">Conductor</span> on
+        the Google Cloud Platform (GCP)</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">You can deploy an   <span class="- topic/ph ph">Airwall Conductor</span> on GCP
+        and manage physical, virtual, and cloud <span class="- topic/ph ph">Airwall Edge Services</span>, and <span class="- topic/ph ph">Airwall Agents</span>. Use the
+        following steps to deploy on the Google Cloud platform.</p>
+        <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Click the print icon <img class="- topic/image image" src="../images/printicon.png" alt="printer icon"/> in the top right to print or download this topic.</div>
+    </div>
+<article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title2" id="install_cond_gcp_prereq">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title2">Prerequisites</h2>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"></p>
+        <p class="- topic/p p" id="install_cond_gcp_prereq__get_started" data-ofbid="install_cond_gcp_prereq__get_started">To get started, make sure you have access to your Google Cloud account.
+            If you do not have an account, you can create a free <a class="- topic/xref xref" href="https://cloud.google.com/" target="_blank" rel="external noopener">Google</a> Cloud
+            account and upgrade it to a full account later. If you have an existing Google Cloud
+            account, make sure your billing information is set up. You cannot create a project until
+            you are able to link your billing information to your newly created project.</p>
+        <div class="- topic/note note note note_note" id="install_cond_gcp_prereq__gcp_prereq" data-ofbid="install_cond_gcp_prereq__gcp_prereq"><span class="note__title">Note:</span> You should be familiar with using Google Cloud before attempting to
+            deploy a <span class="- topic/ph ph">Tempered</span>
+            <span class="- topic/ph ph">Conductor</span> or <span class="- topic/ph ph">Airwall Gateway</span> on the
+            platform. To get started, we recommend you review the following content offered by Google:<ul class="- topic/ul ul">
+                <li class="- topic/li li"><a class="- topic/xref xref" href="https://cloud.google.com/docs/overview/" target="_blank" rel="external noopener">Google Cloud Platform Overview</a></li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="https://cloud.google.com/storage/docs/" target="_blank" rel="external noopener">Google Cloud Storage</a></li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="https://cloud.google.com/vpc/" target="_blank" rel="external noopener">Virtual Private Cloud</a></li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="https://cloud.google.com/compute/docs/" target="_blank" rel="external noopener">Google Compute Engine Documentation</a></li>
+            </ul></div>
+        <p class="- topic/p p" id="install_cond_gcp_prereq__cond_license" data-ofbid="install_cond_gcp_prereq__cond_license">A <span class="- topic/ph ph">Conductor</span> license
+            voucher is necessary at the end of this procedure if you want to start the <span class="- topic/ph ph">Conductor</span> and verify
+            it is set up correctly. Fulfillment will provide this to you in an email after your
+            purchase is complete. </p>
+    </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title3" id="install_cond_gcp_login">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title3">Log in to Google Cloud</h2>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"></p>
+        <p class="- topic/p p">From a Web browser, navigate to <a class="- topic/xref xref" href="https://console.cloud.google.com" target="_blank" rel="external noopener">https://console.cloud.google.com</a>. You will see
+            one of two pages, the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Getting Started</span> page if you have no
+            projects or the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Home</span> page if you have existing projects.</p>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title4" id="install_cond_gcp_project">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title4">Create and configure a project</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">A Google Cloud project organizes all of your resources into a logical group for
+            easier management. You will add the <span class="- topic/ph ph">Tempered</span>
+            <span class="- topic/ph ph">Conductor</span> to a new
+            or existing project, so you need to have a project created before you deploy the <span class="- topic/ph ph">Conductor</span>.<div class="- topic/note note note note_note"><span class="note__title">Note:</span> If
+                you are adding the <span class="- topic/ph ph">Conductor</span> to an
+                existing project, you can skip step 2 and proceed directly to step 3 in this
+                document.</div></section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the top bar of the Google Cloud page, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Select a
+                        project</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_select_project.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the upper-right corner of the Select a project dialog, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">New
+                        Project</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_project_dialog.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Project Name</span> field, enter a name for your new
+                    project. By default, your new project is assigned a default ID, which you can
+                    change by clicking <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit</span> to the right of the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Project ID</span> field.</span>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">If you want to add your project to an organization you have already created,
+                    select it in the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Location</span> field by clicking
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Browse</span> to the right. For more information about
+                    organizations, see <a class="- topic/xref xref" href="https://cloud.google.com/resource-manager/docs/quickstart-organizations" target="_blank" rel="external noopener">Quickstart Using Organizations</a> in the
+                    Google Cloud documentation.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_create_project.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Once you are finished, click <strong class="+ topic/ph hi-d/b ph b">Create</strong>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result">It will take a moment to set up your project. A notification window will indicate
+            when the operation is complete. You can then select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Home</span> in the
+            Google Cloud sidebar to access your dashboard.</section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title5" id="install_cond_gcp_firewall">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title5">Set up firewall rules</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">GCP firewall rules will manage the traffic coming into your instance on a network. By
+                default, you have a network with a default set of firewall rules for your region,
+                and you will need to make a few changes to set up your environment so the <span class="- topic/ph ph">Conductor</span> can
+                function correctly.</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> This step assumes you are using the default network for your region. If you would
+                like to create a separate virtual private cloud (VPC) network, please review the
+                topic <a class="- topic/xref xref" href="https://cloud.google.com/vpc/docs/vpc" target="_blank" rel="external noopener">Virtual Private Cloud (VPC) Network Overview</a> in the
+                Google Cloud documentation.</div>
+            <p class="- topic/p p">To set up firewall rules:</p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the Google Cloud sidebar, navigate to the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Networking</span>
+                    section, hover over <span class="+ topic/ph ui-d/uicontrol ph uicontrol">VPC network</span>, and select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Firewall rules</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_firewall_rules.png" width="600"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create Firewall Rule</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_create_rule.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Fill in the <strong class="+ topic/ph hi-d/b ph b">Create firewall rule</strong> page with the following
+                    information:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <dl class="- topic/dl dl">
+                        
+                            <dt class="- topic/dt dt dlterm">Name</dt>
+                            <dd class="- topic/dd dd">You can use any name you choose, but it must be lowercase with no
+                                spaces.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Description</dt>
+                            <dd class="- topic/dd dd">This can be anything you like. We recommend something descriptive
+                                such as <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Firewall access rules for </span><strong class="+ topic/ph hi-d/b ph b"><span class="- topic/ph ph">Tempered</span>
+                                    <span class="- topic/ph ph">Conductor</span></strong>.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Network</dt>
+                            <dd class="- topic/dd dd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">default</span> from the drop-down unless you
+                                are using a different network.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Direction of traffic</dt>
+                            <dd class="- topic/dd dd">Select the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Ingress</span> radio button.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Action on match</dt>
+                            <dd class="- topic/dd dd">Select the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Allow</span> radio button.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Targets</dt>
+                            <dd class="- topic/dd dd">Select Specific target tags from the drop-down.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Target tags</dt>
+                            <dd class="- topic/dd dd">
+                                <div class="- topic/p p">Enter
+                                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">tempered-conductor-rules</span><div class="- topic/note note note note_note"><span class="note__title">Note:</span> Remember
+                                        this tag. You will need it later in this
+                                    procedure.</div></div>
+                            </dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm"><strong class="+ topic/ph hi-d/b ph b">Source filter</strong></dt>
+                            <dd class="- topic/dd dd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">IP ranges</span> from the drop-down.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm"><strong class="+ topic/ph hi-d/b ph b">Source IP ranges</strong></dt>
+                            <dd class="- topic/dd dd">Enter <span class="+ topic/ph ui-d/uicontrol ph uicontrol">0.0.0.0/0</span>.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm"><strong class="+ topic/ph hi-d/b ph b">Protocols and ports</strong></dt>
+                            <dd class="- topic/dd dd">
+                                <p class="- topic/p p">Select the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Specified protocols and ports</span>
+                                    radio button and enter  <span class="+ topic/ph ui-d/uicontrol ph uicontrol">443,8096</span>.</p>
+                                <div class="- topic/note note note note_note"><span class="note__title">Note:</span> Do not check the box next to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">tcp</span> and
+                                    then select the field to enter your ports – the box will revert
+                                    to unchecked and disable both fields. Click only on the field to
+                                    enter your ports.</div>
+                                <p class="- topic/p p">Leave all other fields as is.</p>
+                                <div class="- topic/p p">Your page should look similar to the image below:<br/><img class="- topic/image image" src="../images/gcp_rule_form.png" width="400"/><br/></div>
+                            </dd>
+                        
+                    </dl>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create</span>. It will take a moment to finish the
+                    operation. Once complete, you should see the following in your rules list:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_rules_list.png" width="600"/><br/>
+                </div>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title6" id="install_cond_gcp_image">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title6">Add a <span class="- topic/ph ph">Conductor</span> Image</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">Add a <span class="- topic/ph ph">Conductor</span>
+                image to create an instance in your Google Cloud project. </p>
+            <p class="- topic/p p">To add an image:</p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the Google Cloud sidebar, navigate to the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Compute</span>
+                    section, hover over <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Compute Engine</span>, and select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Images</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_compute_engine.png" width="600"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create Image</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_create_image.png" width="600"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Fill in the <strong class="+ topic/ph hi-d/b ph b">Create an image</strong> page with the following information:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <dl class="- topic/dl dl">
+                        
+                            <dt class="- topic/dt dt dlterm">Name</dt>
+                            <dd class="- topic/dd dd">Enter <span class="+ topic/ph ui-d/uicontrol ph uicontrol">conductor-r216-1144</span>.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Description</dt>
+                            <dd class="- topic/dd dd">Enter <span class="- topic/ph ph">Tempered</span>
+                                <span class="- topic/ph ph">Conductor</span><span class="+ topic/ph ui-d/uicontrol ph uicontrol"> version 2.1.6</span>.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Source</dt>
+                            <dd class="- topic/dd dd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Cloud Storage file</span> from the
+                                drop-down.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Cloud Storage File</dt>
+                            <dd class="- topic/dd dd">
+                                <p class="- topic/p p">Enter
+                                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">tempered-image-storage/conductor-r216-1144.tar.gz</span>.</p>
+                            </dd>
+                        
+                    </dl>
+                    <p class="- topic/p p">You can leave all other fields as they are.</p>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create</span>. It will take a moment to finish the
+                    operation.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <p class="- topic/p p">Once complete, you should see the following in your images list:</p>
+                    <br/><img class="- topic/image image" src="../images/gcp_image_list.png" width="400"/><br/>
+                    <div class="- topic/note note note note_note"><span class="note__title">Note:</span> If you have multiple projects, make sure the image is associated with your
+                        desired project, listed in the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Created by</span>
+                        column.</div>
+                </div>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title7" id="install_cond_create_instance">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title7">Create a <span class="- topic/ph ph">Conductor</span>
+        Instance</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">The <span class="- topic/ph ph">Conductor</span>
+            image can now be used to create a virtual machine instance. The image supplied by <span class="- topic/ph ph">Tempered</span> contains the <span class="- topic/ph ph">Conductor</span> and is
+            relatively small in size. Configuration information and storage requires a second hard
+            disk, which you will set up as part of the instructions below. This image must be a
+            minimum of 120 GB.<p class="- topic/p p">To create a <span class="- topic/ph ph">Conductor</span>
+                instance:</p></section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select the image in the list by clicking on its name. You have several options
+                    available: Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create Instance</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_create_instance.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Fill in the <strong class="+ topic/ph hi-d/b ph b">Create an instance</strong> page with the following
+                    information:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <dl class="- topic/dl dl">
+                        
+                            <dt class="- topic/dt dt dlterm">Name</dt>
+                            <dd class="- topic/dd dd">
+                                <p class="- topic/p p">Enter a name of your choice, but it must be lower case and
+                                    without spaces.</p>
+                            </dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Region</dt>
+                            <dd class="- topic/dd dd">Select the region of your choice from the drop-down.</dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Zone</dt>
+                            <dd class="- topic/dd dd">Select the zone of your choice from the drop-down.</dd>
+                        
+                    </dl>
+                    <p class="- topic/p p">You can leave all other fields as is.</p>
+                    <br/><img class="- topic/image image" src="../images/gcp_instance_page.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Management, security, disks, networking, sole
+                        tenancy</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Disks</span> tab, leave all settings as is and click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">+ Add new disk</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_disks_tab.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">New disk</span> dialog enter the following:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <dl class="- topic/dl dl">
+                        
+                            <dt class="- topic/dt dt dlterm">Name</dt>
+                            <dd class="- topic/dd dd">
+                                <p class="- topic/p p">You can leave this field as <span class="+ topic/ph ui-d/uicontrol ph uicontrol">disk 1</span>,
+                                    otherwise enter a name of your choice.</p>
+                            </dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Type</dt>
+                            <dd class="- topic/dd dd">
+                                <p class="- topic/p p">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Standard persistent disk</span> from the
+                                    drop-down.</p>
+                            </dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Source type</dt>
+                            <dd class="- topic/dd dd">
+                                <p class="- topic/p p">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Blank disk</span>.</p>
+                            </dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Deletion rule</dt>
+                            <dd class="- topic/dd dd">
+                                <p class="- topic/p p">Select the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Delete disk</span> radio button</p>
+                            </dd>
+                        
+                        
+                            <dt class="- topic/dt dt dlterm">Size (GB)</dt>
+                            <dd class="- topic/dd dd">
+                                <p class="- topic/p p">Enter the value <span class="+ topic/ph ui-d/uicontrol ph uicontrol">200</span></p>
+                            </dd>
+                        
+                    </dl>
+                    <p class="- topic/p p">You can leave all other settings as is.</p>
+                    <br/><img class="- topic/image image" src="../images/gcp_disk_form.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Done</span>. The dialog will close, and you should see
+                    the following:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_disk_complete.png" width="300"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Networking</span> tab to the right of the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Disk</span> tab and enter the tag name you created for your
+                    firewall rules in step 3.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_networking_tab.png" width="400"/><br/>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create</span>. It will take a moment to finish the
+                    operation. Once complete, you should see the following:</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <br/><img class="- topic/image image" src="../images/gcp_instance_complete.png" width="600"/><br/>
+                    <div class="- topic/note note note note_note"><span class="note__title">Note:</span> The <span class="+ topic/ph ui-d/uicontrol ph uicontrol">External IP</span> for your instance is the address
+                        you will use to connect to the <span class="- topic/ph ph">Conductor</span>.</div>
+                </div>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title8" id="install_cond_azure_verify">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title8">Verify, Configure, Provision, and License a Cloud <span class="- topic/ph ph">Conductor</span></h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">At this point the <span class="- topic/ph ph">Conductor</span> instance
+            is running in your cloud provider. <div class="- topic/p p">To verify, paste your <span class="- topic/ph ph">Conductor</span> IP
+                into a browser window. It should show you the Initial <span class="- topic/ph ph">Conductor</span>
+                Configuration page. To log in, configure, and license your <span class="- topic/ph ph">Conductor</span>, see
+                    <a class="- topic/xref xref" href="login_secure_admin.html" title="The first step in setting up a Conductor is to log in and configure it.">Log in and Configure the Conductor</a>. <div class="- topic/note note note note_note"><span class="note__title">Note:</span> In v2.2.8 and earlier, it shows
+                    the Provisioning page. See <a class="- topic/xref xref" href="conductor_setup_initial.html" title="To get a Conductor up and running, you need license and provision it. You need your licensing voucher to complete these steps.">License and Provision a Conductor (v2.2.8 and earlier)</a>.</div></div><p class="- topic/p p">It may take several minutes for the <span class="- topic/ph ph">Conductor</span> to
+                become available after it starts, so if you attempt to access it and your browser
+                appears to stop responding, please try again in a few minutes. </p><div class="- topic/p p">Here are the default passwords for cloud <span class="- topic/ph ph">Conductors</span>. You are
+                prompted to change the password as soon as you log in:<ul class="- topic/ul ul">
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Alibaba Cloud</strong> – Tnw-&lt;instanceID&gt;</li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Amazon Web Services</strong> – Tnw-&lt;instanceID&gt;</li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Microsoft Azure</strong> – Tnw-&lt;privateIpOfPublicNic&gt;</li>
+                    <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Google Cloud</strong> – Tnw-&lt;instanceID&gt;</li>
+                </ul><div class="- topic/note note note note_note"><span class="note__title">Note:</span> In Microsoft Azure, if you do not see a password on the Azure Outputs
+                    page next to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">conductorPassword</span>, it is likely you are not
+                    using the Managed image. </div></div><div class="- topic/note note note note_note"><span class="note__title">Note:</span> When running the <span class="- topic/ph ph">Conductor</span> for
+                the first time, you may receive notifications indicating the connection is not
+                private. Once you have finished configuring the <span class="- topic/ph ph">Conductor</span>, you
+                can install a custom certificate on the <span class="- topic/ph ph">Conductor</span> that
+                prevents these notifications in the future.</div></section>
+        <section class="- topic/section task/postreq section postreq">For more information, see:<ul class="- topic/ul ul">
+                <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Conductor v2.2.8 and earlier only</strong> – <a class="- topic/xref xref" href="conductor_setup_initial.html" title="To get a Conductor up and running, you need license and provision it. You need your licensing voucher to complete these steps.">License and Provision a Conductor (v2.2.8 and earlier)</a></li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="login_secure_admin.html" title="The first step in setting up a Conductor is to log in and configure it.">Log in and Configure the Conductor</a></li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="lic_add.html" title="The first step in licensing Airwall Edge Services is to add your licensing vouchers to the Conductor.">Add Airwall Edge Service Licenses to the Conductor</a></li>
+                <li class="- topic/li li"><a class="- topic/xref xref" href="cond_deploy_wizard.html" title="Here are the settings you can configure in the Conductor Configuration Wizard.">Conductor Configuration Wizard Settings</a></li>
+            </ul></section>
+    </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title9" id="install_cond_stub_additional">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title9">Additional Information</h2>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"></p>
+        <p class="- topic/p p">Once your <span class="- topic/ph ph">Conductor</span>
+            is installed, you can configure and manage it as you would a physical <span class="- topic/ph ph">Conductor</span>. See <a class="- topic/xref xref" href="conductor_configure.html" title="The Settings page contains many configurable options to help you customize Conductor behavior to support your environment.">Configure a Conductor</a>. For additional help, you can <span class="- topic/ph ph">search</span>
+            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Airwall help</span> by using the search bar at the top of the page or
+            the navigation links to the left.</p>
+    </div>
+</article></article></article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns:whc="http://www.oxygenxml.com/webhelp/components"></whc:webhelp_feedback>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#install_cond_gcp_prereq" data-tocid="install_cond_gcp_prereq">Prerequisites</a></li><li class="topic-item"><a href="#install_cond_gcp_login" data-tocid="install_cond_gcp_login">Log in to Google Cloud</a></li><li class="topic-item"><a href="#install_cond_gcp_project" data-tocid="install_cond_gcp_project">Create and configure a project</a></li><li class="topic-item"><a href="#install_cond_gcp_firewall" data-tocid="install_cond_gcp_firewall">Set up firewall rules</a></li><li class="topic-item"><a href="#install_cond_gcp_image" data-tocid="install_cond_gcp_image">Add a <span class="- topic/ph ph">Conductor</span> Image</a></li><li class="topic-item"><a href="#install_cond_create_instance" data-tocid="install_cond_create_instance">Create a <span class="- topic/ph ph">Conductor</span>
+        Instance</a></li><li class="topic-item"><a href="#install_cond_azure_verify" data-tocid="install_cond_azure_verify">Verify, Configure, Provision, and License a Cloud <span class="- topic/ph ph">Conductor</span></a></li><li class="topic-item"><a href="#install_cond_stub_additional" data-tocid="install_cond_stub_additional">Additional Information</a></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <footer class="navbar navbar-default wh_footer" data-whc_version="21.0">
+  <div class=" footer-container  mx-auto">
+    <div>
+    <p> 
+        Go to: <a href="http://webhelp.tempered.io/webhelp-ft" target="_blank">Airwall Teams help</a> or <a href="http://webhelp.tempered.io/webhelp/webhelp222" target="_blank">pre-2.2.3 Tempered HIPswitch Help</a>.</p>
+    <p>© Copyright 2023 <a href="https://tempered.io">tempered.io</a> | <a href="https://tempered.io/resources/terms-of-product-sale-license-and-warranty" target="_blank">Terms of Product Sale, License and Warranty</a></p>
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

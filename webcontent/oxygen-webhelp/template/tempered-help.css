@@ -1,0 +1,683 @@
+/*
+ * ==============================================
+ * Tempered WebHelp Template Skin
+ * v2.4 on 10.Mar.2022
+ * w.wildwood@tempered.io
+ * ==============================================
+ */
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Fonts
+ *
+ */
+/* @import url("https://fonts.googleapis.com/css?family=Lato:400,700,300");*/
+
+body{
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    background-color: rgb(255,255,255);
+}
+body, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: initial;
+}
+/*
+ * ------------------------------------------------------------------
+ * Image borders
+ */
+ .image {
+    border-style: solid;
+    border-width: 1px; 
+    border-color: #d0cfd4;
+    }
+  
+/* 
+ *  ------------------------------------------------------------------
+ *
+ * Standard HTML Elements
+ *
+ */
+ dt {
+     background-color: #f4f4f8;
+     padding: 2px;
+ }
+ code {
+    background-color: #f4f4f8;
+    color: #222222;
+}
+pre {
+    background-color: #f4f4f8;
+}
+/*
+ * ------------------------------------------------------------------
+ *
+ * Fight with bootstrap
+ *
+ */
+.navbar-brand{
+    height:auto;
+}
+.navbar {
+    border:none;
+    border-radius:0;
+    margin:0;
+}
+a,
+a:hover,
+a:visited{
+    color:#4864DE;
+}
+a:hover{
+    text-decoration: none;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Special Tempered Settings
+ *
+ */
+ 
+
+ kbd {
+   color: #3d3d40;
+   background-color: transparent;
+   font-style: italic;
+ }
+ .important {
+  padding: 5px;
+  background-color: #f4f4f8;
+  border: 1px solid #ED0B32;
+  border-radius: 5px;
+}
+.tasktroubleshooting {
+  padding: 5px;
+  background-color: #f4f4f8;
+  border: 1px solid #00a083;
+  border-radius: 5px;
+}
+span.ph.supportmeta_platform {
+  padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #00A083;
+    border-radius: 3px;
+}
+span.ph.supportmeta_product {
+  padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #4864DE;
+    border-radius: 3px;
+}
+span.ph.supportmeta_relnote {
+  padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #6F6F78;
+    border-radius: 3px;
+}
+span.ph.supportmeta_audience {
+  padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #ED0B32;
+    border-radius: 3px;
+}
+a.taggedlink {
+  padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #4864DE;
+    border-radius: 3px;
+}
+.hipnet_intro {
+  color: #3D3D40;
+  font-size: 12pt;
+  font-style: oblique;
+  font-weight: bold;
+  text-align: center;
+  margin-left:50px;
+  margin-right: 50px;
+}
+.hipnet_tagline {
+  color: #3D3D40;
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+}
+.draft-comment {
+  padding: 10px;
+}
+
+.note_tip {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4px 8px;
+  font-size: 100%;
+  color: #000;
+  border-radius: 3px;
+}
+
+.note {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4px 8px; 
+  font-size: 100%;
+  color: #000;
+  border-radius: 3px;
+}
+
+.indev::before {
+  padding: 2px 4px;
+  margin-right: .3em;
+  font-size: 90%;
+  color: #fff;
+  background-color: #ED0B32;
+  border-radius: 3px;
+  content: "In Development";
+}
+
+p.callout {
+  padding: 4px 8px;
+    font-size: 90%;
+    color: #000;
+    background-color: #f4f4f8;
+    border-radius: 3px;
+}
+
+p.callout::before {
+  content: "You should know: ";
+  font-weight: bold;
+}
+
+.embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
+  background-color: rgb(255,255,255);
+}
+/*  'be invisible' disappearing, can't hack what you can't see appearing */
+ 
+ .beinvisible:hover {
+     opacity: 0;
+ }
+ 
+ .beinvisible:hover .canthack{
+  opacity:1;
+}
+
+.beinvisible {
+    opacity: 1;
+    visibility: initial;
+    color: #6f6f78;
+    transition: opacity 3s;
+}
+ 
+.canthack:hover {
+     opacity: 1;
+ }
+
+.canthack {
+    opacity: 0;
+    visibility: initial;
+    color: #6f6f78;
+    transition: opacity 3s;
+}
+/*
+* Turn off expand/collapse
+*/
+.wh_expand_btn {
+display: none;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Headers
+ *
+ */
+.wh_header {
+  background: #3d3d40;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Publication titles
+ *
+ */
+ .wh_publication_title {
+   padding-left: 20px;
+   font-size: 32px;
+   font-weight: 800;
+ }
+ .wh_publication_title a {
+    color: #ffcd00;
+}
+
+.wh_logo + .wh_publication_title {
+    margin-left: 0em;
+}
+
+.sectiontitle {
+  margin-bottom: .5em;
+  padding-left: 1em;
+}
+
+.sectiontitle:not(.tasklabel), .wh_term_group > .wh_first_letter {
+    font-size: 1.4em;
+    margin-top: 1em;
+    padding-left: 0em;
+    font-weight: 400;
+}
+
+.topictitle2:not(.tasklabel) {
+    font-size: 1.4em;
+    margin-top: 1em;
+    padding-left: 0em;
+    font-weight: 500;
+}
+
+.topictitle3:not(.tasklabel) {
+    font-size: 1.3em;
+    margin-top: 1em;
+    padding-left: 0em;
+    font-weight: 400;
+}
+
+.topictitle4:not(.tasklabel) {
+    font-size: 1.3em;
+    margin-top: 1em;
+    padding-left: 0em;
+    font-weight: 400;
+    font-style:italic;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Menu
+ *
+ */
+.wh_top_menu {
+    font-size: 1.5em;
+    margin: .4em 0;
+    align-content: right;
+}
+.wh_top_menu a {
+  background: #3d3d40;
+  color: rgb(255,255,255);
+}
+
+/* The submenus */
+.wh_top_menu ul ul {
+    background-color: #2d2d2f;
+    font-size: .8em;
+}
+.wh_top_menu ul li:hover {
+    background-color: #2d2d2f;
+}
+.wh_top_menu ul ul li a:hover {
+    background: #2d2d2f;
+    font-size: 1em;
+}
+.wh_top_menu ul ul li {
+    border-top-color: #3d3d40;
+}
+
+/* DOB trying another tool tip removal solution that I found here https://www.oxygenxml.com/forum/other-issues/topic21051.html 
+.wh-tooltip-container .wh-tooltip,
+.wh_breadcrumb .topicref .wh-tooltip,
+.wh_publication_toc .topicref .wh-tooltip {
+     display: block;
+}
+*/
+
+/* DOB Added below to toggle off tooltips, which are flickering on live site 
+when opened with Chrome on Windows machine. Used info from here: 
+https://www.oxygenxml.com/forum/post56373.html. However, not working 
+*[class~="topicref"][data-state~="expanded"] *[class~="wh-tooltip"]{
+  display: none;
+}
+*/
+
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Link to the index.
+ *
+ */
+ .wh_indexterms_link a span{
+    display:none;
+}
+
+@media only screen and (max-width: 767px) {
+    .wh_indexterms_link a:before{
+        bottom: 0;
+    }
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Breadcrumb
+ *
+ */
+.wh_breadcrumb ol {
+    background-color: #eeeeee;
+}
+.wh_breadcrumb ol{
+    color: #6F6F78;
+}
+.wh_breadcrumb ol a {
+    color:inherit;
+}
+.wh_breadcrumb ol .active {
+    color: #4864DE;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Tools and navigation
+ *
+ */
+.wh_tools{
+    background-color: #f4f4f8;
+    margin: 1em 0 2em;
+}
+
+.wh_print_link,
+.wh_navigation_links,
+.wh_navigation_links .navnext,
+.wh_navigation_links .navprev{
+}
+.wh_print_link button,
+.webhelp_expand_collapse_sections,
+.wh_hide_highlight,
+.wh_navigation_links a,
+.wh_navigation_links a:hover,
+.wh_navigation_links a:active,
+.wh_navigation_links a:visited,
+.wh_print_link a:before,
+.wh_navigation_links a:before,
+.wh_navigation_links a:hover:before,
+.wh_navigation_links a:active:before,
+.wh_navigation_links a:visited:before{
+    color: #4864DE;
+    text-decoration: none;
+}
+.wh_child_links::before {
+  display: block;
+  content: "In this section:";
+  font-size: 110%;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Tiles
+ *
+ */
+.wh_tile {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 200px;
+    max-height: 200px;
+    justify-content: space-around;
+    background-color: #f4f4f8;
+    background-image: url("./images/tile-bar.png");
+    background-repeat: no-repeat;
+}
+.wh_tile_image {
+  padding-left: 0px;
+}
+.wh_tile_shortdesc{
+    margin-top:0.5em;
+    text-align: center;
+    font-size:110%;
+}
+.wh_tile_title{
+    font-family:'Helvetica Neue', 'Arial', sans-serif;
+    text-align: center;
+    font-size: 120%;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+.wh_tile_title  a{
+}
+.wh_tile_shortdesc{
+    text-align: center;
+}
+.wh_tile_text:after{
+    background: linear-gradient(to bottom, rgba(238, 238, 238, 0), rgba(238, 238, 238, 1) 50%);
+}
+@media only screen and (max-width: 767px) {
+    .wh_tile > div{
+        height: auto;
+    }
+}
+/*.wh_tiles *[data-id='web_content_start']{
+    font-weight: bold;
+}*/
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Search area
+ *
+ */
+.wh_search_input {
+    display: block;
+    margin: 0em 0;
+    position: relative;
+    padding: 20px 0;
+}
+
+.wh_welcome:not(:empty){
+    font-size: 2.5em;
+    margin: 0 auto;
+    padding: 0 0 .5em 0;
+    text-shadow: none;
+    color:#040480;
+}
+
+.wh_search_textfield {
+    border: solid 1px #CCC;
+    border-radius: 5px;
+    padding: 0 0.5em;
+    font-size: 1.2em;
+    line-height: 2em;
+    height: auto;
+} 
+
+.wh_search_button {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    float: right;
+    width: 2.8em;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    padding: 0.6em 1em;
+    color: #fff;
+    background-color: #3d3d40;
+}
+
+
+/* Search autocomplete */
+.ui-menu-item {
+    font-size: 1.4em;
+}
+
+.ui-menu-item .ui-state-active {
+    background-color: #4864DE;
+}
+
+/* Search relative path */
+.searchresult li .relativePath a {
+    color: #006621;
+}
+/* Search autocomplete icons */
+.search-autocomplete-proposal-type-history a,
+.search-autocomplete-proposal-type-history a:hover,
+.search-autocomplete-proposal-type-history a:visited,
+.search-autocomplete-proposal-type-history a:active{
+    text-decoration: none;
+    color:inherit;
+    font-size: 0.8em;
+}
+.ui-state-active .search-autocomplete-proposal-type-history a,
+.ui-state-active .search-autocomplete-proposal-type-history a:hover,
+.ui-state-active .search-autocomplete-proposal-type-history a:visited,
+.ui-state-active .search-autocomplete-proposal-type-history a:active{
+    color: #fff;
+}
+
+/* Active search page */
+#wh-search-pagination > ul > li.active > a {
+    background-color: #4864DE;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    border-color: #4864DE !important;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Publication TOC
+ *
+ */
+.wh_publication_toc{
+    border-radius: 3px;
+    background-color: #f4f4f8;
+    padding: 1.5em 2em;
+    line-height: 2em;
+}
+.wh_publication_toc .active > .topicref a {
+    color: #4864DE;
+}
+.wh_publication_toc span, .wh_publication_toc a, .wh_publication_toc a:visited, .wh_publication_toc a:hover {
+    color: #6f6f78;
+}
+.wh_publication_toc a:hover {
+    text-decoration: underline;
+}
+.topictitle3{
+    font-weight: 400
+}
+@media only screen and (max-width: 767px) {
+    .wh_publication_toc {
+        border-radius: 0;
+        padding: 1em 0.5em;
+        margin-top: 10px;
+    }
+}
+
+/* ------------------------------------------------------------------
+ *
+ * Flex Containers
+ *
+ */
+
+.wh_content_flex_container {
+  background-color: rgb(255,255,255);
+}
+
+/* Remove extra space from tiles on homepage */
+.wh_content_area {
+    min-height: 300px;
+    flex-grow: 0;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Footer
+ *
+ */
+.wh_footer{
+    text-align: center;
+    padding: 1em;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Topic content
+ *
+ */
+.wh_topic_content,.wh_content_area {
+    background-color: rgb(255,255,255);
+    color: #3d3d40;
+    line-height: 1.7em
+}
+.wh_related_links,
+.wh_child_links,
+.wh_topic_content .related-links {
+    background-color: #f4f4f8;
+    padding: 1.5em;
+    margin-top: 1.5em;
+}
+.related-links a,
+.related-links a:visited {
+    color: #4864DE;
+    /*padding-bottom: .3em;*/
+    display:inline-block;
+}
+.wh_term_group {
+    padding-left: 0em;
+}
+
+li.link.ulchildlink {
+  padding-bottom: 1em;
+}
+/*
+ * ------------------------------------------------------------------
+ *
+ * Search results.
+ *
+ */
+.searchresult {
+    list-style: none;
+}
+.searchresult li a {
+    color:#3d3d40;
+}
+.searchresult .shortdesclink {
+    margin: .3em .5em 0 0;
+}
+.wh_search_expression{
+    font-weight:bold;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Index terms.
+ *
+ */
+.wh_index_terms span.wh_first_letter {
+    color: #4864de;
+    padding-left: 0em;
+}
+.wh_index_terms #indexList{
+    padding:0;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *
+ * Tree TOC for the main page. Not currently using. FUTURE
+ *
+ */
+.wh_main_page_toc{
+}

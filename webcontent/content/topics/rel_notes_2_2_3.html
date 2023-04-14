@@ -1,0 +1,1087 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="21.0">
+    <head><link rel="shortcut icon" href="../../logo.png"/><link rel="icon" href="../../logo.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="DC.rights.owner" content="(C) Copyright 2023"/><meta name="copyright" content="(C) Copyright 2023"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Release Date: Feb 6, 2020"/><meta name="DC.relation" content="../../content/topics/web_top_rel_notes.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="rel_notes_2_2_2"/>        
+      <title>Release Notes 2.2.3</title><!--  Generated with Oxygen version 24.0, build number 2022012605.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="rel_notes_2_2_2-d8884e15895"/><meta name="wh-source-relpath" content="content/topics/rel_notes_2_2_3.dita"/><meta name="wh-out-relpath" content="content/topics/rel_notes_2_2_3.html"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022012605"/><script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script><script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tempered-help.css?buildId=2022012605"/><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NX2TVTD'); //</script><!-- End Google Tag Manager --></head>
+
+    <body id="rel_notes_2_2_2" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        <!-- Google Tag Manager (noscript) --><noscript> &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2TVTD"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt; //</noscript><!-- End Google Tag Manager (noscript) -->
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="21.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../logo-48px.png" alt="Airwall help  be invisible    - you can't hack what you can't see"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Airwall help <sub class="ph sub"><sup class="ph sup beinvisible"> be invisible </sup>  <sup class="ph sup canthack"> - you can't hack what you can't see</sup></sub></span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' --> 
+                <!-- DOB commented this out to show the support menu without odd stray button
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                    aria-expanded="false" aria-label="${i18n(toggle.menu)}" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"/>
+                    
+                    
+                </button -->
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container" align="right"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support_top-d8884e16110-mi" data-tocid="support_top-d8884e16110" data-state="not-ready" class=" topicref " data-id="support_top"><span class="title"><a href="../../support_top.html">Get Support</a></span></span></li></ul></nav><!--DOB Added align to solve Support menu issue-->
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+        
+        <div class="container-fluid">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="web_top_downloads"><div class="title"><a href="../../content/topics/web_top_downloads.html">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div></li><li><div class="topicref" data-id="web_top_rel_notes"><div class="title"><a href="../../content/topics/web_top_rel_notes.html">Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Get information on the improvements, fixes, and known issues for each major
+                release of the <span class="ph">Airwall</span>
+                solution.</p></div></div></div></li><li class="active"><div class="topicref" data-id="rel_notes_2_2_2"><div class="title"><a href="../../content/topics/rel_notes_2_2_3.html">Release Notes 2.2.3</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Feb 6, 2020</p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 d-none d-md-block d-print-none">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="vid_overdemos-d8884e17" class="topicref" data-id="vid_overdemos" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../vid_overdemos.html" id="vid_overdemos-d8884e17-link">Video Overview and Demos</a><div class="wh-tooltip"><p class="shortdesc">Overviews and demos for the <span class="ph">Tempered</span>         <span class="ph">Airwall Solution</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect_top-d8884e43" class="topicref" data-id="connect_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect_top-d8884e43-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/connect_top.html" id="connect_top-d8884e43-link">Connect to <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Connect your mobile or laptop to <span class="ph">Airwall</span> to
+                get access to protected resources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="idn_administrative-d8884e1435" class="topicref" data-id="idn_administrative" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action idn_administrative-d8884e1435-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_administrative.html" id="idn_administrative-d8884e1435-link">Manage <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Provision and manage <span class="ph">Airwall Edge Services</span> and devices, monitor activity, and install updates.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_docs-d8884e4585" class="topicref" data-id="web_top_docs" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_docs-d8884e4585-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_docs.html" id="web_top_docs-d8884e4585-link">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_downloads-d8884e14947" class="topicref" data-id="web_top_downloads" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_downloads-d8884e14947-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_downloads.html" id="web_top_downloads-d8884e14947-link">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="downloads_latest-d8884e14962" class="topicref" data-id="downloads_latest" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action downloads_latest-d8884e14962-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_latest.html" id="downloads_latest-d8884e14962-link">Latest firmware and software</a></div></div></li><li role="treeitem"><div data-tocid="downloads_3_1_2-d8884e15043" class="topicref" data-id="downloads_3_1_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_1_2.html" id="downloads_3_1_2-d8884e15043-link">3.1.2 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_1_0-d8884e15053" class="topicref" data-id="downloads_3_1_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_1_0.html" id="downloads_3_1_0-d8884e15053-link">3.1.0 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_0_3-d8884e15096" class="topicref" data-id="downloads_3_0_3" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_0_3.html" id="downloads_3_0_3-d8884e15096-link">3.0.3 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_0_2-d8884e15106" class="topicref" data-id="downloads_3_0_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_0_2.html" id="downloads_3_0_2-d8884e15106-link">3.0.2 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_0_1-d8884e15116" class="topicref" data-id="downloads_3_0_1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_0_1.html" id="downloads_3_0_1-d8884e15116-link">3.0.1 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_3_0_0-d8884e15143" class="topicref" data-id="downloads_3_0_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_3_0_0.html" id="downloads_3_0_0-d8884e15143-link">3.0.0 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_13-d8884e15170" class="topicref" data-id="downloads_2_2_13" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_13.html" id="downloads_2_2_13-d8884e15170-link">2.2.13 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_12-d8884e15197" class="topicref" data-id="downloads_2_2_12" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_12.html" id="downloads_2_2_12-d8884e15197-link">2.2.12 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15224" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_11.html" id="downloads_2_2_2-d8884e15224-link">2.2.11 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15235" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_10.html" id="downloads_2_2_2-d8884e15235-link">2.2.10 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15245" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_8.html" id="downloads_2_2_2-d8884e15245-link">2.2.8 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15255" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_5.html" id="downloads_2_2_2-d8884e15255-link">2.2.5 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_2_2_2-d8884e15265" class="topicref" data-id="downloads_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_2_2_3.html" id="downloads_2_2_2-d8884e15265-link">2.2.3 firmware and software</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_cellular_packages-d8884e15275" class="topicref" data-id="downloads_cellular_packages" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_cellular_packages.html" id="downloads_cellular_packages-d8884e15275-link">Cellular modem firmware</a><div class="wh-tooltip"><p class="shortdesc">Firmware updated May 19, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_serial_drivers-d8884e15300" class="topicref" data-id="downloads_serial_drivers" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_serial_drivers.html" id="downloads_serial_drivers-d8884e15300-link">Serial drivers</a><div class="wh-tooltip"><p class="shortdesc">64-bit drivers updated Dec 16, 2020</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="firmware_older-d8884e15311" class="topicref" data-id="firmware_older" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action firmware_older-d8884e15311-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/firmware_older.html" id="firmware_older-d8884e15311-link">Older downloads</a><div class="wh-tooltip"><p class="shortdesc">Downloads for 2.1.x to 2.2.2 firmware and software versions. For firmware downloads         for versions 1.12.1 through 2.0.x, see the <a class="xref" href="https://webhelp.tempered.io/webhelp/webhelp222/content/topics/web_top_downloads.html" target="_blank" rel="external noopener">pre-2.2.3 software downloads page</a>.</p></div></div></div></li><li role="treeitem"><div data-tocid="downloads_hotfixes-d8884e15417" class="topicref" data-id="downloads_hotfixes" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/downloads_hotfixes.html" id="downloads_hotfixes-d8884e15417-link">Hotfixes</a><div class="wh-tooltip"><p class="shortdesc">Updated May 19, 2022</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_rel_notes-d8884e15432" class="topicref" data-id="web_top_rel_notes" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_rel_notes-d8884e15432-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_rel_notes.html" id="web_top_rel_notes-d8884e15432-link">Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Get information on the improvements, fixes, and known issues for each major
+                release of the <span class="ph">Airwall</span>
+                solution.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rel_notes_latest-d8884e15454" class="topicref" data-id="rel_notes_latest" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_latest.html" id="rel_notes_latest-d8884e15454-link">Latest Release Notes (v3.1.2)</a></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_1_1-d8884e15479" class="topicref" data-id="rel_notes_3_1_1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_1_2.html" id="rel_notes_3_1_1-d8884e15479-link">Release Notes v3.1.2</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: November 30, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_1_0-d8884e15492" class="topicref" data-id="rel_notes_3_1_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_1_0.html" id="rel_notes_3_1_0-d8884e15492-link">Release Notes v3.1.0</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Oct 13, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_0_3-d8884e15526" class="topicref" data-id="rel_notes_3_0_3" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_0_3.html" id="rel_notes_3_0_3-d8884e15526-link">Release Notes v3.0.3</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: May 10, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_0_2-d8884e15547" class="topicref" data-id="rel_notes_3_0_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_0_2.html" id="rel_notes_3_0_2-d8884e15547-link">Release Notes v3.0.2</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Apr 8, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_0_1-d8884e15560" class="topicref" data-id="rel_notes_3_0_1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_0_1.html" id="rel_notes_3_0_1-d8884e15560-link">Release Notes v3.0.1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Feb 3, 2022</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_3_0_0-d8884e15587" class="topicref" data-id="rel_notes_3_0_0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_3_0_0.html" id="rel_notes_3_0_0-d8884e15587-link">Release Notes v3.0.0</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Nov 2, 2021</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_13-d8884e15614" class="topicref" data-id="rel_notes_2_2_13" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_13.html" id="rel_notes_2_2_13-d8884e15614-link">Release Notes 2.2.13</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Jul 30, 2021</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_12_cond_HF15748-d8884e15641" class="topicref" data-id="rel_notes_2_2_12_cond_HF15748" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_12_cond_HF15748.html" id="rel_notes_2_2_12_cond_HF15748-d8884e15641-link">Release Notes 2.2.12 Hotfix – <span class="ph">Conductor</span> HF-15748</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: May 28, 2021 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_12-d8884e15657" class="topicref" data-id="rel_notes_2_2_12" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_12.html" id="rel_notes_2_2_12-d8884e15657-link">Release Notes 2.2.12</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: May 24, 2021</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_11_cond_HF1-d8884e15685" class="topicref" data-id="rel_notes_2_2_11_cond_HF1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_11_cond_HF1.html" id="rel_notes_2_2_11_cond_HF1-d8884e15685-link">Release Notes 2.2.11 Hotfix – <span class="ph">Conductor</span> HF-1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Apr 13, 2021 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_11_aw_HF2-d8884e15701" class="topicref" data-id="rel_notes_2_2_11_aw_HF2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_11_aw_HF2.html" id="rel_notes_2_2_11_aw_HF2-d8884e15701-link">Release Notes 2.2.11 Hotfix – <span class="ph">Airwall Gateway</span> HF-2</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Mar 30, 2021 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15717" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_11_aw_HF1.html" id="rel_notes_2_2_2-d8884e15717-link">Release Notes 2.2.11 Hotfix – <span class="ph">Airwall Gateway</span> HF-1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Mar 17, 2021 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_11-d8884e15733" class="topicref" data-id="rel_notes_2_2_11" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_11.html" id="rel_notes_2_2_11-d8884e15733-link">Release Notes 2.2.11</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Mar 15, 2021</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15746" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_10_aw_HF1.html" id="rel_notes_2_2_2-d8884e15746-link">Release Notes 2.2.10 Hotfix – <span class="ph">Airwall Gateway</span> HF-1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Dec 16, 2020 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15762" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_10_cond_HF1.html" id="rel_notes_2_2_2-d8884e15762-link">Release Notes 2.2.10 Hotfix – <span class="ph">Conductor</span> HF-1</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Dec 16, 2020 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15778" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_10.html" id="rel_notes_2_2_2-d8884e15778-link">Release Notes 2.2.10</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Nov 18, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15791" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8_cond_HF5.html" id="rel_notes_2_2_2-d8884e15791-link">Release Notes 2.2.8 Hotfix – <span class="ph">Conductor</span> HF-5</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Dec 18, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15807" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8_aw_HF3.html" id="rel_notes_2_2_2-d8884e15807-link">Release Notes 2.2.8 Hotfix – <span class="ph">Airwall Gateway</span> HF-3</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Oct 19, 2020 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15823" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8_cond_HF4.html" id="rel_notes_2_2_2-d8884e15823-link">Release Notes 2.2.8 Hotfix – <span class="ph">Conductor</span> HF-4</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Oct 19, 2020 </p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15839" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8_hotfix_13955.html" id="rel_notes_2_2_2-d8884e15839-link">Release Notes 2.2.8 Hotfix – <span class="ph">Airwall Gateway</span> Hotfix-13955</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Aug 4, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15856" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_8.html" id="rel_notes_2_2_2-d8884e15856-link">Release Notes 2.2.8</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Jul 17, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15869" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_5.html" id="rel_notes_2_2_2-d8884e15869-link">Release Notes 2.2.5</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Apr 17, 2020</p></div></div></div></li><li role="treeitem"><div data-tocid="rel_notes_2_2_2-d8884e15882" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_3_hotfix.html" id="rel_notes_2_2_2-d8884e15882-link">Release Notes 2.2.3 Hotfix</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Mar 27, 2020</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="rel_notes_2_2_2-d8884e15895" class="topicref" data-id="rel_notes_2_2_2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_2_2_3.html" id="rel_notes_2_2_2-d8884e15895-link">Release Notes 2.2.3</a><div class="wh-tooltip"><p class="shortdesc"><strong class="ph b">Release Date</strong>: Feb 6, 2020</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rel_notes_older-d8884e15908" class="topicref" data-id="rel_notes_older" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rel_notes_older-d8884e15908-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/rel_notes_older.html" id="rel_notes_older-d8884e15908-link">Older Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Release Notes for versions 2.1.2 through 2.2.2.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="untitled6-d8884e16023" class="topicref" data-id="untitled6" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action untitled6-d8884e16023-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/relnotes_retired_hotfixes.html" id="untitled6-d8884e16023-link">Release Notes for Retired Hotfixes</a><div class="wh-tooltip"><p class="shortdesc">These hotfixes have been retired.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="support_top-d8884e16110" class="topicref" data-id="support_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support_top-d8884e16110-link" class="wh-expand-btn"></span><div class="title"><a href="../../support_top.html" id="support_top-d8884e16110-link">Get Support</a><div class="wh-tooltip"><p class="shortdesc">You can often find answers to your questions in <span class="ph">Airwall             help</span>. If you still need help, check here for help         getting support.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Release Notes 2.2.3</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><strong class="+ topic/ph hi-d/b ph b">Release Date</strong>: Feb 6, 2020</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Introducing Tempered Airwall</h2><p class="- topic/p p"><span class="- topic/ph ph">Tempered's</span>
+                fully encrypted, virtual air-gap network security solution is now called <span class="- topic/ph ph">Airwall</span>. Our
+                product offerings are also changing to match our brand and make their functions
+                clearer.</p></section>
+        <section class="- topic/section section">
+            
+        </section>
+        <section class="- topic/section section" id="rel_notes_2_2_2__whats_new" data-ofbid="rel_notes_2_2_2__whats_new"><h2 class="- topic/title title sectiontitle">What’s New</h2>
+            
+            <dl class="- topic/dl dl">
+                
+                    <dt class="- topic/dt dt dlterm">New <span class="- topic/ph ph">Airwall</span> help</dt>
+                    <dd class="- topic/dd dd">
+                        <p class="- topic/p p">If you're looking for the previous Tempered Networks Technical
+                            Documentation, most is included in the new <span class="- topic/ph ph">Airwall</span> Help. You can also click the link on the home page to get to the
+                                pre-<span class="- topic/ph ph">Airwall</span> Help.</p>
+                    </dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">OpenID Connect support for <span class="- topic/ph ph">Airwall Agents</span></dt>
+                    <dd class="- topic/dd dd">
+                        <p class="- topic/p p">We have added OpenID Connect support for authenticating remote sessions
+                            on Android, iOS and macOS <span class="- topic/ph ph">Airwall Agents</span> (formerly Android, iOS, and OSx HIPclients). There is also now a
+                            global option to lock out clients that do not support user auth.</p>
+                    </dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">People groups as <span class="- topic/ph ph">Overlay</span> members/managers </dt>
+                    <dd class="- topic/dd dd">People Groups are now able to be members of <span class="- topic/ph ph">Overlay</span> Networks as well as Managers of <span class="- topic/ph ph">Overlay</span> Networks. Now user permissions can be configured entirely in an
+                        authentication provider such as LDAP or OpenID Connect via people group
+                        membership.</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">Lockdown Mode</dt>
+                    <dd class="- topic/dd dd">Lockdown Mode is now configurable from the <span class="- topic/ph ph">Airwall Conductor</span> for <span class="- topic/ph ph">Airwall Agents</span>
+                        (formerly HIPclients) that support this feature (currently supported by the
+                        Windows <span class="- topic/ph ph">Airwall Agent</span>).</dd>
+                
+                
+                    <dt class="- topic/dt dt dlterm">Cloud Linux <span class="- topic/ph ph">Airwall Servers</span></dt>
+                    <dd class="- topic/dd dd">The <span class="- topic/ph ph">Airwall Conductor</span> can create and deploy Linux <span class="- topic/ph ph">Airwall Servers</span>
+                        directly in any cloud provider, such as Azure, AWS, or Google.</dd>
+                
+            </dl>
+        </section>
+        <section class="- topic/section section" id="rel_notes_2_2_2__upgrade_considerations" data-ofbid="rel_notes_2_2_2__upgrade_considerations"><h2 class="- topic/title title sectiontitle">Upgrade Considerations</h2>
+            
+            <p class="- topic/p p">We recommend that you upgrade to 2.2.3 if:</p>
+            <table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col style="width:49.01960784313725%"/><col style="width:50.98039215686274%"/></colgroup><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0">You want to use any of the following features:</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">You were impacted by any issues discovered in prior releases,
+                                especially if you have any of the following:</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0">Multifactor Authentication</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <ul class="- topic/ul ul">
+                                    <li class="- topic/li li">A large number of spokes causes network issues</li>
+                                    <li class="- topic/li li">Issues with NTPD (Network Time Protocol daemon) not running
+                                        on Conductor</li>
+                                    <li class="- topic/li li">Broadcast traffic not forwarded across Overlay network</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody></table>
+            <div class="- topic/note note important note_important"><span class="note__title">Important:</span> If you are using SHA-1 for the ESP transform, you should convert
+                to SHA-256 before upgrading to 2.2.x.</div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">IMPORTANT: Migrating existing Deployments to 2.2.x</h2>
+            
+            <p class="- topic/p p">The 2.2.2 release brought a significant change to the base platform configuration and
+                capabilities of an Airwall Gateway/HIPswitch. <span class="- topic/ph ph">Conductors</span> after
+                2.2.2 will not be able to manage <span class="- topic/ph ph">Airwall Edge Services</span> prior
+                to version 2.0. See the note in the <a class="- topic/xref xref" href="rel_notes_2_2_2.html" title="Release Date: October 18 , 2019">Release Notes 2.2.2</a> for
+                information on upgrading <span class="- topic/ph ph">Airwall Edge Services</span> prior
+                to version 2.0.</p>
+        </section>
+        <section class="- topic/section section" id="rel_notes_2_2_2__fixes" data-ofbid="rel_notes_2_2_2__fixes"><h2 class="- topic/title title sectiontitle">Fixes</h2>
+            
+            <table class="- topic/table table frame-all" data-cols="4"><caption></caption><colgroup><col style="width:13.755158184319122%"/><col style="width:23.383768913342504%"/><col style="width:18.43191196698762%"/><col style="width:44.42916093535076%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_2_2__fixes__entry__1">ID</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_2_2__fixes__entry__2">Applies to</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_2_2__fixes__entry__3">Formerly Known As</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_2_2__fixes__entry__4">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12852</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Windows <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Windows</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Windows <span class="- topic/ph ph">Airwall Agent</span> wasn't handling re-address during interface (for example, cell to
+                                wi-fi) changes </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12683</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed an issue where large firmware update packages would
+                                sometimes fail to be installed via <span class="- topic/ph ph">Conductor</span>, Diagnostic mode, and airsh (hipsh).</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12613</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-250</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-250</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed an issue where port 8 (SFP portion) of the <span class="- topic/ph ph">Airwall Gateway</span>-250 does not get re-enabled after reconfiguring network
+                                interfaces. This issue affects firmware versions 2.2.0, 2.2.1, and
+                                2.2.2.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12582</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPapp-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">iOS <span class="- topic/ph ph">Airwall Agent</span> - 2x 'Sign-in Failed' pop up for invalid username &amp;
+                                password</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12579</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">iOS <span class="- topic/ph ph">Airwall Agent</span> not using 'DNS domain' from <span class="- topic/ph ph">Conductor</span></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12528</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android and iOS <span class="- topic/ph ph">Airwall Agents</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">
+                                <p class="- topic/p p">HIPclient-Android</p>
+                                <p class="- topic/p p">HIPclient-iOS</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Android and iOS <span class="- topic/ph ph">Airwall Agents</span> user auth status pages are not getting updated on toggling
+                                policies</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12510</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Android and iOS <span class="- topic/ph ph">Airwall Agents</span> user auth status pages are changing session expire time according
+                                to the current time of the phone.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12487</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Android <span class="- topic/ph ph">Airwall Agent</span> user auth Notification showing symbols instead of profile
+                                name</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12468</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Android <span class="- topic/ph ph">Airwall Agent</span> crash on overlay networks page when you click refresh with no
+                                peers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12463</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Syslog setting appears disabled after upgrade while it is still
+                                enabled</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12441</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">
+                                <p class="- topic/p p">Linux, macOS, and Windows <span class="- topic/ph ph">Airwall Agents</span></p>
+                                <p class="- topic/p p">OpenHIP</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">
+                                <p class="- topic/p p">HIPclient-Linux,</p>
+                                <p class="- topic/p p">HIPclient-OSX</p>
+                                <p class="- topic/p p">HIPclient-Win </p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Mac, Linux and Windows <span class="- topic/ph ph">Airwall Agents</span> now use and select an optimal relay when the underlay interface
+                                is set to 'auto'.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12404</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">A new cellular modem firmware (version 02.33.03.00) is available
+                                for <span class="- topic/ph ph">Airwall Gateway</span>-150 with the SFF-MOD-MC7430 modem. Please see the <a class="- topic/xref xref" href="downloads_cellular_packages.html" title="Firmware updated May 19, 2022">downloads
+                                page</a>.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12399</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">OpenHIP</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Reject ARP responses for loopback, multicast, broadcast and
+                                0.0.0.0</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12382</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Edge Services</span> online bar graph displays, then goes blank. </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12376</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">HTTP 422 error for some accounts after 2.2.1 &gt; 2.2.2 <span class="- topic/ph ph">Conductor</span> upgrade.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12373</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">iOS status page seems to not be updating</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12355</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">OpenHIP</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Broadcast IP packets not traversing tunnel properly</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12353</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Some <span class="- topic/ph ph">Airwall Gateway</span>-150s with part numbers (PLF-) ending in -02 and -03 were shipped
+                                with non-functional SFP ports due to a firmware bug. This is fixed
+                                in firmware version 2.2.3. Additionally, a hotfix is available to
+                                address this issue in firmware versions 2.1.6, 2.1.7, 2.2.0, 2.2.1,
+                                and 2.2.2.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12339</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">A regression in firmware versions 2.2.0, 2.2.1, and 2.2.2 caused
+                                    <span class="- topic/ph ph">Airwall Gateway</span>-150s to be unable to link with dual-speed or BiDi SFP/SFP+
+                                modules. Support for these SFPs is fixed in firmware 2.2.3.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12326</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Edge Services</span> fail to reconnect to <span class="- topic/ph ph">Conductor</span> after re-provisioning</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12318</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Android not using 'DNS domain' from <span class="- topic/ph ph">Conductor</span></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12311</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed an issue that was causing serial or modbus configured
+                                overlay ports to stop working after performing a reconnect.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12301</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed a bug that caused <span class="- topic/ph ph">Airwall Gateways</span> to lose their <span class="- topic/ph ph">Conductor</span> connection after installing a customer certificate requiring a
+                                reboot.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12293</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Modbus-RTU times out when multiple sessions are connected from
+                                one host.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12287</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-500</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-500</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed a bug that caused some IP broadcasts on the overlay network
+                                to cross into different subnets.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12285</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">macOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-OSX</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Mac unable to log in via username and password after switching to
+                                a different profile</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12276</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Do not allow a non-editor to be the rule editor of a Smart Device
+                                Group. </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12241</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">iOS needs to initiate pings for other side to reach it</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12230</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Do not remove port group configs during port detection</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12219</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">OpenHIP</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">When processing concurrent traffic to or from multiple peers
+                                    an<span class="- topic/ph ph">Airwall Gateway</span> may drop traffic for some tunnels.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12217</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall</span> Invitations</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPinvite</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Poor messaging of license sync errors during invite
+                                activation</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12214</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Monitor alert (flapping) settings do not result in an indication
+                                of frequent alerts</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12205</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Not able to remove NTP on the Standby</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12187</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Edge Services</span> uptime graph units scale incorrectly</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12179</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Deleting SoIP/Modbus settings when a description is
+                                edited</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12167</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Remove tags and end remote session on revoke</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12159</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Doesn't log device traffic reported by High-Availability
+                                standby</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12146</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Windows <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Win</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Windows <span class="- topic/ph ph">Airwall Agent</span> takes a very long time to appear in <span class="- topic/ph ph">Conductor</span> dashboard after license is granted</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12127</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">OpenHIP</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Detect unidirection traffic through tunnels which may indicate an
+                                extremely rare issue that causes tunneled traffic to be be lost and
+                                attempt to recovery tunnel by initiating a rekey</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12104</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Change license pop up blocking functionality to a temporarily
+                                dismissible banner</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12096</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Address Marvell WiFi "mwifiex" driver CVEs: CVE-2019-3846,
+                                CVE-2019-14814, CVE-2019-14815, CVE-2019-14816, and
+                                CVE-2019-14895</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12093</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Add DNS setting back to Android and iOS <span class="- topic/ph ph">Airwall Agents</span>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12092</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Gateway</span>-150 not maintaining HIP tunnels when configured with more than 10
+                                peers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12090</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">OpenHIP</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">In previous versions, HIP would buffer packets during the base
+                                exchange. This has been removed to mitigate a potential DoS from a
+                                local protected device, almost all protocols will re-transmit making
+                                the buffering unnecessary. If you encounter issues with esoteric
+                                protocols, please turn on auto-connect so the tunnels are brought up
+                                automatically.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12077</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">If fail-safe reboot is enabled in the Failover settings, the <span class="- topic/ph ph">Airwall Gateway</span> reboots whenever the initial reboot timeout is expired (assuming
+                                all links failing) ignoring the timeout for recurring
+                                reboot.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12076</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Invalid license vouchers shouldn't prevent customers from loading
+                                new valid vouchers</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12075</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Licensing</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Customer cannot remove invalid licenses due to license
+                                deficit</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12024</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed a bug that was causing validation errors in the port
+                                configuration UI after factory-reseting and re-connecting an <span class="- topic/ph ph">Airwall Gateway</span> to the same <span class="- topic/ph ph">Conductor</span>.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12005</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Device Match Rules rule "include Any Object without certain tag"
+                                does not include untagged devices</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12004</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Device Match Rules "negative filter MAC_prefix" filters out
+                                devices without MAC address</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-12000</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Offline <span class="- topic/ph ph">Airwall Agents</span> are named incorrectly in Add Device to Network popup</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11994</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Replacing <span class="- topic/ph ph">Airwall Agent</span> in <span class="- topic/ph ph">Conductor</span> doesn't update its capabilities </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11992</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">Conductor</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Conductor</span> breaks when upgrading to from 2.2.1 to 2.2.2 in a factory reset
+                                state.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11991</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed an issue that causes dropped packets when traffic from the
+                                same MAC address is received on multiple ports of the same <span class="- topic/ph ph">Airwall Gateway</span> (regardless of the port group membership of those ports).</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11982</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">The auto-generated Lockdown Mode Device Group doesn't appear to
+                                match new <span class="- topic/ph ph">Airwall Gateways</span> coming online.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11969</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">NTPD terminates and won't come back.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11968</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Cloud</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Delay and fetch userdata causes slow <span class="- topic/ph ph">Conductor</span> refresh</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11951</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Notifications Controller Validation failed: MTU must be greater
+                                than or equal to 100 when no MTU provided by 2.2.2 HIPapp</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11900</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Modbus-RTU does not work correctly when <span class="- topic/ph ph">Overlay</span> NAT is enabled.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11898</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android and iOS <span class="- topic/ph ph">Airwall Agents</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android, HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Unable to establish any <span class="- topic/ph ph">Overlay</span> connections with Android and iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11893</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Scale views on <span class="- topic/ph ph">Overlay</span> and Services page in <span class="- topic/ph ph">Airwall Agent</span></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11887</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">In Add Profile, error remains after you correct the field
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11881</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Keep user auth timeout within the range of 1 hour to 1
+                                year</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11867</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Ruggedcom: Cannot enter diagnostic mode from hipsh (now
+                                airsh)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11864</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed an <span class="- topic/ph ph">Airwall Gateway</span>-150 issue where the cellular LED indicators did not function
+                                properly following the first reboot after inserting the AW-150
+                                cellular module.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11858</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">End Remote Session button activity is missing from PCI user
+                                activities</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11844</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Blank Provider name for OpenID connect leads to blank dropdown
+                                list item</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11830</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Able to authenticate user auth using expired password</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11829</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Unable to log in legacy users without email</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11824</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Deleting the people group doesn't remove the tag from the <span class="- topic/ph ph">Airwall Edge Services</span></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11823</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android and iOS <span class="- topic/ph ph">Airwall Agents</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Android, HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Prevent users from clicking multiple times on Login and Sign in
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11819</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">macOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-OSX</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Doing anything in the macOS <span class="- topic/ph ph">Airwall Agent</span> closes your user auth session</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11815</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Add notice or block transparent mode when multiple overlay port
+                                groups are configured.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11807</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Ping all devices on High-Availability Standby in failover
+                                mode</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11804</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Cloud</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Route injection was not performed on <span class="- topic/ph ph">Conductor</span> reboot or upgrade</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11794</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Linux <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Linux</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">WiFi scanning is now available on the Linux <span class="- topic/ph ph">Airwall Agent</span>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11785</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Conductor should remove remote session button on disabling global
+                                user auth</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11778</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">HTTP GET overlay monitor confused when multiple port
+                                groups</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11772</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">iOS <span class="- topic/ph ph">Airwall Agent</span> user auth alert icon on Dashboard doesn't work on click</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11769</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">iOS <span class="- topic/ph ph">Airwall Agent</span> not getting overlay device IP updates</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11733</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Gateway</span> High-Availability, you get incorrect status after failover:
+                                primary <span class="- topic/ph ph">Airwall Gateway</span> status reports OK (tunneling)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11732</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Fixed an issue where Quectel cellular expansion modules would
+                                sometimes fail to connect to AT&amp;T's LTE network and instead fall
+                                back to 3g / UMTS.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11727</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Licensing</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Denied license request not cleared after import of synced
+                                encrypted package</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11698</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-300v HA</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-300v</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Gateway</span>-300v High-Availability member went offline after removing High
+                                Availability settings</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11684</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Starting concurrent packet captures on the same <span class="- topic/ph ph">Airwall Gateway</span> appears to work, then fails with "An error occurred communicating
+                                with the server"</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11680</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPapp-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Agent</span> Invitations Decline and <span class="- topic/ph ph">Conductor</span> hidden in landscape view</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11677</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Conductor</span> ports config permits network address as overlay IP</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11656</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span>-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch-150</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">In firmware versions 2.2.0, 2.2.1, and 2.2.2, a regression caused
+                                the link LEDs for <span class="- topic/ph ph">Airwall Gateway</span>-150 port 5 (SFP) to not operate when port 5 is assigned to an <span class="- topic/ph ph">Overlay</span> port group. This is fixed in firmware version 2.2.3. Note: The
+                                SFP port LEDs turn on and stay solid when the <span class="- topic/ph ph">Airwall Gateway</span> has not been managed in a <span class="- topic/ph ph">Conductor</span>. This issue will be addressed in a future release.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11651</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Gateway</span> Ports page doesn't display IP or MAC address after
+                                configuring</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11645</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">OpenID user auth login requires re-authentication </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11516</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Device import allows device with arbitrary name/description
+                                length</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11499</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">iOS <span class="- topic/ph ph">Airwall Agent</span> shows LSI for NAT'd devices on overlay networks page</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11470</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">
+                                <p class="- topic/p p">
+                                    <span class="- topic/ph ph">Airwall Agents</span></p>
+                                <p class="- topic/p p">Airwall Servers</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">
+                                <p class="- topic/p p">HIPclients</p>
+                                <p class="- topic/p p">HIPservers</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Changing overlay IP conf. back to NAT requires <span class="- topic/ph ph">Airwall Agent</span> restart</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11459</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">iOS <span class="- topic/ph ph">Airwall Agent</span> doesn't show up on <span class="- topic/ph ph">Conductor</span></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11343</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">The port detection part of hardware detection was made more
+                                reliable, for upgrades and during each boot on certain
+                                platforms.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11103</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">A device's port group can now be seen and edited from the <span class="- topic/ph ph">Airwall Gateway's</span> "local devices" tab.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-11013</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">macOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-OSX</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Switching profile doesn't forget about user auth sign-in</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-10960</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">macOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-OSX</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">If you add wrong credentials for user auth on macOS, it won't ask
+                                you to enter again</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-10887</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Linux <span class="- topic/ph ph">Airwall Server</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPserver-Linux</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Linux <span class="- topic/ph ph">Airwall Server</span> DNS server settings do not seem to have any effect</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-10665</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">macOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-OSX</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">macOS 10.15 requires app notarization by default</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-10592</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Cloud-Azure</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">do not require reboot to get the route table ID</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-10555</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Cloud-AWS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Better user error for auth failure due to time difference</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-9927</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">
+                                <p class="- topic/p p">Linux, macOS, and Windows <span class="- topic/ph ph">Airwall Agents</span></p>
+                                <p class="- topic/p p"><span class="- topic/ph ph">Airwall Gateways</span></p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">
+                                <p class="- topic/p p">HIPclient-Linux</p>
+                                <p class="- topic/p p">HIPclient-OSX</p>
+                                <p class="- topic/p p">HIPclient-Win</p>
+                                <p class="- topic/p p">HIPswitch</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Mac <span class="- topic/ph ph">Airwall Agent</span> receives routes for disabled overlays</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-9857</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">do not allow access to private key when phone is locked</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-9253</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Smart Device Groups will not add <span class="- topic/ph ph">Airwall Agents</span> and <span class="- topic/ph ph">Airwall Servers</span> using tag matches.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-9204</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4"><span class="- topic/ph ph">Airwall Gateway</span> Underlay IP NAT field shouldn't accept CIDRs</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-9122</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">macOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-OSX</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">macOS <span class="- topic/ph ph">Airwall Agent</span> publishes IP of random interface as an Underlay IP</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__1">DEV-8929</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__2">Windows <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__3">HIPclient-Win</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__fixes__entry__4">Tray app doesn't start after unattended install</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_2_2__fixes__entry__1">DEV-8742</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_2_2__fixes__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_2_2__fixes__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_2_2__fixes__entry__4">Add better error messaging for the initial <span class="- topic/ph ph">Conductor</span> voucher failures</td>
+                        </tr>
+                    </tbody></table>
+            
+        </section>
+        <section class="- topic/section section" id="rel_notes_2_2_2__known_issues" data-ofbid="rel_notes_2_2_2__known_issues"><h2 class="- topic/title title sectiontitle">Known Issues</h2>
+            
+            
+            <table class="- topic/table table frame-all" data-cols="4"><caption></caption><colgroup><col style="width:14.306151645207438%"/><col style="width:23.175965665236053%"/><col style="width:18.741058655221746%"/><col style="width:43.776824034334766%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_2_2__known_issues__entry__1">ID</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_2_2__known_issues__entry__2">Applies to</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_2_2__known_issues__entry__3">Formerly Known As</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="rel_notes_2_2_2__known_issues__entry__4">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12744</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2"><span class="- topic/ph ph">Airwall Gateways</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3">HIPswitches</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">Customers with <span class="- topic/ph ph">Conductor</span> HA and <span class="- topic/ph ph">Airwall Gateways</span> version 2.2.1 or earlier might see connectivity issues when using
+                                User Authentication. Recommendation: Upgrade <span class="- topic/ph ph">Conductors</span> and <span class="- topic/ph ph">Airwall Gateways</span> to version 2.2.3 Workaround: After upgrades, if you still see
+                                connectivity issues, restart the primary <span class="- topic/ph ph">Conductor</span>.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12710</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2">airsh</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3">hipsh</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">Customers need to update each cell value individually when using
+                                airsh to configure the cell modems</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12697</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2">airsh</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3">hipsh</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">The console command "airsh log" does not display the log file on
+                                a virtual <span class="- topic/ph ph">Airwall Gateway</span>. The 300v log file is now located at
+                                /etc/asguard/system/messages. </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12692</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2">API</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">The API docs navigation section does not work properly in Chrome
+                                v80. Use Firefox or Safari to view the API docs. </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12645</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3">HIPClient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">When creating a new profile and starting the app for the first
+                                time there is a chance the "Upgrade Needed" page will be displayed.
+                                This is an error and the user should simply click cancel and start
+                                the app again. This may only happen the first time you create the
+                                profile.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12521</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2"><span class="- topic/ph ph">Airwall Gateway</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3">HIPswitch</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">TPM usage is disabled by default for all <span class="- topic/ph ph">Airwall Gateways</span> due to the amount of time it takes to complete an RSA signature
+                                and frequency of RSA signatures when connected via a relay. This
+                                will be addressed in a future version.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12513</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2">Cloud Azure</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">Conductor occasionally gives "Net::ReadTimeout" error when user
+                                tries to deploy an Azure <span class="- topic/ph ph">Airwall Gateway</span> 300v or server. This doesn't indicate that the deployment has
+                                failed. Go to the Azure portal and check the actual deployment
+                                result.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12303</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2">macOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3">HIPclient-OSX</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">Upgrading macOS <span class="- topic/ph ph">Airwall Agent</span> from 2.2.1 to 2.2.3 requires uninstalling the 2.2.1 <span class="- topic/ph ph">Airwall Agent</span>, installing the 2.2.3 <span class="- topic/ph ph">Airwall Agent</span>, and replacing the old profile with new profile on <span class="- topic/ph ph">Conductor</span>. </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12290</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2">macOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3">HIPclient-OSX</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">User approval needed to complete macOS<span class="- topic/ph ph">Airwall Agent</span> installation. From macOS High Sierra onwards, you need to allow
+                                the system extension com.tempered.tuntaposx.tap, or simply tap.kext,
+                                required by the <span class="- topic/ph ph">Airwall Agent</span>. In the System Preferences, on the <strong class="+ topic/ph hi-d/b ph b">Security and Privacy</strong>
+                                page, open the <strong class="+ topic/ph hi-d/b ph b">General</strong> tab. Where it says system software was
+                                blocked from loading, click <strong class="+ topic/ph hi-d/b ph b">Allow</strong>. macOS only shows this
+                                allow message for a limited time (30mins). The installer will wait
+                                for you to allow the extension.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-12268</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2"><span class="- topic/ph ph">Conductor</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">Firmware version on <span class="- topic/ph ph">Conductor</span> is not getting updated until macOS <span class="- topic/ph ph">Airwall Agent</span> is restarted</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-11578</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__2">Android <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__3">HIPclient-Android</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="rel_notes_2_2_2__known_issues__entry__4">Do not change the LSI prefix to match a peer address.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_2_2__known_issues__entry__1">DEV-9542</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_2_2__known_issues__entry__2">iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_2_2__known_issues__entry__3">HIPclient-iOS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="rel_notes_2_2_2__known_issues__entry__4">Cannot generate a Support Bundle from the <span class="- topic/ph ph">Conductor</span> for an iOS <span class="- topic/ph ph">Airwall Agent</span> when the <span class="- topic/ph ph">Conductor</span> is in High Availability mode. You can instead generate a Support
+                                Bundle from the iOS <span class="- topic/ph ph">Airwall Agent</span></td>
+                        </tr>
+                    </tbody></table>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns:whc="http://www.oxygenxml.com/webhelp/components"></whc:webhelp_feedback>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#rel_notes_2_2_2__whats_new" data-tocid="rel_notes_2_2_2__whats_new">What’s New</a></div></li><li class="section-item"><div class="section-title"><a href="#rel_notes_2_2_2__upgrade_considerations" data-tocid="rel_notes_2_2_2__upgrade_considerations">Upgrade Considerations</a></div></li><li class="section-item"><div class="section-title"><a href="#rel_notes_2_2_2__fixes" data-tocid="rel_notes_2_2_2__fixes">Fixes</a></div></li><li class="section-item"><div class="section-title"><a href="#rel_notes_2_2_2__known_issues" data-tocid="rel_notes_2_2_2__known_issues">Known Issues</a></div></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <footer class="navbar navbar-default wh_footer" data-whc_version="21.0">
+  <div class=" footer-container  mx-auto">
+    <div>
+    <p> 
+        Go to: <a href="http://webhelp.tempered.io/webhelp-ft" target="_blank">Airwall Teams help</a> or <a href="http://webhelp.tempered.io/webhelp/webhelp222" target="_blank">pre-2.2.3 Tempered HIPswitch Help</a>.</p>
+    <p>© Copyright 2023 <a href="https://tempered.io">tempered.io</a> | <a href="https://tempered.io/resources/terms-of-product-sale-license-and-warranty" target="_blank">Terms of Product Sale, License and Warranty</a></p>
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

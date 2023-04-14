@@ -1,0 +1,312 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="21.0">
+    <head><link rel="shortcut icon" href="../../logo.png"/><link rel="icon" href="../../logo.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="DC.rights.owner" content="(C) Copyright 2023"/><meta name="copyright" content="(C) Copyright 2023"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="dita"/><meta name="description" content="The default port groups work for some deployments. You may need to set up overlay port groups if your deployment requires it."/><meta name="DC.subject" content="overlay,port group,setup"/><meta name="keywords" content="overlay, port group, setup"/><meta name="DC.relation" content="../../content/topics/port_groups.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="cond_overlay_pg_set_up_overlay_port_groups"/>        
+      <title>Set up Overlay Port Groups</title><!--  Generated with Oxygen version 24.0, build number 2022012605.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="cond_overlay_pg_set_up_overlay_port_groups-d8884e10874"/><meta name="wh-source-relpath" content="content/topics/cond_overlay_pg_top.dita"/><meta name="wh-out-relpath" content="content/topics/cond_overlay_pg_top.html"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2022012605"/><script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script><script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tempered-help.css?buildId=2022012605"/><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NX2TVTD'); //</script><!-- End Google Tag Manager --></head>
+
+    <body class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        <!-- Google Tag Manager (noscript) --><noscript> &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2TVTD"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt; //</noscript><!-- End Google Tag Manager (noscript) -->
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="21.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../logo-48px.png" alt="Airwall help  be invisible    - you can't hack what you can't see"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Airwall help <sub class="ph sub"><sup class="ph sup beinvisible"> be invisible </sup>  <sup class="ph sup canthack"> - you can't hack what you can't see</sup></sub></span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' --> 
+                <!-- DOB commented this out to show the support menu without odd stray button
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                    aria-expanded="false" aria-label="${i18n(toggle.menu)}" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"/>
+                    
+                    
+                </button -->
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container" align="right"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support_top-d8884e16110-mi" data-tocid="support_top-d8884e16110" data-state="not-ready" class=" topicref " data-id="support_top"><span class="title"><a href="../../support_top.html">Get Support</a></span></span></li></ul></nav><!--DOB Added align to solve Support menu issue-->
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+        
+        <div class="container-fluid">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="web_top_docs"><div class="title"><a href="../../content/topics/web_top_docs.html">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div></li><li><div class="topicref" data-id="web_top_howto"><div class="title"><a href="../../content/topics/idn_install_config.html">Deploy an <span class="ph">Airwall</span> secure network</a><div class="wh-tooltip"><p class="shortdesc">Learn how to deploy the Airwall solution, connect devices, set up <span class="ph">overlays</span>,
+                configure device trust, and give people access to your Airwall secure
+                network.</p></div></div></div></li><li><div class="topicref" data-id="setup_hip_services"><div class="title"><a href="../../content/topics/setup_aws.html">Deploy and Configure <span class="ph">Airwall Edge Services</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Airwall Edge Services</span> let     you securely connect managed endpoints, such as laptops, PCs, tablets, and     smartphones.</p></div></div></div></li><li><div class="topicref" data-id="hipservice_advanced"><div class="title"><a href="../../content/topics/aw_advanced.html">Configure Advanced <span class="ph">Airwall Edge Service</span> Options</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li><div class="topicref" data-id="port_groups"><div class="title"><a href="../../content/topics/port_groups.html">Set up Port Groups on an Airwall Gateway</a><div class="wh-tooltip"><p class="shortdesc">The default port groups work for some deployments. You may need to set up <span class="ph">underlay</span> or <span class="ph">overlay</span> port groups if         your deployment requires it.</p></div></div></div></li><li class="active"><div class="topicref" data-id="cond_overlay_pg_set_up_overlay_port_groups"><div class="title"><a href="../../content/topics/cond_overlay_pg_top.html#cond_overlay_pg_set_up_overlay_port_groups">Set up <span class="ph">Overlay</span> Port Groups</a><div class="wh-tooltip"><p class="shortdesc">The default port groups work for some deployments. You may need to set up <span class="ph">overlay</span> port groups if         your deployment requires it.</p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 d-none d-md-block d-print-none">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="vid_overdemos-d8884e17" class="topicref" data-id="vid_overdemos" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../vid_overdemos.html" id="vid_overdemos-d8884e17-link">Video Overview and Demos</a><div class="wh-tooltip"><p class="shortdesc">Overviews and demos for the <span class="ph">Tempered</span>         <span class="ph">Airwall Solution</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect_top-d8884e43" class="topicref" data-id="connect_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect_top-d8884e43-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/connect_top.html" id="connect_top-d8884e43-link">Connect to <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Connect your mobile or laptop to <span class="ph">Airwall</span> to
+                get access to protected resources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="idn_administrative-d8884e1435" class="topicref" data-id="idn_administrative" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action idn_administrative-d8884e1435-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_administrative.html" id="idn_administrative-d8884e1435-link">Manage <span class="ph">Airwall™</span></a><div class="wh-tooltip"><p class="shortdesc">Provision and manage <span class="ph">Airwall Edge Services</span> and devices, monitor activity, and install updates.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_docs-d8884e4585" class="topicref" data-id="web_top_docs" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_docs-d8884e4585-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_docs.html" id="web_top_docs-d8884e4585-link">Deploy <span class="ph">Airwall™</span>  </a><div class="wh-tooltip"><p class="shortdesc">Successfully deploy and configure the <span class="ph">Airwall</span>
+                solution and revolutionize security on your network. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="web_content_start-d8884e4607" class="topicref" data-id="web_content_start" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_content_start-d8884e4607-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/get_started.html" id="web_content_start-d8884e4607-link">Get Started with the <span class="ph">Airwall Solution</span></a><div class="wh-tooltip"><p class="shortdesc">Get started with the <span class="ph">Airwall</span>
+                solution.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="web_top_howto-d8884e5102" class="topicref" data-id="web_top_howto" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action web_top_howto-d8884e5102-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/idn_install_config.html" id="web_top_howto-d8884e5102-link">Deploy an <span class="ph">Airwall</span> secure network</a><div class="wh-tooltip"><p class="shortdesc">Learn how to deploy the Airwall solution, connect devices, set up <span class="ph">overlays</span>,
+                configure device trust, and give people access to your Airwall secure
+                network.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="deploy_checklist-d8884e5123" class="topicref" data-id="deploy_checklist" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_checklist.html" id="deploy_checklist-d8884e5123-link">Deployment Checklist</a><div class="wh-tooltip"><p class="shortdesc">A checklist for deploying the <span class="ph">Airwall Solution</span></p></div></div></div></li><li role="treeitem"><div data-tocid="deploy_roadmap-d8884e5153" class="topicref" data-id="deploy_roadmap" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_roadmap.html#deploy_roadmap" id="deploy_roadmap-d8884e5153-link">Deployment Roadmap</a><div class="wh-tooltip"><p class="shortdesc">A roadmap to the most helpful topics for getting the <span class="ph">Airwall Solution</span> up and running         on your network.</p></div></div></div></li><li role="treeitem"><div data-tocid="net_browse_require-d8884e5317" class="topicref" data-id="net_browse_require" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/depl_shared_net.html" id="net_browse_require-d8884e5317-link">Confirm your Network Settings</a><div class="wh-tooltip"><p class="shortdesc">Check that your network is set up to start deploying the <span class="ph">Airwall Solution</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="lic_top-d8884e5339" class="topicref" data-id="lic_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action lic_top-d8884e5339-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/lic_top.html" id="lic_top-d8884e5339-link">License a Conductor and Airwall Edge Services</a><div class="wh-tooltip"><p class="shortdesc">Everything you need to know about licensing your <span class="ph">Conductor</span> and <span class="ph">Airwall Edge Services</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cond_deploy_config-d8884e5724" class="topicref" data-id="cond_deploy_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cond_deploy_config-d8884e5724-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_deploy_config.html" id="cond_deploy_config-d8884e5724-link">Deploy and Configure a Conductor</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Airwall Conductor</span> helps you deploy, configure, administer, and update your <span class="ph">Airwall Solution</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="setup_hip_services-d8884e7854" class="topicref" data-id="setup_hip_services" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action setup_hip_services-d8884e7854-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/setup_aws.html" id="setup_hip_services-d8884e7854-link">Deploy and Configure <span class="ph">Airwall Edge Services</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Airwall Edge Services</span> let     you securely connect managed endpoints, such as laptops, PCs, tablets, and     smartphones.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="setup_airwall_gateways-d8884e7869" class="topicref" data-id="setup_airwall_gateways" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action setup_airwall_gateways-d8884e7869-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/setup_airwall_gateways.html" id="setup_airwall_gateways-d8884e7869-link">Set up <span class="ph">Airwall Gateways</span></a><div class="wh-tooltip"><p class="shortdesc">Set up physical, virtual, or cloud <span class="ph">Airwall Gateways</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hipapp_admin_welcome-d8884e9380" class="topicref" data-id="hipapp_admin_welcome" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hipapp_admin_welcome-d8884e9380-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/agent_server_setup_deploy.html" id="hipapp_admin_welcome-d8884e9380-link">Install <span class="ph">Airwall Agents and Servers</span> on people's laptops and devices</a><div class="wh-tooltip"><p class="shortdesc">How to connect people's cell phones, laptops, and servers to the resources people need     access to behind your <span class="ph">Airwall secure network</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hip_relay-d8884e9904" class="topicref" data-id="hip_relay" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hip_relay-d8884e9904-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_relay.html" id="hip_relay-d8884e9904-link">Set up an <span class="ph">Airwall Relay</span> to Route Encrypted Connections </a><div class="wh-tooltip"><p class="shortdesc">An <span class="ph">Airwall Relay</span> routes     encrypted <span class="ph">Airwall Edge Service</span>     connections across all networks and transport options, without modifying the underlying network,     for secure end-to-end connectivity. </p></div></div></div></li><li role="treeitem"><div data-tocid="deploy_aw_alibaba-d8884e10108" class="topicref" data-id="deploy_aw_alibaba" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_cloud_server.html" id="deploy_aw_alibaba-d8884e10108-link">Deploy a cloud <span class="ph">Airwall Server</span></a><div class="wh-tooltip"><p class="shortdesc">You can deploy an <span class="ph">Airwall Server</span> on a cloud         provider, which gives you a Windows Server machine with an <span class="ph">Airwall Server</span> installed and         configured to connect with your <span class="ph">Conductor</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hip_edit_settings-d8884e10141" class="topicref" data-id="hip_edit_settings" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hip_edit_settings-d8884e10141-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_edit_settings.html" id="hip_edit_settings-d8884e10141-link">Configure <span class="ph">Airwall Edge Service</span> Settings</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="hip_auth_session-d8884e10729" class="topicref" data-id="hip_auth_session" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/agent_auth_session.html" id="hip_auth_session-d8884e10729-link">Configure an authenticated <span class="ph">Airwall Agent or Server</span> session</a><div class="wh-tooltip"><p class="shortdesc">An authenticated <span class="ph">Airwall Agent or Server</span> session requires         users to authenticate before the <span class="ph">Airwall Agent or Server</span> can communicate         in an <span class="ph">overlay</span> network.         The authentication is based on a user’s <span class="ph">Conductor</span> login         credentials. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="hipservice_advanced-d8884e10769" class="topicref" data-id="hipservice_advanced" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action hipservice_advanced-d8884e10769-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_advanced.html" id="hipservice_advanced-d8884e10769-link">Configure Advanced <span class="ph">Airwall Edge Service</span> Options</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="cond_custom_certs_signed-d8884e10782" class="topicref" data-id="cond_custom_certs_signed" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_custom_certs.html#cond_custom_certs_signed" id="cond_custom_certs_signed-d8884e10782-link">Add or Replace a Signed Certificate on an <span class="ph">Airwall Gateway</span> for <span class="ph">Conductor</span> Communication</a><div class="wh-tooltip"><p class="shortdesc">By default, the <span class="ph">Airwall Gateways</span> come with a <span class="ph">Tempered</span> factory-installed         certificate. You can add your own custom CA certificate to use for <span class="ph">Conductor</span> communication. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="port_groups-d8884e10857" class="topicref" data-id="port_groups" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action port_groups-d8884e10857-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/port_groups.html" id="port_groups-d8884e10857-link">Set up Port Groups on an Airwall Gateway</a><div class="wh-tooltip"><p class="shortdesc">The default port groups work for some deployments. You may need to set up <span class="ph">underlay</span> or <span class="ph">overlay</span> port groups if         your deployment requires it.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="cond_overlay_pg_set_up_overlay_port_groups-d8884e10874" class="topicref" data-id="cond_overlay_pg_set_up_overlay_port_groups" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cond_overlay_pg_top.html#cond_overlay_pg_set_up_overlay_port_groups" id="cond_overlay_pg_set_up_overlay_port_groups-d8884e10874-link">Set up <span class="ph">Overlay</span> Port Groups</a><div class="wh-tooltip"><p class="shortdesc">The default port groups work for some deployments. You may need to set up <span class="ph">overlay</span> port groups if         your deployment requires it.</p></div></div></div></li><li role="treeitem"><div data-tocid="deploy_og_underlay-d8884e10935" class="topicref" data-id="deploy_og_underlay" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/deploy_pg_underlay.html" id="deploy_og_underlay-d8884e10935-link">Set up an <span class="ph">Underlay</span> Port Group</a><div class="wh-tooltip"><p class="shortdesc">By default, an <span class="ph">Airwall Gateway</span> has two port         groups. One <span class="ph">underlay</span>         port group assigned to Port 1 and one <span class="ph">overlay</span> port group         assigned to the remaining ports. On virtual and cloud <span class="ph">Airwall Gateways</span>, you may be able         to add additional ports by creating new virtual network adapters on the hypervisor. Some         hardware models allow you to add new ports by inserting port expansion modules.</p></div></div></div></li><li role="treeitem"><div data-tocid="port_replication-d8884e10972" class="topicref" data-id="port_replication" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/port_replication.html" id="port_replication-d8884e10972-link">Replicate Port Settings</a><div class="wh-tooltip"><p class="shortdesc">For minimal disruption and less room for error, you can replicate the port         configuration between two <span class="ph">Airwall Gateways</span> when setting up         an <span class="ph">Airwall Gateway</span> HA pairing,         or when replacing an <span class="ph">Airwall Gateway</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="port_failover_group-d8884e11003" class="topicref" data-id="port_failover_group" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action port_failover_group-d8884e11003-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/port_failover_group.html" id="port_failover_group-d8884e11003-link">Configure an <span class="ph">Underlay</span> Port Failover Group</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="seamless_bypass-d8884e11089" class="topicref" data-id="seamless_bypass" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/seamless_bypass.html#seamless_bypass" id="seamless_bypass-d8884e11089-link">Seamless Bypass</a><div class="wh-tooltip"><p class="shortdesc">Seamless Bypass allows you to separate traffic (split tunnel) going through your <span class="ph">Airwall Gateway</span>, where you         selectively encrypt and tunnel some traffic, while allowing other traffic to pass through         the <span class="ph">Airwall Gateway</span> unchanged.         This ability also allows protected devices to securely communicate with devices or network         locations that are not protected by <span class="ph">Airwall Edge Services</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="backhaul_bypass-d8884e11197" class="topicref" data-id="backhaul_bypass" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/backhaul_bypass.html#backhaul_bypass" id="backhaul_bypass-d8884e11197-link">Backhaul Bypass</a><div class="wh-tooltip"><p class="shortdesc">Set up backhaul bypass to allow any v3.0 or later <span class="ph">Airwall Gateway</span> to reach         bypass destinations by tunneling traffic using designated bypass egress <span class="ph">Airwall Gateways</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="bypass_enable_dns-d8884e11294" class="topicref" data-id="bypass_enable_dns" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/bypass_enable_dns.html" id="bypass_enable_dns-d8884e11294-link">Enable DNS lookup for bypass destinations</a><div class="wh-tooltip"><p class="shortdesc">If you want or need to use a fully-qualified domain name (FQDN) when specifying a         bypass destination, you can enable DNS lookup for bypass. An FQDN may be necessary if the         bypass destination IP is not static.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hip_ha_overview-d8884e11316" class="topicref" data-id="hip_ha_overview" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hip_ha_overview-d8884e11316-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_ha_overview.html" id="hip_ha_overview-d8884e11316-link"><span class="ph">Airwall Edge Service</span> High Availability (HA)</a><div class="wh-tooltip"><p class="shortdesc">High Availability (HA) <span class="ph">Airwall Gateways</span> provide hardware   redundancy in a hot-standby mode. <span class="ph">Airwall Gateways</span> installed in an HA   configuration maintain a heartbeat on a dedicated Ethernet link where only the current primary is   participating in overlay network communications. If the primary fails to send heartbeat messages   to the secondary, the secondary takes over <span class="ph">overlay</span> network communications   for the HA pair.</p></div></div></div></li><li role="treeitem"><div data-tocid="one_arm_mode-d8884e11385" class="topicref" data-id="one_arm_mode" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/one_arm_mode.html#one_arm_mode" id="one_arm_mode-d8884e11385-link">One-arm mode</a><div class="wh-tooltip"><p class="shortdesc">You can configure an <span class="ph">Airwall Gateway</span> to use a         single network connection in cases where you want to prevent common routing errors caused by         multiple interfaces.</p></div></div></div></li><li role="treeitem"><div data-tocid="hip_config_nat-d8884e11414" class="topicref" data-id="hip_config_nat" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_config_nat.html" id="hip_config_nat-d8884e11414-link">Network address translation (NAT)</a><div class="wh-tooltip"><p class="shortdesc">Network Address Translation (NAT) translates an IP address in one network to a         different IP address in another network. The two IP addresses are referred to as the         External IP address and the Internal IP address. The External IP address is the IP address         of the device in the overlay network and the Internal IP address is the actual IP address of         the device.</p></div></div></div></li><li role="treeitem"><div data-tocid="hip_encrypt_comp-d8884e11433" class="topicref" data-id="hip_encrypt_comp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_encrypt_comp.html" id="hip_encrypt_comp-d8884e11433-link">Encryption and tunnel compression on an <span class="ph">Airwall Gateway</span></a><div class="wh-tooltip"><p class="shortdesc">You can change the encryption or compression of <span class="ph">Airwall Gateways</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="dev_dhcp_config-d8884e11460" class="topicref" data-id="dev_dhcp_config" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/dev_dhcp_config.html" id="dev_dhcp_config-d8884e11460-link">Protected devices with static routing</a><div class="wh-tooltip"><p class="shortdesc">You can configure static routing for protected devices with IP addresses not directly         connected to an <span class="ph">Airwall Gateway</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="dev_dhcp_static-d8884e11486" class="topicref" data-id="dev_dhcp_static" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/dev_static_config.html" id="dev_dhcp_static-d8884e11486-link">Protected devices with DHCP</a><div class="wh-tooltip"><p class="shortdesc">If you have protected devices that use DHCP to obtain an IP address, you need to         configure DHCP on the <span class="ph">Airwall Gateway</span> that protects         that device.</p></div></div></div></li><li role="treeitem"><div data-tocid="untitled1-d8884e11511" class="topicref" data-id="untitled1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_relay_dhcp.html" id="untitled1-d8884e11511-link">DHCP relay on an <span class="ph">Airwall Gateway</span></a><div class="wh-tooltip"><p class="shortdesc">If you have protected devices that use DHCP to obtain an IP address, you can         configure the <span class="ph">Airwall Gateway</span>         to relay the DHCP address to your DHCP server.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="custom_firewall_rules-d8884e11538" class="topicref" data-id="custom_firewall_rules" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action custom_firewall_rules-d8884e11538-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/aw_limit_traffic_port_filter.html" id="custom_firewall_rules-d8884e11538-link">Limit Device Traffic on an <span class="ph">Airwall Gateway</span> with Port Filtering </a><div class="wh-tooltip"><p class="shortdesc">You can use  <span class="ph">Airwall Gateway</span> port filtering to limit what traffic can pass over an Overlay based on TCP/UDP Ports. With     port filtering enabled, all communication from remote to local devices is disabled, and you     create custom rules to tell the local <span class="ph">Airwall Gateway</span> what to allow as     incoming connections to local devices.</p></div></div></div></li><li role="treeitem"><div data-tocid="hip_spanning-d8884e11582" class="topicref" data-id="hip_spanning" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/hip_spanning.html" id="hip_spanning-d8884e11582-link">Spanning Tree Protocol on the <span class="ph">Overlay</span> Network</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="device_mgmt-d8884e11603" class="topicref" data-id="device_mgmt" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action device_mgmt-d8884e11603-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/device_mgmt.html" id="device_mgmt-d8884e11603-link">Connect and Configure Devices</a><div class="wh-tooltip"><p class="shortdesc">As you prepare to connect devices to <span class="ph">Airwall Gateways</span>, you may want your <span class="ph">Airwall Gateway</span> product guide available   to identify the ports reserved for connecting devices you want to protect.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="overlay_config-d8884e11959" class="topicref" data-id="overlay_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action overlay_config-d8884e11959-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/overlay_config.html" id="overlay_config-d8884e11959-link">Create and Manage an <span class="ph">Overlay</span> (Protected) Network</a><div class="wh-tooltip"><p class="shortdesc">Create an <span class="ph">overlay</span>     (protected) network for your deployment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="device_trust-d8884e12395" class="topicref" data-id="device_trust" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action device_trust-d8884e12395-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/device_trust.html" id="device_trust-d8884e12395-link">Configure Device Trust</a><div class="wh-tooltip"><p class="shortdesc">Configure device trust to set up secure communication between devices in your <span class="ph">Airwall secure network</span>.  </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cloud_prov_setup-d8884e12591" class="topicref" data-id="cloud_prov_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cloud_prov_setup-d8884e12591-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/cloud_prov_setup.html" id="cloud_prov_setup-d8884e12591-link">Set up Cloud Providers</a><div class="wh-tooltip"><p class="shortdesc">Setting up one of the supported cloud providers in your <span class="ph">Conductor</span> makes it         easier to deploy <span class="ph">Airwall Gateways</span>         and High-Availability <span class="ph">Conductors</span> directly from         your <span class="ph">Conductor</span>. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="top_integrations-d8884e12784" class="topicref" data-id="top_integrations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action top_integrations-d8884e12784-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/top_integrations.html" id="top_integrations-d8884e12784-link">Integrate Third-party Services</a><div class="wh-tooltip"><p class="shortdesc">How to integrate the <span class="ph">Airwall Solution</span> with         third-party services.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_diagnostics-d8884e13413" class="topicref" data-id="web_top_diagnostics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_diagnostics-d8884e13413-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_diagnostics.html" id="web_top_diagnostics-d8884e13413-link">Diagnostics and Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">There are various tools available on our platform to help you diagnose
+                problems you may encounter. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="advisory_bulletins-d8884e14491" class="topicref" data-id="advisory_bulletins" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action advisory_bulletins-d8884e14491-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/advisory_bulletins.html" id="advisory_bulletins-d8884e14491-link">Security Notices, Advisory Notices, and Product Bulletins</a><div class="wh-tooltip"><p class="shortdesc">Go here for important information on known issues, end-of-life notices, and
+                other product updates.</p></div></div></div></li><li role="treeitem"><div data-tocid="web_top_api_ref-d8884e14922" class="topicref" data-id="web_top_api_ref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_api_ref.html" id="web_top_api_ref-d8884e14922-link"><span class="ph">Airwall</span> API</a><div class="wh-tooltip"><p class="shortdesc">You can access the <span class="ph">Airwall</span> API Reference from your    <span class="ph">Conductor</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="web_top_downloads-d8884e14947" class="topicref" data-id="web_top_downloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action web_top_downloads-d8884e14947-link" class="wh-expand-btn"></span><div class="title"><a href="../../content/topics/web_top_downloads.html" id="web_top_downloads-d8884e14947-link">Software Downloads and Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Download firmware, software, and hotfixes by version, and see release notes for versions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support_top-d8884e16110" class="topicref" data-id="support_top" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support_top-d8884e16110-link" class="wh-expand-btn"></span><div class="title"><a href="../../support_top.html" id="support_top-d8884e16110-link">Get Support</a><div class="wh-tooltip"><p class="shortdesc">You can often find answers to your questions in <span class="ph">Airwall             help</span>. If you still need help, check here for help         getting support.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="cond_overlay_pg_set_up_overlay_port_groups">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Set up <span class="- topic/ph ph">Overlay</span>
+        Port Groups</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">The default port groups work for some deployments. You may need to set up <span class="- topic/ph ph">overlay</span> port groups if
+        your deployment requires it.</p>
+        <section class="- topic/section section">
+            <p class="- topic/p p"><span class="- topic/ph ph">Overlay</span> Port
+                Groups are used to connect your <span class="- topic/ph ph">Airwall Gateway</span> to
+                your protected networks. <span class="- topic/ph ph">Airwall Gateways</span> default
+                to having a single <span class="- topic/ph ph">overlay</span> Port
+                Group, but you may need to configure your <span class="- topic/ph ph">overlay</span> port
+                groups when you want to:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Micro-segment your network for fine grain security control</li>
+                <li class="- topic/li li">Configure IP addresses or Source NAT (SNAT) for routed deployments</li>
+                <li class="- topic/li li">Set up two <span class="- topic/ph ph">Airwall Gateways</span> for
+                    High Availability</li>
+            </ul>
+            <p class="- topic/p p">If your <span class="- topic/ph ph">Airwall Gateway</span>
+                is only providing relay functionality, it only needs an <span class="- topic/ph ph">Underlay</span>
+                Port Group, and does not use any configured <span class="- topic/ph ph">Overlay</span> port
+                group. </p>
+            <p class="- topic/p p">You can set up multiple port groups for an <span class="- topic/ph ph">overlay</span>,
+                assigned to different physical or VLAN tagged sub-interface ports. When multiple
+                ports are included in a Port Group, they are bridged. Port groups are also connected
+                to the <span class="- topic/ph ph">overlay</span>
+                through routing and/or bridging. </p>
+            <p class="- topic/p p"><img class="- topic/image image" src="../images/port_group_arch.png" width="400" alt="Airwall diagram showing Overlay port groups"/></p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle"><strong class="+ topic/ph hi-d/b ph b">Get to Know Your <span class="- topic/ph ph">Airwall Gateway</span>
+                    Ports</strong></h2>
+            
+            <p class="- topic/p p">Here is how the physical ports are assigned on most <span class="- topic/ph ph">Airwall Gateways</span>:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Port 1 – Connects to the initial <span class="- topic/ph ph">underlay</span>
+                    network, and is assigned to the <span class="- topic/ph ph">underlay</span>
+                    Port Group.</li>
+                <li class="- topic/li li">Port 2 &amp; Up – Connect to <span class="- topic/ph ph">overlay</span>
+                    networks, and are assigned to an <span class="- topic/ph ph">overlay</span> Port
+                    Group.</li>
+            </ul>
+            <p class="- topic/p p"><img class="- topic/image image" src="../images/port_group_underandoverlays.png" width="500" alt="Underlay and overlay ports on a physical Airwall Gateway"/></p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Basic <span class="- topic/ph ph">Airwall Gateway</span> Deployment</h2>
+            
+            <p class="- topic/p p">The most basic <span class="- topic/ph ph">Airwall Gateway</span>
+                deployment design is to put <span class="- topic/ph ph">Airwall Gateways</span> inline
+                in front of protected devices. If you don’t want to, or can’t, change IP addresses,
+                you replicate the default gateway of the router on the <span class="- topic/ph ph">overlay</span> Port
+                Group. (If these devices are using DHCP, see <a class="- topic/xref xref" href="dev_dhcp_config.html" title="You can configure static routing for protected devices with IP addresses not directly connected to an Airwall Gateway.">Protected devices with static routing</a> to
+                configure DHCP on the <span class="- topic/ph ph">overlay</span> port
+                group.)</p>
+            <p class="- topic/p p">
+                <img class="- topic/image image" src="../images/port_group_before.png" width="300" alt="Diagram of deployment before Airwall Gateway port groups"/></p>
+            <p class="- topic/p p">The <span class="- topic/ph ph">underlay</span> IP
+                address can be any address on the network. DHCP is common, or you can configure a
+                static IP if needed. The <span class="- topic/ph ph">overlay</span> IP
+                address is the same as the default gateway on the router.</p>
+            <p class="- topic/p p">
+                <img class="- topic/image image" src="../images/port_group_after.png" width="300" alt="Diagram of deployment after Airwall Gateway port groups"/></p>
+        </section>
+    </div>
+<article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title2" id="cond_overlay_pg_set_up_an_overlay_port_group">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title2">Set up an <span class="- topic/ph ph">Overlay</span>
+        Port Group</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">By default, an <span class="- topic/ph ph">Airwall Gateway</span> has
+                two port groups. One <span class="- topic/ph ph">underlay</span> port
+                group assigned to Port 1 and one <span class="- topic/ph ph">overlay</span> port
+                group assigned to the remaining ports. On virtual and cloud <span class="- topic/ph ph">Airwall Gateways</span>, you may
+                be able to configure more ports if supported by the virtual or cloud platform.</p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the <span class="- topic/ph ph">Conductor</span>,
+                    go to the <span class="- topic/ph ph">Airwall Gateway</span> on
+                    which you want to set Port Groups, open the <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Ports</span></span>
+                    tab, and select <span class="- topic/ph ph"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit Settings</span></span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select an <span class="- topic/ph ph">Overlay</span>
+                    port group you want to use, or add a new port group by clicking the + to the
+                    right of <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Port groups</span>, and select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Overlay
+                        group</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/port_group_set1.png" width="600" alt="Overlay Ports tab showing how to add port groups"/></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click the arrow on the left of your <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Overlay group</span> header
+                    to expand the settings for that Port Group.</span>
+                <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/port_group_set2.png" width="600" alt="Expanding the settings for the port group"/></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Enter a name for the group, and under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Interfaces</span>, select
+                    the ports or other interfaces for the group. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Under <span class="+ topic/ph ui-d/uicontrol ph uicontrol">IP addresses</span>, click the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">+</span>
+                    to add IP addresses. For example, 10.0.1.1/24 (be sure to include the prefix
+                    length). Your protected devices will use this address as their gateway to reach
+                    the rest of your <span class="- topic/ph ph">overlay</span>
+                    network. </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select the network options that apply for your implementation:</span>
+                <ol type="a" class="- topic/ol task/substeps ol substeps">
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Enable Source NAT </span>– Check this box to rewrite
+                            the source IP address of traffic arriving from other port groups or
+                            tunnels with the overlay IP address of this port group. You must also
+                            configure an overlay IP address. Use this option when your local
+                            protected devices do not use this <span class="- topic/ph ph">Airwall Gateway</span> as their default gateway. This setting enables connections, permitted
+                            by policy, from remote <span class="- topic/ph ph">overlay</span> devices to local protected devices. When you enable Source NAT, local
+                            protected devices cannot initiate connections to remote <span class="- topic/ph ph">overlay</span> devices.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Enable MAC masquerading</span> – Check this box to
+                            rewrite the source MAC address of all traffic arriving from other port
+                            groups or tunnels with the Airwall’s MAC address. Use this option if the
+                            network you are connected to doesn’t permit foreign MAC addresses. Note:
+                            Checking the Routed traffic only box enables MAC masquerading by
+                            default.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Enable spanning tree protocol </span>– Leave this box
+                            checked to enable spanning tree protocol on the <span class="- topic/ph ph">overlay</span> bridge to avoid potential bridge loops. Only clear this box if this
+                            port group is free of any bridge loops, and you do not wish to run STP.
+                            One example is if this port group is connected to a Cisco switch running
+                            BPDU guard. A recommended alternative is to configure the port group
+                            with only a single port and use routed traffic only mode to make bridge
+                            loops impossible.</span>
+                    </li>
+                    <li class="- topic/li task/substep li substep substepexpand">
+                        <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Routed traffic only</span> – Check this box to permit
+                            only routed bypass traffic. You must also configure an <span class="- topic/ph ph">overlay</span> IP address. Local protected devices should use this <span class="- topic/ph ph">overlay</span> IP as a gateway (either their default gateway or a static route) or
+                            Source NAT to allow incoming connections. Typically, you check Routed
+                            traffic only, unless you specifically need to bridge traffic. For
+                            example, if you have IP addresses in the same subnet on both sides of
+                            the tunnel, you are bridging traffic, so clear this box. </span>
+                        <div class="- topic/itemgroup task/info itemgroup info">This setting prevents inadvertently carrying broadcast and multicast
+                            traffic sent by protected devices and can improve performance by using
+                            only a single port in the port group. </div>
+                    </li>
+                </ol>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">If you are connecting this port group to a router connected to a larger <span class="- topic/ph ph">overlay</span>
+                    network, you can configure static routes or even a default gateway.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Update Settings</span>.</span>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="cond_overlay_pg_interfaces">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title3">Add Interfaces to a Port</h2>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p">Each physical or logical port on an <span class="- topic/ph ph">Airwall Gateway</span> has a
+                single interface by default, that can be assigned to a port group. If you are
+                connecting an <span class="- topic/ph ph">Airwall Gateway</span> port
+                to a switch using an 802.1q trunk allowing multiple VLANs, you need to add
+                additional interfaces. To do this:</p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Up above the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Port Groups</span> section, select the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Port</span> and then click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit
+                        Settings</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Next to <span class="+ topic/ph ui-d/uicontrol ph uicontrol">VLAN</span>, click the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">+</span> to add
+                    a new VLAN for this <span class="- topic/ph ph">overlay</span>.
+                </span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Enter the VLAN tag to match the VLAN config on the switch.</span>
+                <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" src="../images/port_group_vlan.png" width="600" alt="showing where to add VLAN on the Ports page"/><div class="- topic/note note note note_note"><span class="note__title">Note:</span> If you disable the VLAN parent interface, the child interfaces are
+                        also disabled. <br/><div class="imageleft"><img class="- topic/image image imageleft" src="../images/ports_vlan_disable.png" width="600"/></div><br/></div></div>
+            </li></ol></section>
+    </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title4" id="cond_overlay_pg_needgw">
+    <h2 class="- topic/title title topictitle2" id="ariaid-title4">Do I need a gateway?</h2>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"></p>
+        <p class="- topic/p p">You only need a gateway if the <span class="- topic/ph ph">Airwall Gateway</span> needs to
+            know how to reach additional networks from this port. The <span class="- topic/ph ph">Airwall Gateway</span> is the
+            gateway for its protected devices. In general, using static routes (for example,
+            10.0.0.0/8) for your corporate network is preferable to using a default gateway (which
+            is a 0.0.0.0/0 route), particularly if you have a bypass destination of 0.0.0.0/0 set
+            up, since that will cause a conflict.</p>
+    </div>
+</article></article></article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns:whc="http://www.oxygenxml.com/webhelp/components"></whc:webhelp_feedback>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#cond_overlay_pg_set_up_an_overlay_port_group" data-tocid="cond_overlay_pg_set_up_an_overlay_port_group">Set up an <span class="- topic/ph ph">Overlay</span>
+        Port Group</a></li><li class="topic-item"><a href="#cond_overlay_pg_interfaces" data-tocid="cond_overlay_pg_interfaces">Add Interfaces to a Port</a></li><li class="topic-item"><a href="#cond_overlay_pg_needgw" data-tocid="cond_overlay_pg_needgw">Do I need a gateway?</a></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <footer class="navbar navbar-default wh_footer" data-whc_version="21.0">
+  <div class=" footer-container  mx-auto">
+    <div>
+    <p> 
+        Go to: <a href="http://webhelp.tempered.io/webhelp-ft" target="_blank">Airwall Teams help</a> or <a href="http://webhelp.tempered.io/webhelp/webhelp222" target="_blank">pre-2.2.3 Tempered HIPswitch Help</a>.</p>
+    <p>© Copyright 2023 <a href="https://tempered.io">tempered.io</a> | <a href="https://tempered.io/resources/terms-of-product-sale-license-and-warranty" target="_blank">Terms of Product Sale, License and Warranty</a></p>
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
